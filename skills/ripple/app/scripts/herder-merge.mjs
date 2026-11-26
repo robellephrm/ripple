@@ -53,12 +53,14 @@ for (const p of lanePaths) {
   }
 }
 
-// every link must point at a real node; orphans attach to the center; anything touching the center is tier 1
+// every link must point at a real node; orphans attach to the center. The tier (1st / 2nd / 3rd order)
+// stays the scouts' call, lowest one wins: a line to the center does not make a regulator or a data
+// source first order, and the map's 1ST / 2ND ORDER views depend on these staying honest.
 for (const n of nodes.values()) {
   if (n.id === CENTER) continue;
   n.connectsTo = (n.connectsTo || []).filter(id => nodes.has(id) && id !== n.id);
   if (!n.connectsTo.length) n.connectsTo = [CENTER];
-  if (n.connectsTo.includes(CENTER)) n.tier = 1;
+  if (![1, 2, 3].includes(n.tier)) n.tier = 3;
 }
 const finalSignals = signals.filter(s => nodes.has(s.nodeId));
 const unmapped = signals.length - finalSignals.length;

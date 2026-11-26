@@ -195,7 +195,7 @@
       "label": "Wiwynn",
       "type": "company",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "microsoft",
@@ -278,7 +278,7 @@
       "label": "Ornn Compute Price Index",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 3,
       "connectsTo": [
         "nvidia"
       ],
@@ -303,7 +303,7 @@
       "label": "Street consensus",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -327,7 +327,7 @@
       "label": "HBM contract prices (TrendForce)",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "sk-hynix"
@@ -353,7 +353,7 @@
       "label": "DRAM contract prices (TrendForce)",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -430,7 +430,7 @@
       "label": "Dell'Oro AI back-end switch tracker",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -455,7 +455,7 @@
       "label": "IDC data center Ethernet switch tracker",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -505,7 +505,7 @@
       "label": "Innolight",
       "type": "company",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -530,7 +530,7 @@
       "label": "Street margin consensus",
       "type": "index",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -725,7 +725,7 @@
       "label": "Anthropic",
       "type": "company",
       "role": "customer",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "google",
         "amazon",
@@ -770,7 +770,7 @@
       "label": "SB Energy",
       "type": "company",
       "role": "partner",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "openai"
@@ -792,7 +792,7 @@
       "label": "IDC",
       "type": "company",
       "role": "other",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -814,7 +814,7 @@
       "label": "Dell'Oro Group",
       "type": "company",
       "role": "other",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -835,7 +835,7 @@
       "label": "Silicon Data",
       "type": "company",
       "role": "other",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -856,7 +856,7 @@
       "label": "OpenRouter",
       "type": "company",
       "role": "other",
-      "tier": 1,
+      "tier": 3,
       "connectsTo": [
         "nvidia"
       ],
@@ -877,7 +877,7 @@
       "label": "AWS Trainium",
       "type": "product",
       "role": "substitute",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "amazon",
         "nvidia"
@@ -899,7 +899,7 @@
       "label": "Google TPU",
       "type": "product",
       "role": "substitute",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "google",
         "meta",
@@ -922,7 +922,7 @@
       "label": "Meta MTIA",
       "type": "product",
       "role": "substitute",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "meta",
         "nvidia"
@@ -944,7 +944,7 @@
       "label": "Marvell",
       "type": "company",
       "role": "competitor",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "amazon",
@@ -1012,7 +1012,7 @@
       "label": "Epoch AI",
       "type": "company",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -1033,7 +1033,7 @@
       "label": "Morgan Stanley Research",
       "type": "company",
       "role": "data-source",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "tsmc"
@@ -1098,7 +1098,7 @@
       "label": "US Congress",
       "type": "regulator",
       "role": "regulator",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "us-commerce-dept"
@@ -1142,7 +1142,7 @@
       "label": "China SAMR",
       "type": "regulator",
       "role": "regulator",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "china-government"
@@ -1164,7 +1164,7 @@
       "label": "US Justice Department",
       "type": "regulator",
       "role": "regulator",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -1185,7 +1185,7 @@
       "label": "European Commission",
       "type": "regulator",
       "role": "regulator",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia"
       ],
@@ -1228,7 +1228,7 @@
       "label": "Taiwan Strait",
       "type": "event",
       "role": "other",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "tsmc"
@@ -1336,7 +1336,7 @@
       "label": "Arista Networks",
       "type": "company",
       "role": "competitor",
-      "tier": 1,
+      "tier": 2,
       "connectsTo": [
         "nvidia",
         "broadcom",
@@ -1530,7 +1530,7 @@
       "label": "US grid equipment shortage",
       "type": "event",
       "role": "other",
-      "tier": 1,
+      "tier": 3,
       "connectsTo": [
         "nvidia"
       ],

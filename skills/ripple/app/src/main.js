@@ -12,12 +12,14 @@ const C = { positive: '#8DB08F', negative: '#D2774F', mixed: '#D4AA5E', none: '#
 const CENTER = data.company.id;
 const byId = Object.fromEntries(data.nodes.map(n => [n.id, n]));
 let active = null;
+let shown = { nodes: [] };   // the companies currently on the map (the library's getter can lag a frame behind a switch)
+let order = 3;   // how many rings to show: 1 = direct ties only, 2 = plus one step behind, 3 = everything
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const tick = (data.company.ticker || '').split(' ')[0] || data.company.name.slice(0, 3).toUpperCase();
 
 // logos: only ids that scripts/fetch-logos.mjs saved at >=48px; everything else (and the center) uses initials
 const logoFile = Array.isArray(logoIds) ? Object.fromEntries(logoIds.map(id => [id, `${id}.png`])) : logoIds;
-const logo = id => (id !== CENTER && /^[a-z0-9-]+\.(png|svg)$/.test(logoFile[id] || '') ? `/logos/${logoFile[id]}` : null);
+const logo = id => (/^[a-z0-9-]+\.(png|svg)$/.test(logoFile[id] || '') ? `/logos/${logoFile[id]}` : null);
 const initials = s => s.replace(/\(.*?\)/g, '').split(/[\s/]+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 
 const sig = (p, n) => data.signals.filter(s => (!p || s.pillar === p) && (!n || s.nodeId === n));
@@ -33,7 +35,9 @@ function dir(nid, p) {
 // ---------- left panel ----------
 document.getElementById('co-name').textContent = data.company.name;
 document.getElementById('co-meta').textContent = data.company.ticker;
-document.getElementById('co-logo').outerHTML = `<div class="co-ini">${esc(tick)}</div>`;
+{ const cl = document.getElementById('co-logo'), src = logo(CENTER);   // the stock's own logo, ticker letters only as a fallback
+  if (src) { cl.src = src; cl.alt = data.company.name; cl.addEventListener('load', () => cl.classList.toggle('lightlogo', isLight(cl)), { once: true }); }
+  else cl.outerHTML = `<div class="co-ini">${esc(tick)}</div>`; }
 // Status scale: strong / stable / weak / broken (older maps used intact / watch; map them across)
 const STATUS = s => ({ intact: 'strong', watch: 'stable' }[s] || s);
 data.pillars.forEach(p => (p.status = STATUS(p.status)));
@@ -125,6 +129,7 @@ function build(p) {
     let grew = true;
     while (grew) { grew = false; [...keep].forEach(id => (byId[id]?.connectsTo || []).forEach(c => { if (!keep.has(c) && byId[c]) { keep.add(c); grew = true; } })); }
   }
+  if (order < 3) keep = new Set([...keep].filter(id => id === CENTER || (byId[id]?.tier || 3) <= order));
   const nodes = data.nodes.filter(n => keep.has(n.id)).map(n => {
     const o = { ...n, dir: n.id === CENTER ? 'center' : dir(n.id, p) };
     const q = POS.get(n.id); if (q) { o.x = o.fx = q.x; o.y = o.fy = q.y; o.z = o.fz = q.z; }   // same spot in every view
@@ -140,7 +145,12 @@ let MAX_ANISO = 8;
 const G = ForceGraph3D({ controlType: 'orbit' })(el)
   .backgroundColor('rgba(0,0,0,0)')
   .enableNodeDrag(false)
-  .onEngineStop(() => { if (!active) G.graphData().nodes.forEach(n => { POS.set(n.id, { x: n.x, y: n.y, z: n.z }); n.fx = n.x; n.fy = n.y; n.fz = n.z; }); })
+  .onEngineStop(() => {
+    if (active || order !== 3) return;
+    const first = !POS.size;
+    G.graphData().nodes.forEach(n => { POS.set(n.id, { x: n.x, y: n.y, z: n.z }); n.fx = n.x; n.fy = n.y; n.fz = n.z; });
+    if (first) resetView(0);   // the opening view frames the settled map, all three rings
+  })
   .showNavInfo(false)
   .warmupTicks(900).cooldownTicks(0)   // settle fully before the first frame; the map never re-lays itself out
   .nodeThreeObject(nodeObj)
@@ -166,11 +176,13 @@ CTL.rotateSpeed = 0.6; CTL.zoomSpeed = 0.8;
 // depth cues: fog so far nodes fade, and dotted sphere shells for each ring
 const scn = G.scene();
 scn.fog = new THREE.FogExp2(0x0E0D0B, 0.00085);
+const SHELLS = [];   // one dotted shell per ring, hidden along with its ring in the 1st/2nd order views
 [75, 150, 215].forEach((R, k) => {
   const N = [1400, 2600, 3800][k], pos = new Float32Array(N * 3), gold = Math.PI * (3 - Math.sqrt(5));
   for (let i = 0; i < N; i++) { const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = gold * i; pos.set([Math.cos(th) * r * R, y * R, Math.sin(th) * r * R], i * 3); }
   const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  scn.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xECEAE3, size: 1.1, transparent: true, opacity: [0.38, 0.26, 0.18][k], depthWrite: false })));
+  const shell = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xECEAE3, size: 1.1, transparent: true, opacity: [0.38, 0.26, 0.18][k], depthWrite: false }));
+  SHELLS.push(shell); scn.add(shell);
 });
 // Auto-orbit is always on. It pauses only while you look at a company (card open) or drag the map,
 // and picks up again by itself: when the card closes, or a few seconds after a drag ends.
@@ -205,12 +217,24 @@ function moveCamera(to, ms = 900) {
 function resetView(ms = 900) {
   stopOrbit(); closeDrawer();
   // fit the zoom to how big the map actually is (a dense map of tier-1 names should not sit tiny in the middle)
-  const r = Math.max(60, ...G.graphData().nodes.map(n => Math.hypot(n.x || 0, n.y || 0, n.z || 0)));
-  const c = G.camera().position, a = Math.atan2(c.x, c.z), d = Math.min(active ? 430 : 560, Math.max(active ? 280 : 300, r * (active ? 2.9 : 3.2)));
+  const r = Math.max(60, ...shown.nodes.map(n => Math.hypot(n.x || 0, n.y || 0, n.z || 0)));
+  // the 1st / 2nd order views fit their own rings more tightly, so the three views step outward
+  const floor = order === 1 ? 220 : active ? 280 : 300, k = order < 3 ? 2.7 : active ? 2.9 : 3.2;
+  const c = G.camera().position, a = Math.atan2(c.x, c.z), d = Math.min(active ? 430 : 560, Math.max(floor, r * k));
   moveCamera({ x: d * Math.sin(a), y: d * 0.42, z: d * Math.cos(a) }, ms);
   resetTimer = setTimeout(() => (orbit = true), ms + 50);
 }
-document.getElementById('reset').onclick = () => resetView();
+// RESET brings back all three orders and the default view; 1ST / 2ND ORDER show just the inner rings
+// (click the lit one again to go back to everything)
+function setOrder(o) {
+  order = o;
+  document.querySelectorAll('#views .ord').forEach(b => b.classList.toggle('on', +b.dataset.o === o));
+  SHELLS.forEach((s, k) => (s.visible = k < o));
+  G.graphData(shown = build(active));
+  resetView();
+}
+document.getElementById('reset').onclick = () => (order === 3 ? resetView() : setOrder(3));
+document.querySelectorAll('#views .ord').forEach(b => (b.onclick = () => setOrder(order === +b.dataset.o ? 3 : +b.dataset.o)));
 function fly(n) {
   const len = Math.hypot(n.x || 0, n.y || 0, n.z || 0);
   if (len < 1) { const c = G.camera().position, d = 300, a = Math.atan2(c.x, c.z); moveCamera({ x: d * Math.sin(a), y: d * 0.42, z: d * Math.cos(a) }, 1000); return; }
@@ -224,7 +248,7 @@ function fly(n) {
 function select(p) {
   active = p;
   document.querySelectorAll('.row').forEach(r => r.classList.toggle('on', r.dataset.id === p));
-  G.graphData(build(p));
+  G.graphData(shown = build(p));
   const P = data.pillars.find(x => x.id === p); const i = data.pillars.indexOf(P);
   document.getElementById('crumb').innerHTML = P ? `<b>${String(i + 1).padStart(2, '0')} ${esc(P.short.toUpperCase())}</b>` : '';
   document.getElementById('claim').innerHTML = '';

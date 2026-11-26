@@ -91,7 +91,7 @@ Fetch every signal URL. Write `data/verify.json` keyed by URL: `{ status, ok, ha
 - Load `data/thesis.json`, add the center node (the user's company, tier 0, all pillars).
 - Merge nodes by id: union `connectsTo` and `pillars`, keep the lowest tier and the longest summary, keep the first `domain`, `brief` and `health` found.
 - Signals: treat the same `nodeId + pillar + date` as one event. If two scouts disagree on direction, mark it `mixed`. Drop signals whose URL `hardFail`ed.
-- Remove links to nodes that don't exist. Orphan nodes attach to the center. Any node linked to the center is tier 1.
+- Remove links to nodes that don't exist. Orphan nodes attach to the center. Keep the scouts' tier (the lowest across lanes) even when a node links straight to the center, so 1st / 2nd / 3rd order stay meaningful.
 - Write `{ company, pillars, nodes, signals }` to `data/ripple.json`.
 
 ---
@@ -108,7 +108,7 @@ Inspired by coatue.com and iconiq.com, flipped to dark. Official and professiona
 
 ### Layout: three columns
 **Left panel (340px), top to bottom:**
-1. Tiny label `RIPPLE MAP`. Then a round disc with the ticker initials (cream disc, dark text), the company name in serif, and the ticker in mono. **No date.**
+1. Tiny label `RIPPLE MAP`. Then a round disc with the company's logo (ticker initials only if no logo can be found), the company name in serif, and the ticker in mono. **No date.**
 2. `THESIS` header with `2 OF 3 HOLDING` on the right (strong + stable count as holding). Numbered rows `01`-`05`, separated by hairlines: serif title on the left, outlined mono status tag on the right (STRONG sage, STABLE cream, WEAK gold, BROKEN terracotta). Clicking a row expands it and filters the map to that thesis point. Clicking again collapses it and shows the whole map. When expanded:
    - one or two natural sentences on where the point stands
    - a two-column key/value block in mono labels: `WHY` (2-3 short bullets with numbers), `BREAKS IF`, `NEXT CHECK`, `NEWS` (`2 ▲  8 ▼  9 ◆` in sage / terracotta / gold)
@@ -116,10 +116,10 @@ Inspired by coatue.com and iconiq.com, flipped to dark. Official and professiona
 4. `LEGEND` (helps / hurts / mixed / no news dots) **pinned to the bottom left** (`position: sticky; bottom: 0`) with a line above it.
 
 **Center: the 3D map.**
-- Top-left: only a mono breadcrumb when a thesis point is selected, e.g. `03 MARGIN COMPRESSION`. On the full map, nothing at all (never `ALL THESIS POINTS`). Bottom-left: a `RESET` button, then the hint `DRAG TO ROTATE · SCROLL TO ZOOM · CLICK A NODE`.
+- Top-left: only a mono breadcrumb when a thesis point is selected, e.g. `03 MARGIN COMPRESSION`. On the full map, nothing at all (never `ALL THESIS POINTS`). Bottom-left: a `RESET` button, then `1ST ORDER` and `2ND ORDER` buttons that show only the inner ring (direct ties) or the inner two rings, so the user can start close and widen out; clicking the lit one again, or `RESET`, brings back all three orders. Bottom-right: the hint `DRAG TO ROTATE · SCROLL TO ZOOM · CLICK A NODE`.
 - Size the canvas to its container (`Graph.width(el.clientWidth).height(el.clientHeight)` plus a resize listener) so it's centered in the middle column, not the window.
 - Background transparent so the panel color and column lines show.
-- **Nodes:** each is a sprite made from a canvas texture: a cream disc (`#ECEAE3`) with the company logo drawn inside at ~62% of the disc, and a colored ring showing the net news direction for the selected thesis point (ring width ~7px, 3px if no news). Nodes without a usable logo get mono initials on a dark disc. My company is the center node: cream disc with the ticker initials. Sizes: center 26, tier 1 15, tier 2 12, tier 3 9.5. Label under each node with `three-spritetext` in Inter, cream for tier 0-1, grey for tier 2-3, parentheses stripped.
+- **Nodes:** each is a sprite made from a canvas texture: a cream disc (`#ECEAE3`) with the company logo drawn inside at ~62% of the disc, and a colored ring showing the net news direction for the selected thesis point (ring width ~7px, 3px if no news). Nodes without a usable logo get mono initials on a dark disc. The stock is the center node: a disc with its own logo like every other company (ticker initials only if no logo can be found). Sizes: center 26, tier 1 15, tier 2 12, tier 3 9.5. Label under each node with `three-spritetext` in Inter, cream for tier 0-1, grey for tier 2-3, parentheses stripped.
 - **Net direction:** sum `magnitude` (positive +, negative −) over that node's signals for the selected thesis point. If it has both kinds and |score| ≤ 1, it's mixed.
 - **Links:** straight, 1px, opacity ~0.6, colored by the source node's direction (`#3A362F` if none). No particles, no curvature.
 - **3D layout:** `forceRadial` by tier at radius 75 / 150 / 215 (strength 1.2), charge −160, link distance 60 (strength 0.12), 600 warmup ticks, cooldown 5000 ms.

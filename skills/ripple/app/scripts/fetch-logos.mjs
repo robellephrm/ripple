@@ -205,6 +205,8 @@ async function one(n) {
   if (domain) tries.push(() => tryUrl(`https://icons.duckduckgo.com/ip3/${domain}.ico`, 48));
   for (const t of tries) {
     const r = await t();
+    // the center stock is drawn biggest: a tiny favicon looks cheap there, so hold out for a sharp image
+    if (r && n.id === center && r.d && r.d[0] !== 'svg' && Math.min(...r.d) < 128) continue;
     if (r) {
       const ext = r.ext || 'png', other = ext === 'png' ? 'svg' : 'png';
       fs.writeFileSync(path.join(outDir, `${n.id}.${ext}`), r.buf);
@@ -218,7 +220,7 @@ async function one(n) {
 const center = thesis.company?.id;
 const byId = new Map(ripple.nodes.map(n => [n.id, n]));
 for (const id of Object.keys(domains)) if (!byId.has(id)) byId.set(id, { id, label: id });
-const nodes = [...byId.values()].filter(n => n.id !== center && /^[a-z0-9-]+$/.test(n.id));
+const nodes = [...byId.values()].filter(n => /^[a-z0-9-]+$/.test(n.id));   // the center stock gets its logo too
 
 const ok = {}; const miss = []; const queue = [...nodes];
 await Promise.all(Array.from({ length: 4 }, async () => {
@@ -227,7 +229,7 @@ await Promise.all(Array.from({ length: 4 }, async () => {
 const sorted = Object.fromEntries(Object.entries(ok).sort());
 fs.writeFileSync(path.join(root, 'data/logos.json'), JSON.stringify(sorted, null, 1));
 // people, products, indices and events may use initials; companies and regulators must have a logo
-const needs = id => ['company', 'regulator', undefined].includes(byId.get(id)?.type);
+const needs = id => id === center || ['company', 'regulator', undefined].includes(byId.get(id)?.type);
 const hard = miss.filter(needs).sort(); const soft = miss.filter(id => !needs(id)).sort();
 console.log(`logos ${Object.keys(ok).length}/${nodes.length}${soft.length ? `; initials (person/product/index/event): ${soft.join(', ')}` : ''}`);
 if (hard.length) {
