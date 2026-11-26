@@ -53,11 +53,11 @@ The left panel holds the memo's own thesis points. Each is rated **Strong / Stab
 
 If the memo names KPIs, an optional KPI row brings in alternative data. Suppliers' monthly sales, input prices, hiring and consensus help show what moves those KPIs before the company reports.
 
-![The KPI row expanded, showing each tracked number, its latest reading and the outside data that leads it](docs/ripple-kpis.jpg)
-
 You also get six risk and six valuation metrics chosen for that company from a researched library. No `n/a` entries or repeated measures filling space.
 
 The 3D map puts your stock at the center. Green helps your position, red hurts it and gold is mixed, including when you are short. Click a thesis point to filter the map. Click a company for its card: impact, why it matters, financial health, the chain back to your stock and dated news with sources that open in your browser.
+
+![The NVIDIA demo in the 2nd order view with TrendForce's card open: its impact on the thesis, why it matters, health, what it tracks, the latest reading, timing, the chain back to NVIDIA and dated news](docs/ripple-card.webp)
 
 The map spins on its own, pauses while you read a card or drag, and resumes afterward. It always pivots around your stock.
 
