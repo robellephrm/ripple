@@ -1,0 +1,215 @@
+{
+  "lane": "suppliers",
+  "nodes": [
+    {
+      "id": "tsmc", "label": "TSMC", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Makes NVIDIA's GPU and CPU dies and packages them with CoWoS",
+      "pillars": ["P2"], "domain": "tsmc.com",
+      "summary": "TSMC is the single source for NVIDIA's leading-edge wafers and most of its advanced packaging.",
+      "brief": ["Foundry and CoWoS packaging", "Every Blackwell and Rubin GPU goes through TSMC, so its capacity sets NVIDIA's shipment ceiling."],
+      "health": "Q3 net profit was NT$763.1 billion, up 69%, a sixth straight record."
+    },
+    {
+      "id": "sk-hynix", "label": "SK hynix", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Lead HBM supplier; reported: about 70% of Vera Rubin HBM4 volume",
+      "pillars": ["P2"], "domain": "skhynix.com",
+      "summary": "SK hynix supplies most of the HBM stacked next to each NVIDIA GPU, and it now has the pricing power.",
+      "brief": ["Lead HBM memory supplier", "HBM is the most expensive input after the GPU die, so its price moves NVIDIA's gross margin."],
+      "health": "Plans 2026 investment in the high 40 trillion won range, with 2027 HBM already contracted."
+    },
+    {
+      "id": "samsung", "label": "Samsung Electronics", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "HBM4 supplier; reported: about 30% of Vera Rubin HBM4 volume",
+      "pillars": ["P2"], "domain": "samsung.com",
+      "summary": "Samsung is NVIDIA's second HBM4 source, which matters for both volume and bargaining leverage against SK hynix.",
+      "brief": ["Second HBM4 memory supplier", "A working second HBM4 source gives NVIDIA more volume and some leverage on memory prices."],
+      "health": "Q3 operating profit hit a record KRW 107.4 trillion, KRW 106.5 trillion from chips."
+    },
+    {
+      "id": "micron", "label": "Micron", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "HBM supplier; reported: the smallest of the three in Rubin HBM4 allocation",
+      "pillars": ["P2"], "domain": "micron.com",
+      "summary": "Micron is the third HBM supplier and the only US one, and its commentary is the clearest read on 2027 memory pricing.",
+      "brief": ["Third HBM memory supplier", "Micron's sold-out 2027 HBM tells you memory stays tight and expensive for NVIDIA next year."],
+      "health": "Fiscal Q4 revenue was $54.23 billion, up 379%, with 87% gross margin."
+    },
+    {
+      "id": "foxconn", "label": "Foxconn", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Largest assembler of NVIDIA rack-scale systems such as GB300 and Vera Rubin NVL72",
+      "pillars": ["P1", "K"], "domain": "foxconn.com",
+      "summary": "Foxconn builds more NVIDIA racks than anyone, so its server revenue is an early read on NVIDIA's shipments.",
+      "brief": ["Rack-scale server assembler", "Foxconn's AI rack volumes show NVIDIA's data center shipments before NVIDIA reports them."],
+      "health": "Q3 net profit was a record NT$77.52 billion, up 34% from a year earlier."
+    },
+    {
+      "id": "quanta", "label": "Quanta Computer", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Assembles NVIDIA GPU servers and racks for the hyperscalers",
+      "pillars": ["P1", "K"], "domain": "quantatw.com",
+      "summary": "Quanta is the second big rack assembler, building mostly for the US hyperscalers.",
+      "brief": ["AI server and rack assembler", "Quanta builds for the hyperscalers directly, so its AI mix tracks their NVIDIA orders."],
+      "health": "Record Q3 revenue up 125%, but gross margin slipped to 4.75%."
+    },
+    {
+      "id": "wistron", "label": "Wistron", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Builds NVIDIA GPU baseboards and compute trays",
+      "pillars": ["K"], "domain": "wistron.com",
+      "summary": "Wistron makes the GPU boards inside NVIDIA systems and reports revenue monthly, which makes it a useful leading indicator.",
+      "brief": ["GPU board and tray maker", "Wistron's monthly sales are the fastest public read on NVIDIA's board volumes."],
+      "health": "October revenue was NT$402.6 billion, up 117.6% from a year earlier."
+    },
+    {
+      "id": "spil", "label": "SPIL", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Advanced packaging and optical-engine partner under a multiyear NVIDIA agreement",
+      "pillars": ["P2"], "domain": "spil.com.tw",
+      "summary": "SPIL, part of ASE, is NVIDIA's main packaging capacity outside TSMC, now backed by NVIDIA money.",
+      "brief": ["Advanced packaging second source", "SPIL adds packaging capacity outside TSMC, which loosens the tightest bottleneck on NVIDIA's shipments."],
+      "health": "Backed by multibillion-dollar NVIDIA funding, with dedicated capacity rising through mid-2029."
+    },
+    {
+      "id": "amkor", "label": "Amkor Technology", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Packaging partner with multiyear NVIDIA agreements covering Arizona and South Korea",
+      "pillars": ["P2"], "domain": "amkor.com",
+      "summary": "Amkor is building interposer and packaging capacity for NVIDIA in South Korea and Arizona.",
+      "brief": ["Packaging and interposer supplier", "Amkor gives NVIDIA packaging outside Taiwan, cutting both the bottleneck and the geography risk."],
+      "health": "Holds nearly $3 billion of NVIDIA agreements, including prepayments, for Arizona and Korea."
+    },
+    {
+      "id": "ibiden", "label": "IBIDEN", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Supplies the ABF substrates NVIDIA GPUs are mounted on",
+      "pillars": ["P2"], "domain": "ibiden.com",
+      "summary": "IBIDEN is NVIDIA's main substrate maker, and substrates are now one of the named limits on how many GPUs ship.",
+      "brief": ["GPU package substrate maker", "Substrates are a named shipment constraint, and new IBIDEN capacity does not arrive until 2028."],
+      "health": "Ono plant is expanding to three times current capacity, ramping from Q1 2028."
+    },
+    {
+      "id": "kyec", "label": "King Yuan Electronics", "type": "company", "role": "supplier", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Tests NVIDIA chips; building US test sites on an NVIDIA advance payment",
+      "pillars": ["P2"], "domain": "kyec.com.tw",
+      "summary": "KYEC does final testing on NVIDIA chips, and testing has become another capacity limit NVIDIA is paying to remove.",
+      "brief": ["Chip testing services provider", "NVIDIA is prepaying KYEC so testing does not cap shipments as volumes double."],
+      "health": "A $1.1 billion NVIDIA advance funds US test sites, with volume production from April 2027."
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "tsmc", "pillar": "P2", "date": "2026-10-17",
+      "headline": "TSMC posts a sixth straight record profit but turns cautious on 2027",
+      "direction": "positive", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "If TSMC itself says AI demand is well ahead of what it can make, NVIDIA is still selling into a shortage, which keeps its pricing firm.",
+      "evidence": "demand still far exceeds its supply capacity",
+      "url": "https://thenextweb.com/news/tsmc-q3-2026-record-profit-prudent-2027", "sourceName": "The Next Web"
+    },
+    {
+      "nodeId": "tsmc", "pillar": "P2", "date": "2026-10-16",
+      "headline": "After TSMC's 3Q26 earnings: brokerages see CoWoS capacity more than doubling in 2027",
+      "direction": "mixed", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "More than doubling CoWoS lets NVIDIA ship more units, but it also erodes the shortage that holds up its pricing and gives custom-chip rivals room to get packaged.",
+      "evidence": "surging 114% YoY to 2.73 million in 2027 (227,500 monthly)",
+      "url": "https://www.trendforce.com/news/2026/10/16/news-after-tsmcs-3q26-earnings-key-brokerage-takeaways-as-2028-capex-forecasts-reach-us105b/", "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "sk-hynix", "pillar": "P2", "date": "2026-10-28",
+      "headline": "SK hynix says it has finalized next year's HBM supply terms and priced in HBM4's higher value",
+      "direction": "negative", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "NVIDIA's largest memory supplier has locked in higher 2027 HBM prices, which is the same cost pressure already pulling NVIDIA's margin guide down.",
+      "evidence": "We have concluded negotiations on transaction terms for next year's HBM supply, including volume and pricing",
+      "url": "https://www.mt.co.kr/en/industry/2026/10/28/2026102809242617566", "sourceName": "MoneyToday"
+    },
+    {
+      "nodeId": "micron", "pillar": "P2", "date": "2026-10-01",
+      "headline": "Micron blew past estimates and says it can't see when the memory shortage ends",
+      "direction": "mixed", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "A memory shortage with no end in sight keeps NVIDIA's output capped and its pricing firm, but NVIDIA pays much more for every HBM stack in 2027.",
+      "evidence": "A large part of the volume is already sold out for 2027… and the prices are much higher than 2026.",
+      "url": "https://247wallst.com/investing/2026/10/01/micron-blew-past-estimates-and-says-it-cant-see-when-the-memory-shortage-ends/", "sourceName": "24/7 Wall St."
+    },
+    {
+      "nodeId": "samsung", "pillar": "P2", "date": "2026-10-29",
+      "headline": "Samsung Electronics announces third quarter 2026 results",
+      "direction": "positive", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Samsung shipping HBM4 at scale gives NVIDIA a real second source next to SK hynix, which means more memory for Rubin and a little more leverage on price.",
+      "evidence": "significantly scaled up sales of HBM4 on the back of industry-leading product competitiveness",
+      "url": "https://news.samsungsemiconductor.com/global/samsung-electronics-announces-third-quarter-2026-results/", "sourceName": "Samsung Semiconductor Newsroom"
+    },
+    {
+      "nodeId": "nvidia", "pillar": "P2", "date": "2026-11-17",
+      "headline": "NVIDIA announces financial results for third quarter fiscal 2027",
+      "direction": "negative", "magnitude": 3, "horizon": "near",
+      "whyItMatters": "Higher memory costs are taking the gross margin guide from 74.9% to about 71.5%, which puts it within two points of the 70% line that breaks the supply-limit pillar.",
+      "evidence": "GAAP and non-GAAP gross margins are expected to be between 71.0% and 72.0%",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/", "sourceName": "NVIDIA Investor Relations"
+    },
+    {
+      "nodeId": "nvidia", "pillar": "P2", "date": "2026-11-19",
+      "headline": "NVIDIA Q3 FY 2027: Vera Rubin gains raise supply commitments",
+      "direction": "mixed", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Locking up years of memory protects NVIDIA's share of a scarce input, but $390 billion of commitments becomes a heavy fixed bill if demand slows.",
+      "evidence": "supply commitments increased to $390 billion from $279 billion in Q2 FY 2027",
+      "url": "https://futurumgroup.com/?p=98250", "sourceName": "Futurum Group"
+    },
+    {
+      "nodeId": "nvidia", "pillar": "P2", "date": "2026-09-21",
+      "headline": "NVIDIA Rubin ramp delayed to 2027 on HBM snag",
+      "direction": "negative", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Low HBM4 yields at the memory suppliers push Rubin's main ramp into next year, so Blackwell has to carry revenue growth for longer.",
+      "evidence": "Low HBM4 yields constrain chip shipments.",
+      "url": "https://www.trendforce.com/research/download/RP260921NC3", "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "foxconn", "pillar": "P1", "date": "2026-11-12",
+      "headline": "Hon Hai's Q3 net profit hits record high amid AI boom",
+      "direction": "positive", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Cloud and networking, which is mostly NVIDIA racks, is now more than half of Foxconn's revenue, a sign the racks are being built and shipped as fast as planned.",
+      "evidence": "cloud and networking division accounted for 54 percent of total revenue in the third quarter",
+      "url": "https://focustaiwan.tw/business/202611120018", "sourceName": "Focus Taiwan"
+    },
+    {
+      "nodeId": "quanta", "pillar": "P1", "date": "2026-11-11",
+      "headline": "Quanta Computer posts record revenue as AI servers squeeze gross margin to 4.75%",
+      "direction": "positive", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Quanta expects AI servers to be an even bigger share of its business in 2027, which only happens if the hyperscalers keep ordering NVIDIA racks next year.",
+      "evidence": "Third-quarter revenue rose 125.2% year-over-year and 7.6% from the second quarter.",
+      "url": "https://cryptobriefing.com/quanta-computer-record-revenue-ai-servers-margin/", "sourceName": "Crypto Briefing"
+    },
+    {
+      "nodeId": "wistron", "pillar": "K", "date": "2026-11-06",
+      "headline": "Wistron reports October revenue of NT$402.6 billion, up 117.6% from a year earlier",
+      "direction": "positive", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Wistron's board sales more than doubling into October points to another strong data center quarter for NVIDIA in the January report.",
+      "evidence": "4,026.15 億元，較 9 月成長 5.7%，較去年同期成長 117.6%",
+      "url": "https://finance.technews.tw/2026/11/06/wistron-3231-202610-financial-report/", "sourceName": "TechNews"
+    },
+    {
+      "nodeId": "spil", "pillar": "P2", "date": "2026-11-18",
+      "headline": "NVIDIA expands commitments with supply chain partners to support AI infrastructure buildout",
+      "direction": "positive", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "NVIDIA is paying to build packaging capacity outside TSMC, which lifts its shipment ceiling and makes it less dependent on one packaging supplier.",
+      "evidence": "multiyear agreement supported by multibillion-dollar funding from NVIDIA",
+      "url": "https://cxotoday.com/media-coverage/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/", "sourceName": "CXOToday"
+    },
+    {
+      "nodeId": "amkor", "pillar": "P2", "date": "2026-11-18",
+      "headline": "NVIDIA expands commitments with supply chain partners, including Amkor in Arizona and South Korea",
+      "direction": "positive", "magnitude": 1, "horizon": "long",
+      "whyItMatters": "Amkor capacity in Arizona and Korea moves some of NVIDIA's packaging out of Taiwan, which cuts the geographic risk sitting under every GPU.",
+      "evidence": "Our agreements with NVIDIA support investments in Arizona and South Korea.",
+      "url": "https://cxotoday.com/media-coverage/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/", "sourceName": "CXOToday"
+    },
+    {
+      "nodeId": "ibiden", "pillar": "P2", "date": "2026-10-22",
+      "headline": "NVIDIA taps six suppliers to expand AI chip substrate, packaging and testing capacity",
+      "direction": "mixed", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "IBIDEN tripling its Ono plant eases the substrate limit, but the new capacity only starts in 2028, so substrates stay a cap on NVIDIA's volumes through 2027.",
+      "evidence": "targets three times its current capacity",
+      "url": "https://www.credenceresearch.com/news/nvidia-six-suppliers-expand-ai-substrate-packaging-testing-capacity", "sourceName": "Credence Research"
+    },
+    {
+      "nodeId": "kyec", "pillar": "P2", "date": "2026-10-22",
+      "headline": "NVIDIA taps six suppliers to expand AI chip substrate, packaging and testing capacity",
+      "direction": "positive", "magnitude": 1, "horizon": "long",
+      "whyItMatters": "NVIDIA prepaying for US test capacity keeps testing from becoming the next bottleneck and adds a US step to a chain that runs mostly through Taiwan.",
+      "evidence": "NVIDIA is providing a $1.1 billion capacity reservation advance to KYEC for new U.S. testing facilities",
+      "url": "https://www.credenceresearch.com/news/nvidia-six-suppliers-expand-ai-substrate-packaging-testing-capacity", "sourceName": "Credence Research"
+    }
+  ]
+}

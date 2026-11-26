@@ -1,0 +1,379 @@
+{
+ "lane": "demand",
+ "nodes": [
+  {
+   "id": "microsoft",
+   "label": "Microsoft",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Buys NVIDIA racks for Azure and runs Vera Rubin NVL72 systems",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "microsoft.com",
+   "summary": "Azure grew 48% last quarter and Microsoft says it still cannot build capacity fast enough to meet demand.",
+   "brief": [
+    "Azure cloud and GPU buyer",
+    "Its capex is one of the four budgets that set NVIDIA's data center demand."
+   ],
+   "health": "Azure grew 48% and capex is guided above $50 billion next quarter."
+  },
+  {
+   "id": "google",
+   "label": "Alphabet",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Buys NVIDIA GPUs for Google Cloud while scaling its own TPUs",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "google.com",
+   "summary": "Alphabet says 2027 capex will rise significantly, but it is also selling more of its own TPU systems to outside customers.",
+   "brief": [
+    "Cloud buyer and TPU rival",
+    "Both a top GPU buyer and the most credible custom-chip alternative to NVIDIA."
+   ],
+   "health": "Google Cloud revenue grew 103% to $30.7 billion in the third quarter."
+  },
+  {
+   "id": "amazon",
+   "label": "Amazon",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Buys NVIDIA GB300 systems for AWS and builds Trainium chips",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "amazon.com",
+   "summary": "AWS is capacity constrained and Amazon will spend more in 2027, but Trainium is gaining multi-gigawatt commitments.",
+   "brief": [
+    "AWS cloud and Trainium maker",
+    "Its 2027 budget and Trainium push decide how much AWS spend reaches NVIDIA."
+   ],
+   "health": "AWS grew 39% with a $578 billion backlog; trailing free cash flow is negative $42.4 billion."
+  },
+  {
+   "id": "meta",
+   "label": "Meta",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Buys NVIDIA GB and VR racks for its AI training and ad models",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "meta.com",
+   "summary": "Meta narrowed 2026 capex to $135-145 billion and has not yet put a number on 2027.",
+   "brief": [
+    "Social platform and AI lab",
+    "The one big buyer that has not committed to a 2027 capex figure yet."
+   ],
+   "health": "Revenue grew 26% to $64.6 billion, but free cash flow was negative last quarter."
+  },
+  {
+   "id": "trendforce",
+   "label": "TrendForce",
+   "type": "company",
+   "role": "other",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Tracks AI server shipments and cloud capex across the supply chain",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "trendforce.com",
+   "summary": "TrendForce raised its 2026 AI server growth forecast to nearly 31% and expects top cloud capex near $1.3 trillion in 2027.",
+   "brief": [
+    "AI server shipment tracker",
+    "Its forecasts show whether server builds and custom chips are moving for or against NVIDIA."
+   ],
+   "health": "Latest forecast sees top nine cloud capex up nearly 50% in 2027."
+  },
+  {
+   "id": "idc",
+   "label": "IDC",
+   "type": "company",
+   "role": "other",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Tracks server vendor revenue, GPU server units and AI infrastructure spending",
+   "pillars": [
+    "P1",
+    "P2"
+   ],
+   "domain": "idc.com",
+   "summary": "IDC shows GPU server revenue rising on price while custom-accelerator servers grow far faster from a smaller base.",
+   "brief": [
+    "Server market tracker",
+    "Splits GPU servers from custom-chip servers, the cleanest read on share shift."
+   ],
+   "health": "Raised its 2026 AI infrastructure forecast to $521 billion from $497 billion."
+  },
+  {
+   "id": "delloro",
+   "label": "Dell'Oro Group",
+   "type": "company",
+   "role": "other",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Tracks global data center capex and accelerator spending each quarter",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "delloro.com",
+   "summary": "Dell'Oro counts data center capex up 92% in the second quarter, though part of that is memory price inflation.",
+   "brief": [
+    "Data center capex tracker",
+    "Shows how much of total data center spending is landing on accelerators."
+   ],
+   "health": "Sees data center capex passing $3 trillion by 2030, nearly double January's view."
+  },
+  {
+   "id": "silicon-data",
+   "label": "Silicon Data",
+   "type": "company",
+   "role": "other",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Publishes the daily H100 rental price index that CME compute futures settle against",
+   "pillars": [
+    "P2"
+   ],
+   "domain": "silicondata.com",
+   "summary": "Silicon Data's H100 neocloud rental index has climbed from $2.00 last December to about $3.08 an hour.",
+   "brief": [
+    "GPU rental price index",
+    "Rising rent on three-year-old H100s says compute is still scarce, which supports pricing."
+   ],
+   "health": "H100 index at $3.08 per GPU-hour on November 25, 2026."
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter",
+   "type": "company",
+   "role": "other",
+   "tier": 3,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Routes AI model requests across providers, a live gauge of inference usage",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "openrouter.ai",
+   "summary": "OpenRouter's token volume has passed a 10 quadrillion annual run rate, driven mostly by AI agents.",
+   "brief": [
+    "AI model routing marketplace",
+    "Token growth here is an early read on inference demand that ends up on GPUs."
+   ],
+   "health": "Run rate above 10 quadrillion tokens a year, up from 1.5 quadrillion in May."
+  }
+ ],
+ "signals": [
+  {
+   "nodeId": "meta",
+   "pillar": "P1",
+   "date": "2026-08-03",
+   "headline": "TrendForce sees Meta and AWS shifting more AI server volume to their own ASICs in 2027",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "If Meta and AWS move more of their 2027 builds to in-house chips, a bigger capex pie does not mean a proportionally bigger NVIDIA slice.",
+   "evidence": "significantly accelerating deployment of its proprietary AI ASICs in 2027",
+   "url": "https://www.trendforce.com/presscenter/news/20260803-13161.html",
+   "sourceName": "TrendForce"
+  },
+  {
+   "nodeId": "idc",
+   "pillar": "P1",
+   "date": "2026-09-10",
+   "headline": "Worldwide Server Market Revenue Hits Record $166.3 Billion in the Second Quarter of 2026",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Custom-accelerator servers grew more than eight times as fast as GPU servers and GPU units fell, so NVIDIA's growth is leaning on price while rivals gain volume.",
+   "evidence": "GPU-accelerated servers generated $87.4 billion (+28.1% YoY); other accelerated servers +237.6% to $27.5 billion; GPU unit shipments fell 10.8%",
+   "url": "https://www.idc.com/resource-center/press-releases/2q2026-wwserver-tracker/",
+   "sourceName": "IDC"
+  },
+  {
+   "nodeId": "idc",
+   "pillar": "P2",
+   "date": "2026-11-06",
+   "headline": "AI Infrastructure Spending Jumps to $121 Billion in Q2 2026; 2026 Forecast Raised to $521 Billion",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "IDC raised its 2026 forecast by $24 billion and expects high pricing to last into late 2027, which supports NVIDIA holding firm on price.",
+   "evidence": "elevated pricing to persist through at least the second half of 2027",
+   "url": "https://www.idc.com/?p=122953",
+   "sourceName": "IDC"
+  },
+  {
+   "nodeId": "delloro",
+   "pillar": "P1",
+   "date": "2026-09-16",
+   "headline": "Dell'Oro: Data Center capex grew 92% in 2Q-2026 (caveats galore)",
+   "direction": "mixed",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "Spending is still concentrated in NVIDIA Blackwell Ultra, but some of the 92% is memory and storage inflation rather than more racks, so headline capex overstates unit demand.",
+   "evidence": "supply constraints could limit the pace at which planned infrastructure is deployed",
+   "url": "https://techblog.comsoc.org/2026/09/16/delloro-data-center-capex-grew-92-in-2q-2026-caveats-galore/",
+   "sourceName": "IEEE ComSoc Techblog"
+  },
+  {
+   "nodeId": "silicon-data",
+   "pillar": "P2",
+   "date": "2026-11-25",
+   "headline": "Silicon Data H100 rental index reads $3.08 per GPU-hour, up from $2.89 on October 27",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "When rent on older H100s keeps rising, buyers are short of compute, which keeps NVIDIA's newer systems priced firmly.",
+   "evidence": "$3.08 per GPU-hour as of November 25, 2026",
+   "url": "https://www.silicondata.com/products/silicon-index/h100",
+   "sourceName": "Silicon Data"
+  },
+  {
+   "nodeId": "microsoft",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Microsoft's cloud growth accelerates, and so too does the spending",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Microsoft spent $45.2 billion last quarter, guides above $50 billion next, and still cannot meet demand, so its NVIDIA orders are set by capacity, not appetite.",
+   "evidence": "We still have demand that exceeds supply",
+   "url": "https://fortune.com/2026/10/28/microsofts-cloud-growth-accelerates-and-so-too-does-the-spending/",
+   "sourceName": "Fortune"
+  },
+  {
+   "nodeId": "google",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Google misses Wall Street expectations, Alphabet stock sinks in early after-hours trading",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "long",
+   "whyItMatters": "Alphabet committed to a big 2027 capex step-up even on a day its stock fell more than 10%, which counts toward the thesis that budgets keep rising.",
+   "evidence": "capital expenditures to \"increase significantly\" in 2027",
+   "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/10/28/google-misses-revenue-expectations-alphabet-stock-sinks-in-early-after-hours-trading",
+   "sourceName": "Associated Press via NY1"
+  },
+  {
+   "nodeId": "google",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Alphabet reports Q3 2026 revenue of $127.6 billion",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Pichai says outside customers want TPU systems, so Google is becoming a seller of NVIDIA alternatives, not just a buyer of NVIDIA chips.",
+   "evidence": "We're also seeing strong demand for our TPU systems across a wide range of customers.",
+   "url": "https://9to5google.com/2026/10/28/alphabet-q3-2026-earnings/",
+   "sourceName": "9to5Google"
+  },
+  {
+   "nodeId": "amazon",
+   "pillar": "P1",
+   "date": "2026-10-31",
+   "headline": "AWS grows 39% and Amazon will spend even more on AI in 2027",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "long",
+   "whyItMatters": "Amazon is holding $220 billion of 2026 capex and says 2027 will be meaningfully higher, a second of the four big budgets still rising.",
+   "evidence": "Amazon expects to spend \"meaningfully more\" in 2027",
+   "url": "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex",
+   "sourceName": "The Next Web"
+  },
+  {
+   "nodeId": "amazon",
+   "pillar": "P1",
+   "date": "2026-10-31",
+   "headline": "Amazon plans to sell Trainium chips outside AWS from late 2027",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Selling Trainium to third parties would put a second hyperscaler chip in direct competition for NVIDIA's non-hyperscale customers.",
+   "evidence": "Late in 2027, Amazon also plans to start selling its Trainium AI chips outside AWS",
+   "url": "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex",
+   "sourceName": "The Next Web"
+  },
+  {
+   "nodeId": "meta",
+   "pillar": "P1",
+   "date": "2026-10-21",
+   "headline": "Meta Reports Third Quarter 2026 Results",
+   "direction": "mixed",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "Meta narrowed 2026 capex to $135-145 billion but gave no 2027 number, so it is the one big budget the long cannot yet count on.",
+   "evidence": "still developing our budget and capacity plans for next year",
+   "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+   "sourceName": "Meta Investor Relations"
+  },
+  {
+   "nodeId": "openrouter",
+   "pillar": "P1",
+   "date": "2026-11-02",
+   "headline": "OpenRouter crosses a 10 quadrillion annual token run rate",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Inference usage grew more than sixfold since May, and that usage is what makes the cloud buyers' GPU spending pay back.",
+   "evidence": "has hit an annualized run rate of over 10 quadrillion tokens",
+   "url": "https://cryptobriefing.com/openrouter-10-quadrillion-token-run-rate/",
+   "sourceName": "Crypto Briefing"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-18",
+   "headline": "NVIDIA Posts $115.8 Billion Revenue as AI Cloud, Industrial and Enterprise Customers Drive 56% of Data Center Growth",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Non-hyperscale buyers grew 195% to $47.5 billion, so data center growth is no longer resting only on the four big clouds.",
+   "evidence": "AI cloud, industrial and enterprise: $16.1B to $47.5B, up 195%; hyperscale up 71% to $60.1B",
+   "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+   "sourceName": "XenoSpectrum"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "P1",
+   "date": "2026-11-18",
+   "headline": "NVIDIA takes on up to $32 billion of conditional obligations tied to AI cloud providers",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Part of the fastest-growing demand is being supported by NVIDIA's own commitments and guarantees, so some orders depend on NVIDIA's balance sheet rather than end-customer budgets.",
+   "evidence": "up to $32B in conditional obligations tied to AI cloud providers; guarantees up to $118B",
+   "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+   "sourceName": "XenoSpectrum"
+  }
+ ]
+}

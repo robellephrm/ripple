@@ -1,0 +1,390 @@
+{
+  "lane": "drill-P1",
+  "nodes": [
+    {
+      "id": "microsoft",
+      "label": "Microsoft",
+      "type": "company",
+      "role": "customer",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "openai",
+        "marvell"
+      ],
+      "relation": "Azure buys NVIDIA racks for itself, OpenAI and Anthropic, and is ramping its own Maia chips",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "microsoft.com",
+      "summary": "Microsoft is raising spend toward about $170 billion in fiscal 2027, but its CFO says the build can slow quickly and an accounting change already lowered the headline capex number without any real cut.",
+      "brief": [
+        "Largest Azure GPU buyer",
+        "Its headline capex can drop on accounting alone, so the kill test needs its lease numbers too."
+      ],
+      "health": "Uncommenced data center lease commitments reached $329.1 billion, up from $196.6 billion."
+    },
+    {
+      "id": "amazon",
+      "label": "Amazon",
+      "type": "company",
+      "role": "customer",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "aws-trainium",
+        "marvell"
+      ],
+      "relation": "AWS buys NVIDIA systems while moving more of its own and its customers' work onto Trainium",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "amazon.com",
+      "summary": "Amazon says 2027 spend goes up meaningfully and AWS can grow above 40% in 2027 and 2028, but a rising share of that build is Trainium.",
+      "brief": [
+        "Biggest cloud, Trainium maker",
+        "Its 2027 budget rises, but more of each dollar goes to its own chips."
+      ],
+      "health": "AWS grew 39% to a $184 billion run rate on about $220 billion of 2026 capex."
+    },
+    {
+      "id": "google",
+      "label": "Alphabet",
+      "type": "company",
+      "role": "customer",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "google-tpu"
+      ],
+      "relation": "Google Cloud runs NVIDIA racks while building and selling its own TPU systems",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "google.com",
+      "summary": "Alphabet promised a significant 2027 capex increase, and most of the TPU system revenue it has already signed lands in that same year.",
+      "brief": [
+        "Hyperscaler and TPU seller",
+        "Its 2027 raise helps, but more of it builds TPUs that compete with NVIDIA."
+      ],
+      "health": "Guides 2026 capex of $195-205 billion, with a significant increase in 2027."
+    },
+    {
+      "id": "meta",
+      "label": "Meta",
+      "type": "company",
+      "role": "customer",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "meta-mtia",
+        "google-tpu"
+      ],
+      "relation": "Buys NVIDIA, AMD and Google TPU capacity while ramping its own MTIA chips",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "meta.com",
+      "summary": "Meta is the only one of the four with no 2027 capex direction in numbers; it says it will keep investing aggressively and will give the budget on its fourth-quarter call.",
+      "brief": [
+        "Largest non-cloud GPU buyer",
+        "The one big four budget not yet set, and the likeliest to wobble."
+      ],
+      "health": "Guides 2026 capex of $135-145 billion; says it will keep investing aggressively in 2027."
+    },
+    {
+      "id": "aws-trainium",
+      "label": "AWS Trainium",
+      "type": "product",
+      "role": "substitute",
+      "tier": 2,
+      "connectsTo": [
+        "amazon",
+        "nvidia"
+      ],
+      "relation": "Amazon's in-house AI accelerator, sold inside AWS and from late 2027 outside it",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "amazon.com",
+      "summary": "Trainium revenue commitments grew more than 20 times in a year, and Amazon plans to sell the chip outside AWS late in 2027.",
+      "brief": [
+        "Amazon's custom AI chip",
+        "Every Trainium rack AWS fills is a rack NVIDIA does not sell."
+      ],
+      "health": "Revenue commitments up more than 20x year over year; chips business growing triple digits."
+    },
+    {
+      "id": "google-tpu",
+      "label": "Google TPU",
+      "type": "product",
+      "role": "substitute",
+      "tier": 2,
+      "connectsTo": [
+        "google",
+        "meta",
+        "nvidia"
+      ],
+      "relation": "Google's in-house accelerator, now sold as full systems to other companies",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "google.com",
+      "summary": "TrendForce expects TPU shipments to at least double in 2027, and Alphabet expects most of its signed TPU system sales to be recognized that year.",
+      "brief": [
+        "Google's custom AI chip",
+        "The most direct substitute for NVIDIA GPUs inside and outside Google."
+      ],
+      "health": "Shipments seen up over 70% in 2026 and at least doubling in 2027."
+    },
+    {
+      "id": "meta-mtia",
+      "label": "Meta MTIA",
+      "type": "product",
+      "role": "substitute",
+      "tier": 2,
+      "connectsTo": [
+        "meta",
+        "nvidia"
+      ],
+      "relation": "Meta's in-house AI chip, designed with Broadcom and made by TSMC",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "meta.com",
+      "summary": "Meta plans to deploy its newest in-house chip in the first half of 2027 and commit more than 1 gigawatt of it over 12 months.",
+      "brief": [
+        "Meta's custom AI chip",
+        "Its 2027 ramp takes inference work Meta would otherwise put on NVIDIA."
+      ],
+      "health": "First chips came back within 2-3% of simulated performance; over 1 GW committed."
+    },
+    {
+      "id": "trendforce",
+      "label": "TrendForce",
+      "type": "company",
+      "role": "data-source",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "google-tpu"
+      ],
+      "relation": "Industry tracker of AI server shipments and cloud capex",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "trendforce.com",
+      "summary": "TrendForce's November outlook sees AI servers growing about 30% in 2027 and custom chip shipments doubling to pass GPUs.",
+      "brief": [
+        "AI server market tracker",
+        "Its 2027 unit forecasts show how much capex goes to custom chips."
+      ],
+      "health": "Forecasts 2027 AI server growth of 30% to 36% across its reports."
+    },
+    {
+      "id": "hyperscaler-capex",
+      "label": "Hyperscaler capex",
+      "type": "index",
+      "role": "data-source",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "microsoft",
+        "google",
+        "amazon",
+        "meta"
+      ],
+      "relation": "The budgets that pay for most NVIDIA data center revenue",
+      "pillars": [
+        "P1"
+      ],
+      "summary": "Hyperscale customers bought 56% of NVIDIA's data center revenue last quarter, and their capex through 2027 is set to grow faster than the cash flow that pays for it.",
+      "brief": [
+        "Big four cloud capital spending",
+        "Hyperscalers bought $60.1B of NVIDIA's $107.6B data center revenue last quarter."
+      ],
+      "health": "Capex is set to rise about $534 billion by 2027 against $340 billion more cash flow."
+    },
+    {
+      "id": "marvell",
+      "label": "Marvell",
+      "type": "company",
+      "role": "competitor",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia",
+        "amazon",
+        "microsoft"
+      ],
+      "relation": "Co-designs custom AI chips for AWS and Microsoft",
+      "pillars": [
+        "P1"
+      ],
+      "domain": "marvell.com",
+      "summary": "Marvell's December 1 results are the first read this quarter on how fast the AWS and Microsoft custom chip programs are ramping.",
+      "brief": [
+        "Custom chip design partner",
+        "Its custom revenue guide shows how fast AWS and Microsoft shift off GPUs."
+      ],
+      "health": "Reports third quarter fiscal 2027 results and guidance on December 1, 2026."
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "nvidia",
+      "pillar": "P1",
+      "date": "2026-11-17",
+      "headline": "NVIDIA raises its fiscal 2028 revenue growth outlook to about 75% from 70%",
+      "direction": "positive",
+      "magnitude": 3,
+      "horizon": "near",
+      "whyItMatters": "Fiscal 2028 is mostly calendar 2027, so NVIDIA is telling investors it already sees next year's buyer budgets rising, which is the opposite of the kill test.",
+      "evidence": "from 70% to about 75%",
+      "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+      "sourceName": "XenoSpectrum"
+    },
+    {
+      "nodeId": "hyperscaler-capex",
+      "pillar": "P1",
+      "date": "2026-11-17",
+      "headline": "NVIDIA's AI cloud, industrial and enterprise sales grew 195% to $47.5 billion, against 71% growth for hyperscalers",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Hyperscale customers are now only about 56% of NVIDIA's data center revenue, so a cut by two of the big four would hurt less than the thesis assumes.",
+      "evidence": "their year-over-year growth rate of 195% exceeded the 71% growth in hyperscale",
+      "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+      "sourceName": "XenoSpectrum"
+    },
+    {
+      "nodeId": "microsoft",
+      "pillar": "P1",
+      "date": "2026-07-30",
+      "headline": "Microsoft CFO dismisses the AI overcapacity worry but says spending can be reined in if demand changes",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Hood is telling investors the land and building spend is flexible, so Microsoft could slow orders within a quarter or two if Azure demand softens.",
+      "evidence": "If the demand environment changes, you just slow down",
+      "url": "https://newsable.asianetnews.com/markets/msft-stock-soars-after-results-cfo-dismisses-ai-overcapacity-narrative-says-can-rein-in-spending-if-demand-changes-articleshow-9vrw2gs",
+      "sourceName": "Asianet Newsable"
+    },
+    {
+      "nodeId": "microsoft",
+      "pillar": "P1",
+      "date": "2026-08-10",
+      "headline": "Microsoft lowers its capex outlook because of an accounting change, not a spending slowdown",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Moving data center leases from finance to operating treatment cut the reported capex number by about $15 billion while lease commitments jumped, so a headline capex cut is not proof the kill test has fired.",
+      "evidence": "Uncommenced lease commitments rose to $329.1 billion from $196.6 billion",
+      "url": "https://cryptobriefing.com/microsoft-capex-accounting-change-ai-spending/",
+      "sourceName": "Crypto Briefing"
+    },
+    {
+      "nodeId": "amazon",
+      "pillar": "P1",
+      "date": "2026-10-29",
+      "headline": "AWS will be a $1T business, Jassy says, but first it will spend big",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "If AWS really grows above 40% in both 2027 and 2028, Amazon needs more capacity each year, which keeps its share of rack orders rising even as Trainium grows.",
+      "evidence": "we believe that AWS can grow north of 40% in each 2027 and in 2028",
+      "url": "https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/",
+      "sourceName": "TechCrunch"
+    },
+    {
+      "nodeId": "aws-trainium",
+      "pillar": "P1",
+      "date": "2026-10-30",
+      "headline": "Amazon says Trainium revenue commitments rose more than 20x and it will sell the chip outside AWS late in 2027",
+      "direction": "negative",
+      "magnitude": 3,
+      "horizon": "long",
+      "whyItMatters": "Amazon's 2027 capex can rise without NVIDIA getting a matching share, and from late 2027 Trainium competes for other companies' budgets too.",
+      "evidence": "intend to do so late in 2027",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-custom-chips-demand-q3-2026-earnings",
+      "sourceName": "About Amazon"
+    },
+    {
+      "nodeId": "google-tpu",
+      "pillar": "P1",
+      "date": "2026-07-23",
+      "headline": "Google Cloud starts shipping TPU systems and becomes a chipmaker",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Alphabet expects most of its signed TPU system sales to land in 2027, the same year NVIDIA is counting on rising hyperscaler budgets.",
+      "evidence": "the vast majority of the revenues from these agreements will be realized in 2027",
+      "url": "https://www.constellationr.com/insights/news/google-cloud-starts-shipping-tpu-systems-becomes-chipmaker",
+      "sourceName": "Constellation Research"
+    },
+    {
+      "nodeId": "google-tpu",
+      "pillar": "P1",
+      "date": "2026-11-06",
+      "headline": "TrendForce 2027 forecast: Google TPU shipments to at least double again, NVIDIA high-end platforms up 30%",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "If TPUs at least double while NVIDIA's high-end units grow about 30%, Google's spending growth goes disproportionately to its own chip.",
+      "evidence": "預期 2027 年出貨量將持續翻倍以上 (2027 shipments expected to at least double again)",
+      "url": "https://technews.tw/2026/11/06/trendforce-2027-annual-forecast-ar-mlcc-ai-server-robot/",
+      "sourceName": "TechNews"
+    },
+    {
+      "nodeId": "trendforce",
+      "pillar": "P1",
+      "date": "2026-11-16",
+      "headline": "AI Server Outlook: 30% Growth Expected in 2027, but Supply Chain Prospects Diverge",
+      "direction": "negative",
+      "magnitude": 3,
+      "horizon": "long",
+      "whyItMatters": "TrendForce sees custom chip units doubling and passing GPUs in 2027, so rising cloud budgets no longer translate one for one into NVIDIA orders.",
+      "evidence": "ASIC shipments double and pass GPUs",
+      "url": "https://www.trendforce.com/research/download/RP261116CK3",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "meta-mtia",
+      "pillar": "P1",
+      "date": "2026-09-16",
+      "headline": "Meta targets 1H27 deployment for new TSMC-made AI chip, claims efficiency edge over NVIDIA",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Meta is committing over 1 gigawatt of its own chip in 2027 and says a 30% chip cost premium is hard to justify at that scale, which caps NVIDIA's share of its budget.",
+      "evidence": "roughly 30% increase in chip costs",
+      "url": "https://trendforce.com/news/2026/09/16/news-meta-targets-1h27-deployment-for-new-tsmc-made-ai-chip-claims-efficiency-edge-over-nvidia",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "hyperscaler-capex",
+      "pillar": "P1",
+      "date": "2026-07-22",
+      "headline": "Analysis: AI investment boom puts Big Tech's free cash flow under pressure",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "If the five big spenders add $1.57 of capex for every $1 of new cash flow through 2027, any slip in AI revenue makes a budget cut more likely.",
+      "evidence": "by roughly $534 billion",
+      "url": "https://www.thestar.com.my/tech/tech-news/2026/07/22/analysis-ai-investment-boom-puts-big-tech039s-free-cash-flow-under-pressure",
+      "sourceName": "Reuters via The Star"
+    },
+    {
+      "nodeId": "marvell",
+      "pillar": "P1",
+      "date": "2026-11-06",
+      "headline": "Marvell announces conference call to review third quarter of fiscal 2027 results",
+      "direction": "mixed",
+      "magnitude": 1,
+      "horizon": "near",
+      "whyItMatters": "Marvell co-designs Trainium and Maia, so its December 1 custom revenue guide is the next dated read on how much 2027 hyperscaler spend skips NVIDIA.",
+      "evidence": "on Tuesday, December 1, 2026, at 1:30 p.m. Pacific Time",
+      "url": "https://investor.marvell.com/news-events/press-releases/detail/1041/marvell-technology-inc-announces-conference-call-to-review-third-quarter-of-fiscal-year-2027-financial-results",
+      "sourceName": "Marvell"
+    }
+  ]
+}

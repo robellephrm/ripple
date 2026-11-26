@@ -1,0 +1,418 @@
+{
+ "lane": "altdata-growth",
+ "nodes": [
+  {
+   "id": "tsmc",
+   "label": "TSMC",
+   "type": "company",
+   "role": "data-source",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Makes and packages every NVIDIA data center GPU; publishes revenue monthly",
+   "pillars": [
+    "K"
+   ],
+   "domain": "tsmc.com",
+   "summary": "TSMC's monthly revenue is the earliest hard read on how many AI chips are coming off the line for NVIDIA.",
+   "brief": [
+    "Foundry and CoWoS packager",
+    "Its monthly sales show NVIDIA's chip output months before NVIDIA books the revenue."
+   ],
+   "health": "October sales hit a 2026 high of NT$586.9B, up 59.7% on last year.",
+   "tracks": "Wafer and packaging output that becomes NVIDIA data center revenue",
+   "reading": "NT$586.89B in October 2026, up 14.7% from September and 59.7% from October 2025; Jan-Oct up 43.3%",
+   "cadence": "Monthly, about 10 days after month end",
+   "leads": "About one to two quarters ahead of NVIDIA's reported data center revenue"
+  },
+  {
+   "id": "foxconn",
+   "label": "Foxconn (Hon Hai)",
+   "type": "company",
+   "role": "data-source",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Largest assembler of NVIDIA rack-scale AI systems",
+   "pillars": [
+    "K"
+   ],
+   "domain": "foxconn.com",
+   "summary": "Foxconn's cloud and networking segment is the biggest single read on NVIDIA racks leaving the factory.",
+   "brief": [
+    "Largest AI rack assembler",
+    "Its cloud segment tracks NVIDIA rack shipments almost in real time."
+   ],
+   "health": "October revenue was a record NT$1.3 trillion, up 45.73% year on year.",
+   "tracks": "Shipments of NVIDIA GB300 and Vera Rubin racks",
+   "reading": "NT$1.3 trillion in October 2026, up 12.66% from September and 45.73% from a year earlier; cloud and networking dipped slightly from September",
+   "cadence": "Monthly, about 5 days after month end",
+   "leads": "Roughly coincident with NVIDIA's quarter, but readable about a month before NVIDIA reports"
+  },
+  {
+   "id": "quanta",
+   "label": "Quanta Computer",
+   "type": "company",
+   "role": "data-source",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Builds NVIDIA AI server racks for the hyperscalers",
+   "pillars": [
+    "K"
+   ],
+   "domain": "quantatw.com",
+   "summary": "Quanta's monthly sales and its rack-count commentary show both the volume and the pricing of NVIDIA systems.",
+   "brief": [
+    "AI server rack assembler",
+    "Its sales and rack counts split NVIDIA growth into volume versus price."
+   ],
+   "health": "October revenue NT$353.25B, up 104% year on year; Jan-Oct up 99.9%.",
+   "tracks": "NVIDIA rack shipments to US cloud customers, in units and dollars",
+   "reading": "NT$353.25B in October 2026, up 8.6% from September and 104.0% from October 2025",
+   "cadence": "Monthly, about 10 days after month end",
+   "leads": "About one month ahead of NVIDIA's report for the same quarter"
+  },
+  {
+   "id": "wistron",
+   "label": "Wistron",
+   "type": "company",
+   "role": "data-source",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Makes NVIDIA GPU baseboards and AI servers",
+   "pillars": [
+    "K"
+   ],
+   "domain": "wistron.com",
+   "summary": "Wistron builds the GPU boards that go into NVIDIA systems, so its sales sit close to NVIDIA's own shipments.",
+   "brief": [
+    "GPU baseboard and server maker",
+    "Its board sales move almost one for one with NVIDIA GPU shipments."
+   ],
+   "health": "October revenue NT$402.6B, up 117.6% year on year; Jan-Oct up 99.5%.",
+   "tracks": "NVIDIA GPU baseboard and AI server volumes",
+   "reading": "NT$402.62B in October 2026, up 5.7% from September and 117.6% from October 2025",
+   "cadence": "Monthly, about 6 days after month end",
+   "leads": "About one month ahead of NVIDIA's report for the same quarter"
+  },
+  {
+   "id": "wiwynn",
+   "label": "Wiwynn",
+   "type": "company",
+   "role": "data-source",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "microsoft",
+    "meta"
+   ],
+   "relation": "Builds hyperscalers' own server designs, including custom-chip racks",
+   "pillars": [
+    "K"
+   ],
+   "domain": "wiwynn.com",
+   "summary": "Wiwynn's sales track hyperscaler AI server spending in general, including racks built around their own chips.",
+   "brief": [
+    "Hyperscaler server builder",
+    "Shows whether cloud AI spending is still rising, NVIDIA or custom chips."
+   ],
+   "health": "October revenue NT$165.1B, up 80.9% year on year but down 4.3% on September.",
+   "tracks": "Hyperscaler AI server spending, both NVIDIA-based and custom-chip",
+   "reading": "NT$165.13B in October 2026, down 4.3% from September and up 80.9% from October 2025",
+   "cadence": "Monthly, about 6 days after month end",
+   "leads": "About one month ahead; a looser read on NVIDIA because some racks use custom chips"
+  },
+  {
+   "id": "hyperscaler-capex",
+   "label": "Hyperscaler capex",
+   "type": "index",
+   "role": "data-source",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "microsoft",
+    "google",
+    "amazon",
+    "meta"
+   ],
+   "relation": "The budgets that pay for most NVIDIA data center revenue",
+   "pillars": [
+    "K"
+   ],
+   "summary": "Quarterly capex at Microsoft, Alphabet, Amazon and Meta funds the hyperscale half of NVIDIA's data center sales.",
+   "brief": [
+    "Big four cloud capital spending",
+    "Hyperscalers bought $60.1B of NVIDIA's $107.6B data center revenue last quarter."
+   ],
+   "health": "Alphabet spent $51.4B and Microsoft $45.2B on capex in the September quarter.",
+   "tracks": "Cash the four largest US clouds spend on data centers each quarter",
+   "reading": "September quarter 2026: Alphabet $51.4B, Microsoft $45.2B, Meta $34.91B; 2026 guides of $195-205B (Alphabet), $135-145B (Meta), about $220B (Amazon)",
+   "cadence": "Quarterly, with each company's earnings in late October, January, April and July",
+   "leads": "About one quarter ahead of NVIDIA's data center revenue"
+  },
+  {
+   "id": "trendforce",
+   "label": "TrendForce",
+   "type": "company",
+   "role": "data-source",
+   "tier": 3,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Industry tracker of AI server shipments and cloud capex",
+   "pillars": [
+    "K"
+   ],
+   "domain": "trendforce.com",
+   "summary": "TrendForce's AI server and cloud capex forecasts set the industry-wide size of next year's NVIDIA opportunity.",
+   "brief": [
+    "AI server market tracker",
+    "Its 2027 forecasts size the market NVIDIA's data center revenue grows into."
+   ],
+   "health": "Sees nine leading clouds spending over $1.5 trillion on capex in 2027.",
+   "tracks": "AI server shipments and revenue, and capex at the nine largest cloud companies",
+   "reading": "October 14, 2026: CSP capex $957B in 2026 (up 106%), over $1.5T in 2027 (up 60%); AI server revenue up over 90% to nearly $920B in 2027",
+   "cadence": "Forecast updates every few months",
+   "leads": "Two to four quarters ahead of reported revenue"
+  },
+  {
+   "id": "ornn",
+   "label": "Ornn Compute Price Index",
+   "type": "index",
+   "role": "data-source",
+   "tier": 3,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Tracks what NVIDIA GPUs rent for in the neocloud market",
+   "pillars": [
+    "K"
+   ],
+   "domain": "ornnai.com",
+   "summary": "Rising GPU rents mean buyers still cannot get enough compute, which keeps new NVIDIA orders coming.",
+   "brief": [
+    "GPU rental price index",
+    "Rising rents mean compute is scarce, which pulls through more NVIDIA orders."
+   ],
+   "health": "B200 rent near $9.84 per GPU-hour in mid-November, up 32% in a month.",
+   "tracks": "Spot rental prices for NVIDIA GPUs, a real-time gauge of demand against supply",
+   "reading": "Mid-November 2026: B200 $9.84 per GPU-hour (up 32% in a month), H200 $7.75 (up 49%), H100 $3.25 (up 8.3%)",
+   "cadence": "Daily settlement from executed trades",
+   "leads": "One to two quarters ahead; rising rents push GPU clouds to order more systems"
+  },
+  {
+   "id": "street-consensus",
+   "label": "Street consensus",
+   "type": "index",
+   "role": "data-source",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Analyst expectations NVIDIA's data center revenue is judged against",
+   "pillars": [
+    "K"
+   ],
+   "summary": "Consensus sets the bar each reading has to clear; NVIDIA has beaten it by a wide margin.",
+   "brief": [
+    "Analyst expectations for NVIDIA",
+    "Data center revenue beat the $101.24B consensus by about $6.4B last quarter."
+   ],
+   "health": "January-quarter revenue consensus was $124.8B before NVIDIA guided $130B.",
+   "tracks": "What analysts expect NVIDIA's data center and total revenue to be",
+   "reading": "Q3 FY27 data center consensus $101.24B (Zacks, Nov 13) vs $107.6B actual; Q4 FY27 revenue consensus $124.8B (Nov 16) vs $130B guide",
+   "cadence": "Continuously updated; snapshot before each report",
+   "leads": "Sets the bar for the next report on February results day"
+  }
+ ],
+ "signals": [
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-17",
+   "headline": "NVIDIA's data center revenue hit $107.6B in the October quarter, up 110% from a year ago",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "near",
+   "whyItMatters": "This is the KPI itself: data center revenue was $107.6B in the quarter ended October 25, up 110% from a year ago and 21% from the prior quarter, though growth eased from 117% in the July quarter.",
+   "evidence": "Data Center: Third-quarter revenue was $107.6 billion, up 21% from the previous quarter and up 110% from a year ago.",
+   "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+   "sourceName": "NVIDIA Investor Relations"
+  },
+  {
+   "nodeId": "street-consensus",
+   "pillar": "K",
+   "date": "2026-11-13",
+   "headline": "Can AI Infrastructure Demand Sustain NVIDIA's Q3 Data Center Growth?",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Analysts expected $101.24B of data center revenue and NVIDIA reported $107.6B, a beat of about 6%, so the street was still too low going into the quarter.",
+   "evidence": "The Zacks Consensus Estimate for third-quarter data center revenues is pegged at $101.24 billion",
+   "url": "https://www.zacks.com/stock/news/3029256/can-ai-infrastructure-demand-sustain-nvidias-q3-data-center-growth",
+   "sourceName": "Zacks"
+  },
+  {
+   "nodeId": "street-consensus",
+   "pillar": "K",
+   "date": "2026-11-16",
+   "headline": "Earnings Watch | NVIDIA Q3 FY27",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "The street had $124.8B of total revenue pencilled in for the January quarter and NVIDIA guided $130B, so next quarter's estimates have to move up.",
+   "evidence": "Consensus revenue for the January quarter (Q4 FY27) is $124.8 billion.",
+   "url": "https://www.rexshares.com/?p=3196",
+   "sourceName": "REX Shares"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-18",
+   "headline": "NVIDIA Q3 Earnings Beat on Data Center Demand & Rubin Ramp-Up",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Part of the $130B guide is calendar, not demand: the January quarter has an extra week, and receivables days rose to 64 from 60 on longer payment terms for some customers.",
+   "evidence": "The outlook includes an additional week and assumes no Data Center compute revenues from China.",
+   "url": "https://www.zacks.com/stock/news/3031586/nvidia-q3-earnings-beat-on-data-center-demand-rubin-ramp-up",
+   "sourceName": "Zacks"
+  },
+  {
+   "nodeId": "tsmc",
+   "pillar": "K",
+   "date": "2026-11-10",
+   "headline": "TSMC October 2026 Revenue Report",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "TSMC's record October means more NVIDIA chips are being made and packaged, which shows up in NVIDIA's data center revenue over the next one to two quarters.",
+   "evidence": "revenue for October 2026 was approximately NT$586.89 billion, an increase of 14.7 percent from September 2026",
+   "url": "https://pr.tsmc.com/english/news/3349",
+   "sourceName": "TSMC"
+  },
+  {
+   "nodeId": "foxconn",
+   "pillar": "K",
+   "date": "2026-11-05",
+   "headline": "Hon Hai's revenue hits record NT$1.3 trillion in October",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Total sales hit a record, but the cloud segment that carries NVIDIA racks slipped from September on supply limits, so the first month of NVIDIA's January quarter was not a straight line up.",
+   "evidence": "recorded a slight decline from September despite continued strong demand for artificial intelligence (AI) applications",
+   "url": "https://focustaiwan.tw/business/202611050017",
+   "sourceName": "Focus Taiwan"
+  },
+  {
+   "nodeId": "quanta",
+   "pillar": "K",
+   "date": "2026-11-09",
+   "headline": "Quanta (2382) October consolidated revenue NT$353.25 billion, up 104.0% year on year",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Quanta's sales doubled from a year ago and rose 8.6% from September, which points to NVIDIA rack shipments still climbing at the start of NVIDIA's January quarter.",
+   "evidence": "10 \u6708\u5408\u4f75\u71df\u6536 3,532.50 \u5104\u5143\uff0c\u8f03\u4e0a\uff089\uff09\u6708\u6210\u9577 8.6%\uff0c\u8207\u53bb\u5e74\u540c\u671f\u76f8\u6bd4\u70ba\u5e74\u589e 104.0%",
+   "url": "https://finance.technews.tw/2026/11/09/qci-2382-202610-financial-report/",
+   "sourceName": "TechNews"
+  },
+  {
+   "nodeId": "quanta",
+   "pillar": "K",
+   "date": "2026-11-11",
+   "headline": "Quanta (2382): fewer AI racks shipped, revenue still grows as average price takes over",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Quanta shipped slightly fewer AI racks in the September quarter and expects fewer again in December, so growth is coming from higher prices per rack rather than more units, a weaker base if pricing stalls.",
+   "evidence": "\u516c\u53f8\u9810\u671f\u7b2c 4 \u5b63\u65b9\u5411\u76f8\u540c\uff1a\u51fa\u8ca8\u7e3d\u6ac3\u6578\u6bd4\u7b2c 3 \u5b63\u7565\u6e1b\uff0c\u71df\u6536\u7e7c\u7e8c\u5b63\u589e\u3002",
+   "url": "https://uanalyze.com.tw/articles/3809159071",
+   "sourceName": "UAnalyze"
+  },
+  {
+   "nodeId": "wistron",
+   "pillar": "K",
+   "date": "2026-11-06",
+   "headline": "Wistron (3231) October revenue NT$402.6 billion, up 117.6% year on year",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Wistron makes NVIDIA's GPU baseboards, so sales more than doubling and rising 5.7% from September point to steady GPU volumes into NVIDIA's January quarter.",
+   "evidence": "10 \u6708\u71df\u6536\uff0c\u9054 4,026.15 \u5104\u5143\uff0c\u8f03 9 \u6708\u6210\u9577 5.7%\uff0c\u8f03\u53bb\u5e74\u540c\u671f\u6210\u9577 117.6%",
+   "url": "https://finance.technews.tw/2026/11/06/wistron-3231-202610-financial-report/",
+   "sourceName": "TechNews"
+  },
+  {
+   "nodeId": "wiwynn",
+   "pillar": "K",
+   "date": "2026-11-06",
+   "headline": "Wiwynn (6669) October revenue NT$165.13 billion, up 80.9% year on year",
+   "direction": "mixed",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "Hyperscaler server builds are still up 80.9% on last year, but sales fell 4.3% from September, and part of this spending goes to racks built on the clouds' own chips instead of NVIDIA's.",
+   "evidence": "10 \u6708\u71df\u6536\uff0c\u9054 1,651.32 \u5104\u5143\uff0c\u8f03 9 \u6708\u6210\u9577 -4.3%\uff0c\u8f03\u53bb\u5e74\u540c\u671f\u6210\u9577 80.9%",
+   "url": "https://finance.technews.tw/2026/11/06/wiwynn-6669-202610-financial-report/",
+   "sourceName": "TechNews"
+  },
+  {
+   "nodeId": "hyperscaler-capex",
+   "pillar": "K",
+   "date": "2026-10-31",
+   "headline": "Alphabet's Q3 2026 results: search and cloud grow, free cash flow is negative",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Alphabet spent $51.4B in the quarter and says 2027 capex will rise significantly, which funds next year's hyperscale data center orders, though some of it builds TPU systems that compete with NVIDIA.",
+   "evidence": "$51.4 billion in capital expenditures, or CapEx",
+   "url": "https://www.neoteo.com/en/alphabets-q3-2026-results-search-and-cloud-grow-free-cash-flow-is-negative",
+   "sourceName": "NeoTeo"
+  },
+  {
+   "nodeId": "hyperscaler-capex",
+   "pillar": "K",
+   "date": "2026-10-28",
+   "headline": "Microsoft's stock rises on solid earnings and revenue beat, with Azure growing 48%",
+   "direction": "negative",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "Microsoft spent $45.2B against estimates as high as $50.67B because some third-party capacity arrived late, a reminder that data center build delays can push NVIDIA shipments out a quarter.",
+   "evidence": "Microsoft spent $45.2 billion on capital expenditures and finance leases, up by around 30% from a year before.",
+   "url": "https://siliconangle.com/?p=852356",
+   "sourceName": "SiliconANGLE"
+  },
+  {
+   "nodeId": "trendforce",
+   "pillar": "K",
+   "date": "2026-10-14",
+   "headline": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "long",
+   "whyItMatters": "If the nine largest clouds lift capex 60% to over $1.5 trillion and AI server revenue grows over 90% in 2027, NVIDIA's data center revenue has room to keep growing next year.",
+   "evidence": "In 2027, this figure is expected to surpass $1.5 trillion, representing a further 60% YoY increase.",
+   "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
+   "sourceName": "TrendForce"
+  },
+  {
+   "nodeId": "ornn",
+   "pillar": "K",
+   "date": "2026-11-12",
+   "headline": "Ornn Exchange data shows GPU rental prices climbing month-on-month across chip generations",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Blackwell rents up 32% and H200 rents up 49% in a month mean GPU clouds can earn more per chip, which is what makes them place the next NVIDIA order.",
+   "evidence": "the B200, part of Nvidia's Blackwell line, was renting for approximately $9.84 per GPU-hour. That reading was up 32% from the preceding month.",
+   "url": "https://cryptobriefing.com/ornn-exchange-gpu-rental-prices-rising/",
+   "sourceName": "Crypto Briefing"
+  }
+ ]
+}

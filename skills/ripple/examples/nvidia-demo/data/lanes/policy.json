@@ -1,0 +1,424 @@
+{
+ "lane": "policy",
+ "nodes": [
+  {
+   "id": "jensen-huang",
+   "label": "Jensen Huang",
+   "type": "person",
+   "role": "owner",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Co-founder, CEO and largest individual holder; resigned November 11 and was reinstated November 22, 2026",
+   "pillars": [
+    "P1",
+    "K"
+   ],
+   "summary": "Huang resigned as CEO on Nov 11 and the board reinstated him on Nov 22, per NVIDIA's 8-K filings.",
+   "brief": [
+    "Co-founder and chief executive",
+    "The founder-CEO's eleven-day exit and return is a governance question for the long."
+   ],
+   "health": "Holds about 811 million shares directly and through trusts, per his September Form 4."
+  },
+  {
+   "id": "us-commerce-dept",
+   "label": "US Commerce Department (BIS)",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Licenses NVIDIA's chip exports and runs the Section 232 chip tariffs",
+   "pillars": [
+    "P1",
+    "P2"
+   ],
+   "domain": "commerce.gov",
+   "summary": "Commerce decides which buyers abroad NVIDIA can ship to and is preparing a second round of chip tariffs that may reach servers.",
+   "brief": [
+    "Export licensing and tariff authority",
+    "It controls both China access and the tariff bill on servers built for US data centers."
+   ],
+   "health": "Issued a new remote access rule on November 16 covering five countries."
+  },
+  {
+   "id": "us-congress",
+   "label": "US Congress",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "us-commerce-dept"
+   ],
+   "relation": "Writes export control statute and has summoned Huang and Lutnick to testify",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "congress.gov",
+   "summary": "The Senate Banking Committee wants Huang and Commerce Secretary Lutnick at a public hearing on December 3, while chip export bills were dropped from the defense bill.",
+   "brief": [
+    "Lawmakers overseeing chip exports",
+    "A hearing or new statute could harden China limits beyond what the White House allows."
+   ],
+   "health": "Three chip export bills were cut from the final FY2027 defense bill in November."
+  },
+  {
+   "id": "china-government",
+   "label": "Chinese government",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Approves or blocks imports of NVIDIA chips into mainland China",
+   "pillars": [
+    "P1",
+    "K"
+   ],
+   "domain": "gov.cn",
+   "summary": "Beijing has held most licensed H200s outside the mainland to push Alibaba, ByteDance and Tencent toward domestic chips.",
+   "brief": [
+    "Gatekeeper for China chip imports",
+    "Beijing, not just Washington, now decides whether NVIDIA earns anything in China."
+   ],
+   "health": "About 600,000 H200s sit in Hong Kong awaiting import approval."
+  },
+  {
+   "id": "china-samr",
+   "label": "China SAMR",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "china-government"
+   ],
+   "relation": "Antitrust regulator that found NVIDIA broke the conditions on its 2020 Mellanox deal",
+   "pillars": [
+    "P2"
+   ],
+   "domain": "samr.gov.cn",
+   "summary": "SAMR's preliminary finding in September 2025 left a fine of 1% to 10% of prior-year China sales, or remedies, hanging over NVIDIA.",
+   "brief": [
+    "China's market regulator",
+    "An open Mellanox case gives Beijing a lever to fine NVIDIA or restrict its networking sales."
+   ],
+   "health": "Preliminary violation found September 2025; no final penalty announced as of November 2026."
+  },
+  {
+   "id": "us-doj",
+   "label": "US Justice Department",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Reviewing the $11.9 billion Hugging Face deal inside a wider look at NVIDIA's practices",
+   "pillars": [
+    "P2"
+   ],
+   "domain": "justice.gov",
+   "summary": "The antitrust division is reviewing NVIDIA's deals, including Hugging Face and the Groq licensing arrangement.",
+   "brief": [
+    "US antitrust enforcer",
+    "A broad conduct case could limit bundling that keeps NVIDIA's pricing and margins firm."
+   ],
+   "health": "No second request or lawsuit publicly reported as of late October 2026."
+  },
+  {
+   "id": "european-commission",
+   "label": "European Commission",
+   "type": "regulator",
+   "role": "regulator",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Informal antitrust investigation into NVIDIA's data center business",
+   "pillars": [
+    "P2"
+   ],
+   "domain": "ec.europa.eu",
+   "summary": "The Commission has been asking the industry how to define data center products, the groundwork for a bundling or dominance case.",
+   "brief": [
+    "EU competition authority",
+    "An EU case could force NVIDIA to unbundle networking from GPUs in European sales."
+   ],
+   "health": "Took new steps in its informal NVIDIA probe in October 2026."
+  },
+  {
+   "id": "megaspeed",
+   "label": "Megaspeed",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "us-commerce-dept"
+   ],
+   "relation": "Singapore cloud buyer of NVIDIA chips suspected of diverting them to China",
+   "pillars": [
+    "P1"
+   ],
+   "domain": "megaspeed.ai",
+   "summary": "Megaspeed bought more than $4 billion of NVIDIA chips, and Treasury wants it blacklisted.",
+   "brief": [
+    "Southeast Asian GPU cloud operator",
+    "It is the case Washington is using to tighten sales into Southeast Asia."
+   ],
+   "health": "Bought over $4 billion of NVIDIA chips; Treasury wants it blacklisted."
+  },
+  {
+   "id": "taiwan-strait",
+   "label": "Taiwan Strait",
+   "type": "event",
+   "role": "other",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "tsmc"
+   ],
+   "relation": "Military risk to TSMC, which makes and packages nearly all NVIDIA chips",
+   "pillars": [
+    "P2"
+   ],
+   "summary": "China ran an unannounced, multi-fleet exercise around Taiwan in early November that analysts read as practice for isolating the island.",
+   "brief": [
+    "Geopolitical risk to chip supply",
+    "Any blockade would cut the TSMC wafers and CoWoS packaging NVIDIA depends on."
+   ],
+   "health": "About 100 Chinese ships deployed in early November; no blockade followed."
+  },
+  {
+   "id": "vanguard",
+   "label": "Vanguard",
+   "type": "company",
+   "role": "owner",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Largest institutional holder of NVIDIA common stock",
+   "pillars": [
+    "K"
+   ],
+   "domain": "vanguard.com",
+   "summary": "Vanguard reported 1.78 billion NVIDIA shares, 7.31% of the class, in its Schedule 13G for March 31, 2026.",
+   "brief": [
+    "Largest index fund holder",
+    "Passive ownership this large steadies the register but cannot vote out a governance problem."
+   ],
+   "health": "Owned 7.31% of NVIDIA, 1,777,408,252 shares, at March 31, 2026."
+  },
+  {
+   "id": "mark-stevens",
+   "label": "Mark Stevens",
+   "type": "person",
+   "role": "owner",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "NVIDIA director and one of its largest individual holders",
+   "pillars": [
+    "K"
+   ],
+   "summary": "Stevens sold about $298 million of stock in September at around $220, well above where the shares trade now.",
+   "brief": [
+    "NVIDIA board director",
+    "A director selling this much near the top is a read on insider conviction."
+   ],
+   "health": "Still holds about 27.5 million shares directly and through trusts after the sale."
+  }
+ ],
+ "signals": [
+  {
+   "nodeId": "jensen-huang",
+   "pillar": "P1",
+   "date": "2026-11-12",
+   "headline": "NVIDIA announces CEO transition as Jensen Huang resigns and Colette Kress becomes interim CEO",
+   "direction": "negative",
+   "magnitude": 3,
+   "horizon": "near",
+   "whyItMatters": "The founder-CEO stepped away for eleven days before the board brought him back on Nov 22, which tested how much of the story rests on one person.",
+   "evidence": "Jensen Huang has resigned as President, Chief Executive Officer, and a member of the Board, effective immediately.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+   "sourceName": "SEC EDGAR (8-K Exhibit 99.1)"
+  },
+  {
+   "nodeId": "us-congress",
+   "pillar": "P1",
+   "date": "2026-11-13",
+   "headline": "US Senate summons Nvidia's Huang and Lutnick to testify",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "A public hearing on December 3 keeps NVIDIA's China sales in front of lawmakers who can push for tighter export law.",
+   "evidence": "requested that they appear in a public hearing on December 3",
+   "url": "https://aljazeera.com/news/2026/11/13/nvidias-huang-lutnick-summoned-to-testify-to-us-senate",
+   "sourceName": "Al Jazeera"
+  },
+  {
+   "nodeId": "us-congress",
+   "pillar": "P1",
+   "date": "2026-11-09",
+   "headline": "Nvidia chip restrictions unlikely in final NDAA as GAIN AI and Chip Security Acts are dropped",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Without the GAIN AI Act there is no US-buyers-first rule in statute, so NVIDIA keeps freedom to sell abroad for at least another year.",
+   "evidence": "Several proposals aimed at AI chip exports were reportedly excluded from the final NDAA negotiations.",
+   "url": "https://cryptobriefing.com/nvidia-chip-restrictions-unlikely-final-ndaa/",
+   "sourceName": "Crypto Briefing"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-17",
+   "headline": "NVIDIA stops licensed Hopper shipments to China and guides fourth quarter with no China data center revenue",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "China gave NVIDIA $2.4 billion last quarter, about 2% of revenue, and the $130 billion guide already assumes none of it, so the loss is real but already in the numbers.",
+   "evidence": "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm",
+   "sourceName": "SEC EDGAR (CFO Commentary, 8-K Exhibit 99.2)"
+  },
+  {
+   "nodeId": "china-government",
+   "pillar": "P1",
+   "date": "2026-11-06",
+   "headline": "Nvidia H200 chips pile up in Hong Kong as Beijing holds back, Reuters says",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Beijing steering its cloud giants to domestic chips means China demand may not come back even if Washington allows it.",
+   "evidence": "About 600,000 of Nvidia's H200 AI chips are being stored in Hong Kong.",
+   "url": "https://thenextweb.com/news/nvidia-h200-chips-hong-kong-china-import-approval",
+   "sourceName": "The Next Web (citing Reuters)"
+  },
+  {
+   "nodeId": "us-commerce-dept",
+   "pillar": "P1",
+   "date": "2026-11-17",
+   "headline": "US moves to block China's remote access to AI chips amid Nvidia scandal",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Licenses are now needed to ship to Singapore, Malaysia, Thailand, Indonesia and Brazil, which slows sales to the Southeast Asian clouds that rent compute to Chinese firms.",
+   "evidence": "Nvidia shares fell 4.1% on Monday and have lost more than 30% of their market value over the past month.",
+   "url": "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal",
+   "sourceName": "Al Jazeera"
+  },
+  {
+   "nodeId": "megaspeed",
+   "pillar": "P1",
+   "date": "2026-11-13",
+   "headline": "Treasury's Bessent blames Lutnick's Commerce Department for not restricting Nvidia chips to China",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "If Megaspeed is blacklisted, a buyer of more than $4 billion of NVIDIA chips goes away and other Southeast Asian customers face closer checks.",
+   "evidence": "Megaspeed has purchased more than $4 billion worth of Nvidia's advanced semiconductors.",
+   "url": "https://www.adn.com/business-economy/2026/11/13/treasurys-bessent-blames-lutnicks-commerce-department-for-not-restricting-nvidia-chips-to-china/",
+   "sourceName": "Associated Press via Anchorage Daily News"
+  },
+  {
+   "nodeId": "us-commerce-dept",
+   "pillar": "P1",
+   "date": "2026-09-03",
+   "headline": "Chip Tariff Phase Two confirmed: build in America or pay, Lutnick announces",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "If phase two drops the data center exemption and reaches servers, every rack the hyperscalers import gets more expensive and their budgets buy fewer of them.",
+   "evidence": "Companies that don't manufacture in the US should expect to pay to enter the greatest market in the world.",
+   "url": "https://www.techtimes.com/articles/326474/20260903/chip-tariff-phase-two-confirmed-build-america-pay-lutnick-announces.htm",
+   "sourceName": "Tech Times"
+  },
+  {
+   "nodeId": "us-commerce-dept",
+   "pillar": "P1",
+   "date": "2026-10-23",
+   "headline": "Applying semiconductor and server tariffs to data centers would now cost the US about $180 billion a year, CCIA says",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "A 25% tariff on chips and servers works out to a 15.6% tax on data center construction, which would come straight out of the capex that drives NVIDIA's demand.",
+   "evidence": "would put about $900 billion of planned 2027 to 2031 U.S. data center investment at risk",
+   "url": "https://ccianet.org/articles/applying-semiconductor-and-server-tariffs-to-data-centers-under-section-232-or-section-301-would-now-cost-the-u-s-about-180-billion-a-year/",
+   "sourceName": "CCIA"
+  },
+  {
+   "nodeId": "us-doj",
+   "pillar": "P2",
+   "date": "2026-10-28",
+   "headline": "US DOJ examines Nvidia's $12.93 billion Hugging Face acquisition",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "The review sits inside a broader look at NVIDIA's conduct, including the Groq deal, and a conduct case could limit the bundling that supports its pricing.",
+   "evidence": "The review sits inside a broader examination of Nvidia's business practices.",
+   "url": "https://cryptobriefing.com/doj-examines-nvidia-hugging-face-acquisition/",
+   "sourceName": "Crypto Briefing"
+  },
+  {
+   "nodeId": "european-commission",
+   "pillar": "P2",
+   "date": "2026-10-20",
+   "headline": "European Commission takes new steps in informal Nvidia antitrust investigation",
+   "direction": "negative",
+   "magnitude": 1,
+   "horizon": "long",
+   "whyItMatters": "The EU probe is still informal, but it is moving toward a case that could make NVIDIA sell GPUs and networking separately in Europe.",
+   "evidence": "European Commission takes new steps in informal Nvidia antitrust investigation",
+   "url": "https://thecapitolforum.com/european-antitrust-agenda-eu-commission-advances-nvidia-probe-ministers-take-on-china-trade-strategy/",
+   "sourceName": "The Capitol Forum"
+  },
+  {
+   "nodeId": "taiwan-strait",
+   "pillar": "P2",
+   "date": "2026-11-13",
+   "headline": "What we know about China's military exercises around Taiwan",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Roughly 100 ships drilled around Taiwan without a blockade, which shows both how exposed TSMC's supply is and that shipping kept moving.",
+   "evidence": "We are not going to wake up tomorrow to an operation where Taiwan is being taken by force.",
+   "url": "https://www.france24.com/en/asia-pacific/20261113-chinese-army-military-exercises-taiwan",
+   "sourceName": "France 24"
+  },
+  {
+   "nodeId": "mark-stevens",
+   "pillar": "K",
+   "date": "2026-09-18",
+   "headline": "Director Mark Stevens sells 1,356,000 NVIDIA shares at an average of $219.72",
+   "direction": "negative",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "A director cashing out about $298 million two months before the shares fell below $150 is a sign insiders saw the stock as fully priced.",
+   "evidence": "Shares sold: 1,356,000 at a weighted average price of $219.7219",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000119903926000016/xslF345X06/wk-form4_1790110579.xml",
+   "sourceName": "SEC EDGAR (Form 4)"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-19",
+   "headline": "General Counsel Tim Teter sells 30,000 NVIDIA shares between $146 and $157 under a 10b5-1 plan",
+   "direction": "mixed",
+   "magnitude": 1,
+   "horizon": "near",
+   "whyItMatters": "The sale is small and was set up in May, so it says little about conviction, but it shows insiders still selling with the stock near $150.",
+   "evidence": "effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person on May 22, 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml",
+   "sourceName": "SEC EDGAR (Form 4)"
+  }
+ ]
+}

@@ -1,0 +1,417 @@
+{
+  "lane": "supply",
+  "nodes": [
+    {
+      "id": "tsmc",
+      "label": "TSMC",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Makes NVIDIA's GPU dies and packages them with CoWoS",
+      "pillars": [
+        "P2",
+        "K"
+      ],
+      "domain": "tsmc.com",
+      "summary": "TSMC is the only maker of NVIDIA's data center chips and holds most of the world's CoWoS packaging capacity.",
+      "brief": [
+        "Foundry and CoWoS packager",
+        "Its CoWoS capacity sets how many GPUs NVIDIA can ship each quarter."
+      ],
+      "health": "Raised its 2026 sales growth forecast to 44% and kept capex at US$60-64 billion."
+    },
+    {
+      "id": "sk-hynix",
+      "label": "SK hynix",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Largest HBM supplier for NVIDIA's Rubin GPUs",
+      "pillars": [
+        "P2",
+        "P1"
+      ],
+      "domain": "skhynix.com",
+      "summary": "SK hynix supplies most of the HBM stacked next to each NVIDIA GPU and says it is sold out through 2029.",
+      "brief": [
+        "Leading HBM memory supplier",
+        "Its HBM volume and price feed straight into NVIDIA's unit count and gross margin."
+      ],
+      "health": "Record Q3 operating profit of 83.3 trillion won on 104.6 trillion won revenue."
+    },
+    {
+      "id": "samsung",
+      "label": "Samsung Electronics",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Second HBM4 supplier, now qualified on HBM4E",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "samsung.com",
+      "summary": "Samsung is NVIDIA's second HBM source, and its 2027 price talks set the floor for memory costs.",
+      "brief": [
+        "Memory maker, second HBM source",
+        "Its 2027 HBM pricing decides how much memory inflation NVIDIA must absorb."
+      ],
+      "health": "KB Securities expects its HBM selling prices to rise more than 100% in 2027."
+    },
+    {
+      "id": "micron",
+      "label": "Micron",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Third HBM supplier to NVIDIA",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "micron.com",
+      "summary": "Micron is the smallest of NVIDIA's three HBM suppliers but says its 2027 output is mostly spoken for.",
+      "brief": [
+        "US memory maker, HBM supplier",
+        "Its sold-out 2027 HBM confirms memory stays scarce and pricier for NVIDIA."
+      ],
+      "health": "More than 75% of its 2027 output is already committed to customers."
+    },
+    {
+      "id": "foxconn",
+      "label": "Foxconn",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Largest assembler of NVIDIA's rack-scale systems",
+      "pillars": [
+        "K",
+        "P2"
+      ],
+      "domain": "foxconn.com",
+      "summary": "Foxconn builds a large share of NVIDIA's NVL72 racks, so its server sales are an early read on NVIDIA's shipments.",
+      "brief": [
+        "AI rack and server assembler",
+        "Its AI rack sales show NVIDIA systems leaving the factory before NVIDIA reports."
+      ],
+      "health": "Record Q3 net profit of NT$77.52 billion, up 34%, at a 6.02% gross margin."
+    },
+    {
+      "id": "wistron",
+      "label": "Wistron",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Builds GPU boards and servers for NVIDIA systems",
+      "pillars": [
+        "K"
+      ],
+      "domain": "wistron.com",
+      "summary": "Wistron assembles NVIDIA GPU boards and servers and reports revenue monthly, which makes it a fast data point.",
+      "brief": [
+        "GPU board and server assembler",
+        "Its monthly sales give a near real-time read on NVIDIA's data center volumes."
+      ],
+      "health": "October revenue NT$402.6 billion, up 117.6% from a year earlier."
+    },
+    {
+      "id": "kinsus",
+      "label": "Kinsus",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "tsmc"
+      ],
+      "relation": "ABF substrate maker under a new NVIDIA capacity deal",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "kinsus.com.tw",
+      "summary": "Kinsus makes the ABF substrates that every GPU package sits on, a material that has been short all year.",
+      "brief": [
+        "ABF chip substrate maker",
+        "Substrates are a hidden cap on GPU output, and NVIDIA is paying to lift it."
+      ],
+      "health": "Expanding NVIDIA-dedicated ABF capacity more than 3.5x, with full output by Q3 2028."
+    },
+    {
+      "id": "amkor",
+      "label": "Amkor",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "tsmc"
+      ],
+      "relation": "Outsourced packager adding CoWoS-class capacity for NVIDIA",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "amkor.com",
+      "summary": "Amkor is building packaging capacity in Arizona and Korea, partly funded by NVIDIA, as a second path beyond TSMC.",
+      "brief": [
+        "Outsourced chip packager",
+        "Extra packaging lines outside TSMC raise the ceiling on NVIDIA's shipments."
+      ],
+      "health": "Holds nearly $3 billion of multiyear NVIDIA agreements funding Arizona and Korea expansion."
+    },
+    {
+      "id": "intel",
+      "label": "Intel",
+      "type": "company",
+      "role": "substitute",
+      "tier": 2,
+      "connectsTo": [
+        "tsmc"
+      ],
+      "relation": "EMIB packaging offered as a cheaper second source to CoWoS",
+      "pillars": [
+        "P1",
+        "P2"
+      ],
+      "domain": "intel.com",
+      "summary": "Intel's EMIB packaging gives custom-chip buyers like Google a way around TSMC's sold-out CoWoS lines.",
+      "brief": [
+        "Rival packaging second source",
+        "Cheaper non-TSMC packaging lets custom chips grow without waiting behind NVIDIA."
+      ],
+      "health": "Its foundry unit lost $10.3 billion on $17.8 billion of revenue in 2025."
+    },
+    {
+      "id": "us-grid-equipment",
+      "label": "US grid equipment shortage",
+      "type": "event",
+      "role": "other",
+      "tier": 3,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Transformer and turbine lead times gate when data centers can switch on",
+      "pillars": [
+        "P1"
+      ],
+      "summary": "Transformers, switchgear and gas turbines for new data centers now take years to arrive, which can delay rack deployments.",
+      "brief": [
+        "Power equipment bottleneck",
+        "If buildings cannot get power, customers slow GPU orders regardless of budget."
+      ],
+      "health": "Large power transformers now take more than three years to deliver."
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "tsmc",
+      "pillar": "P2",
+      "date": "2026-10-27",
+      "headline": "TSMC reportedly eyes 20% CoWoS price hike, skips equipment price renegotiations amid AI demand surge",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "A packaging price hike proves CoWoS is still the bottleneck, which supports the supply-limited thesis, but it also lands on NVIDIA's cost of goods.",
+      "evidence": "the foundry giant is reportedly weighing price hikes of up to 20%, with some packaging lead times already stretching",
+      "url": "https://trendforce.com/news/2026/10/27/news-tsmc-reportedly-eyes-20-cowos-price-hike-skips-equipment-price-renegotiations-amid-ai-demand-surge",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "tsmc",
+      "pillar": "P2",
+      "date": "2026-09-11",
+      "headline": "Report: TSMC to double CoWoS capacity by 2028 as AI chip shortage spills over to rivals",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Doubling CoWoS lets NVIDIA ship far more units, but once packaging stops being scarce the pricing support in the supply-limit thesis weakens.",
+      "evidence": "CoWoS capacity to sit at 260,000 wafers per month by the end of 2028, up from 130,000 at the end of this year",
+      "url": "https://wccftech.com/report-tsmc-to-double-cowos-capacity-by-2028-as-ai-chip-shortage-spills-over-to-rivals/",
+      "sourceName": "Wccftech"
+    },
+    {
+      "nodeId": "sk-hynix",
+      "pillar": "P2",
+      "date": "2026-10-28",
+      "headline": "SK hynix 'HBM sold out for three years'... dismisses memory 'peak-out'",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "HBM sold out through 2029 keeps GPU supply capped, which props up NVIDIA's pricing, but it also hands the memory makers the pricing power.",
+      "evidence": "effectively all sold out for the next three years, through 2029",
+      "url": "https://www.khan.co.kr/en/article/202610281734027",
+      "sourceName": "Kyunghyang Shinmun"
+    },
+    {
+      "nodeId": "sk-hynix",
+      "pillar": "P1",
+      "date": "2026-11-16",
+      "headline": "SK hynix reportedly plans new HBM4 equipment orders, with P&T6 in focus despite NVIDIA uncertainty",
+      "direction": "negative",
+      "magnitude": 1,
+      "horizon": "long",
+      "whyItMatters": "SK hynix is adding HBM capacity with Google's TPU in view, so new memory supply is not reserved for NVIDIA and helps custom chips scale.",
+      "evidence": "P&T6 at full capacity could lift HBM output by more than 20,000 wafers per month; TPU shipments projected to nearly double from 8-9 million units in 2027 to 16-18 million in 2029",
+      "url": "https://www.trendforce.com/news/?p=66658",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "micron",
+      "pillar": "P2",
+      "date": "2026-10-01",
+      "headline": "Micron blew past estimates and says it can't see when the memory shortage ends",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Micron is charging much more for 2027 HBM, and every dollar of memory inflation NVIDIA cannot pass on comes out of its gross margin.",
+      "evidence": "A large part of the volume is already sold out for 2027... and the prices are much higher than 2026",
+      "url": "https://247wallst.com/investing/2026/10/01/micron-blew-past-estimates-and-says-it-cant-see-when-the-memory-shortage-ends/",
+      "sourceName": "24/7 Wall St."
+    },
+    {
+      "nodeId": "samsung",
+      "pillar": "P2",
+      "date": "2026-10-07",
+      "headline": "Samsung's HBM prices tipped to more than double in 2027",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "If blended HBM prices rise 121% next year, the memory bill per Rubin rack climbs sharply and pushes NVIDIA's margin toward the 70% kill line.",
+      "evidence": "TrendForce forecasts that the global HBM market's blended average selling price will rise 121 percent year-on-year in 2027",
+      "url": "https://www.koreaherald.com/article/10895833",
+      "sourceName": "The Korea Herald"
+    },
+    {
+      "nodeId": "samsung",
+      "pillar": "P2",
+      "date": "2026-10-08",
+      "headline": "Samsung Electronics passes Nvidia quality tests for next-generation HBM4E memory chips",
+      "direction": "positive",
+      "magnitude": 1,
+      "horizon": "long",
+      "whyItMatters": "A qualified second source for HBM4E gives NVIDIA more volume for Rubin Ultra and some leverage against SK hynix on price.",
+      "evidence": "Samsung's 12-layer HBM4E product reportedly passed qualification tests by Nvidia and major hyperscale customers at the end of September",
+      "url": "https://finviz.com/news/400345/samsung-electronics-passes-nvidia-quality-tests-for-next-generation-hbm4e-memory-chips",
+      "sourceName": "Finviz / InvestorsHub"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "P2",
+      "date": "2026-11-17",
+      "headline": "NVIDIA announces financial results for third quarter fiscal 2027",
+      "direction": "negative",
+      "magnitude": 3,
+      "horizon": "near",
+      "whyItMatters": "The Rubin ramp and pricier memory take the gross margin guide from 74.8% to 71-72%, close to the 70% level that breaks the supply-limit pillar.",
+      "evidence": "GAAP and non-GAAP gross margins are expected to be between 71.0% and 72.0%",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/",
+      "sourceName": "NVIDIA"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "P2",
+      "date": "2026-11-17",
+      "headline": "Nvidia (NVDA) earnings show its best quarter ever, reported while its stock was sliding",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "NVIDIA locked in $111 billion more supply, mostly memory, which secures units for years but fixes the cost at today's inflated prices.",
+      "evidence": "Supply commitments of $390 billion at the end of October, up from $279 billion three months earlier",
+      "url": "https://www.stocktitan.net/articles/nvidia-q3-fiscal-2027-earnings-revenue-outlook",
+      "sourceName": "Stock Titan"
+    },
+    {
+      "nodeId": "foxconn",
+      "pillar": "K",
+      "date": "2026-11-12",
+      "headline": "Hon Hai's Q3 net profit hits record high amid AI boom",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Foxconn's AI racks grew faster than it expected last quarter, so NVIDIA systems are clearing the assembly line at the pace its data center guide needs.",
+      "evidence": "Net profit NT$77.52 billion, up 34% year on year; AI servers and AI racks grew more than expected in the third quarter",
+      "url": "https://focustaiwan.tw/business/202611120018",
+      "sourceName": "Focus Taiwan (CNA)"
+    },
+    {
+      "nodeId": "wistron",
+      "pillar": "K",
+      "date": "2026-11-06",
+      "headline": "Wistron (3231) reports October revenue of NT$402.6 billion, up 117.6% year on year",
+      "direction": "positive",
+      "magnitude": 1,
+      "horizon": "near",
+      "whyItMatters": "Wistron's sales more than doubling in October points to NVIDIA's January quarter tracking at or above its $130 billion guide.",
+      "evidence": "October revenue NT$402.615 billion, up 5.7% from September and 117.6% from a year earlier",
+      "url": "https://finance.technews.tw/2026/11/06/wistron-3231-202610-financial-report/",
+      "sourceName": "TechNews"
+    },
+    {
+      "nodeId": "kinsus",
+      "pillar": "P2",
+      "date": "2026-11-18",
+      "headline": "NVIDIA expands commitments with supply chain partners to support AI infrastructure buildout",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "NVIDIA is paying to remove the substrate bottleneck, which protects its 2027 and 2028 unit growth even if T-glass and ABF stay tight industry-wide.",
+      "evidence": "Kinsus plans to expand its ABF substrate capacity dedicated to NVIDIA by more than 3.5x; added capacity targeted for Q3 2028",
+      "url": "https://iconnect007.com/article/152442/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/152439/aep",
+      "sourceName": "I-Connect007 (Globe Newswire)"
+    },
+    {
+      "nodeId": "amkor",
+      "pillar": "P2",
+      "date": "2026-11-18",
+      "headline": "NVIDIA expands commitments with supply chain partners to support AI infrastructure buildout",
+      "direction": "positive",
+      "magnitude": 1,
+      "horizon": "long",
+      "whyItMatters": "Funding Amkor gives NVIDIA packaging capacity outside TSMC, so its unit ceiling rises even if CoWoS stays fully booked.",
+      "evidence": "NVIDIA's multiyear agreements with Amkor total nearly $3 billion and fund advanced packaging expansion in Arizona and South Korea",
+      "url": "https://iconnect007.com/article/152442/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/152439/aep",
+      "sourceName": "I-Connect007 (Globe Newswire)"
+    },
+    {
+      "nodeId": "intel",
+      "pillar": "P1",
+      "date": "2026-06-10",
+      "headline": "Google reportedly books Intel for packaging more than 3 million TPUs in 2028",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "A cheaper packaging route outside TSMC removes the CoWoS queue that has held back Google's TPU, the custom chip most likely to take NVIDIA share.",
+      "evidence": "Bernstein estimates EMIB costs a few hundred dollars per chip, versus $900 to $1,000 for CoWoS on a Rubin-class processor",
+      "url": "https://www.tomshardware.com/tech-industry/google-reportedly-books-intel-for-more-than-3-million-tpus-in-2028",
+      "sourceName": "Tom's Hardware"
+    },
+    {
+      "nodeId": "us-grid-equipment",
+      "pillar": "P1",
+      "date": "2026-11-04",
+      "headline": "America's grid upgrade hinges on a 400-ton machine designed in the 1800s, and just one U.S. mill makes the special steel inside it",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "When transformers take over three years and gas turbines up to seven, customers can have the capex budget but no powered building to put NVIDIA racks in.",
+      "evidence": "Ordering a large power transformer can take more than three years; gas turbine delivery times have stretched to between three and seven years",
+      "url": "https://fortune.com/2026/11/04/power-transformer-shortage-grid-400-ton-electrical-steel-one-us-mill/",
+      "sourceName": "Fortune"
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+{
+ "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms Nov 17, 2026 release: 'Ramped production and began shipping NVIDIA Vera Rubin NVL72 \u2014 the fastest product ramp in the company's history'. Conflicts with TokenPost (Nov 16) and TrendForce (Sep 21) Rubin-delay reports; NVIDIA primary source is the current one."
+ },
+ "https://www.zacks.com/stock/news/3029256/can-ai-infrastructure-demand-sustain-nvidias-q3-data-center-growth": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 13; evidence verbatim. CROSS-VENDOR: Zacks consensus ($101.24B) is compared with NVIDIA's reported $107.6B (NVIDIA IR); beat math (~6%) is correct. Other vendors' consensus may differ."
+ },
+ "https://www.rexshares.com/?p=3196": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 16 (pre-earnings); evidence verbatim. CROSS-VENDOR: REX consensus $124.8B vs NVIDIA $130B guide (NVIDIA IR); Newsquawk shows Q4 consensus at $125.3B, so vendors differ. Also $124.8B is TOTAL revenue consensus, but whyItMatters calls it 'data center revenue' - wording should say total revenue."
+ },
+ "https://www.zacks.com/stock/news/3031586/nvidia-q3-earnings-beat-on-data-center-demand-rubin-ramp-up": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 18; evidence verbatim; DSO 64 vs 60 and extended payment terms also on page (and in NVIDIA CFO commentary)."
+ },
+ "https://pr.tsmc.com/english/news/3349": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl 403 (bot block); read via WebFetch. Nov 10 2026; NT$586.89B, +14.7% MoM, +59.7% YoY, Jan-Oct +43.3% all confirmed."
+ },
+ "https://focustaiwan.tw/business/202611050017": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 5; evidence verbatim. Page attributes cloud dip to consignment-model changes, supply constraints and 'initial production ramp-up of new models' - it does not name Vera Rubin; minor overreach in whyItMatters."
+ },
+ "https://finance.technews.tw/2026/11/09/qci-2382-202610-financial-report/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 9; NT$353.25B (3,532.50\u5104), +8.6% MoM, +104.0% YoY verbatim."
+ },
+ "https://uanalyze.com.tw/articles/3809159071": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 11; evidence verbatim; Q3 AI rack units slightly down, growth via ASP, Q4 same direction. Single-source (UAnalyze reporting company commentary)."
+ },
+ "https://finance.technews.tw/2026/11/06/wistron-3231-202610-financial-report/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TechNews (Chinese), Nov 6, 2026; NT$4,026.15\u5104 = NT$402.615B, +5.7% MoM, +117.6% YoY. English evidence in supply lane is a translation."
+ },
+ "https://finance.technews.tw/2026/11/06/wiwynn-6669-202610-financial-report/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 6; NT$165.13B, -4.3% MoM, +80.9% YoY verbatim."
+ },
+ "https://www.neoteo.com/en/alphabets-q3-2026-results-search-and-cloud-grow-free-cash-flow-is-negative": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Page published Oct 31 2026; both evidence quotes verbatim; 'increase significantly in 2027' confirmed. Date fixed 10-28 -> 10-31 in altdata-growth."
+ },
+ "https://siliconangle.com/?p=852356": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28-29; $45.2B capex, estimates 'as high as $50.67 billion', third-party provider delays all on page."
+ },
+ "https://www.trendforce.com/presscenter/news/20261014-13269.html": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 14; >$1.5T 2027 (+60%), 2026 $957B (+106%), AI server revenue >90% confirmed. This is the CURRENT TrendForce figure (supersedes the Aug 3 $1.3T 2027 estimate)."
+ },
+ "https://cryptobriefing.com/ornn-exchange-gpu-rental-prices-rising/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 12; B200 $9.84/hr +32% MoM and H200 ~+49% confirmed."
+ },
+ "https://valueaddvc.com/blog/nvidia-q3-fy2027-earnings-115-8b-revenue-130b-guide": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 17; quote verbatim; 71-72% Q4 GM guide corroborated by NVIDIA IR."
+ },
+ "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Q3FY27-CFO-Commentary.pdf": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PDF (as of Oct 25 2026); 'supply commitments increased from $279 billion last quarter to $390 billion, primarily related to the multi-year procurement of memory supply' verbatim (line-wrapped in PDF)."
+ },
+ "https://www.nextplatform.com/compute/2026/11/18/nvidia-breaks-revenue-and-profit-records-and-will-keep-doing-it/5310669": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 18; 'more than $21 billion' networking verbatim. CROSS-SOURCE: the $8.2B year-ago networking figure is not on this page (from NVIDIA's prior-year release); 'about a fifth' of $107.6B DC checks out."
+ },
+ "https://www.newsquawk.com/headlines/nvidia-corporation-nvda-q3-fy27-usd-adj-eps-268-exp-248-revenue-1158bln-exp-109bln": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 17; page reads 'Gross margin 74.8% (exp. 74.03%)' - evidence paraphrases the parenthesis, figures match. Consensus is Newsquawk's; also lists Q4 rev exp 125.3bln (differs from REX 124.8B) and $118bln guarantee exposure (corroborates XenoSpectrum)."
+ },
+ "https://www.trendforce.com/presscenter/news/20260929-13255.html": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 29; 'Blended ASP is now projected to jump 121% YoY' verbatim."
+ },
+ "https://www.trendforce.com/presscenter/news/20260930-13258.html": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 30; DRAM contract +10-15% QoQ 4Q26 verbatim."
+ },
+ "https://koreajoongangdaily.com/business/sk-hynix-says-dram-hbm-booked-through-2029-as-profit-soars-to-62b/12942008": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28; quote verbatim; OP 83.33T won ($62.23B) on revenue 104.62T won = ~80% margin, checks out."
+ },
+ "https://trendforce.com/news/2026/10/27/news-tsmc-reportedly-eyes-20-cowos-price-hike-skips-equipment-price-renegotiations-amid-ai-demand-surge": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TrendForce, Oct 27, 2026; 'reportedly' up to 20% verbatim."
+ },
+ "https://www.delloro.com/news/ai-back-end-networks-switch-sales-surpass-front-end-networks-for-the-first-time-in-2q2026/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 3; page: 'Celestica retained the leading position in Ethernet AI back-end switch sales, followed closely by NVIDIA' (evidence elides middle words); Cisco gained most share confirmed."
+ },
+ "https://www.idc.com/resource-center/blog/ethernet-switch-market-surges-43-4-to-18-9b-in-2q26-as-ai-infrastructure-demand-drives-record-datacenter-spending/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 11; NVIDIA $2.5B, 20.4% share, +181.1% YoY on page (evidence is a paraphrase). Prior 21.5% share is from IDC's 1Q26 post (same vendor, confirmed), not this page."
+ },
+ "https://finance.technews.tw/2026/11/05/landmark-3081-202610-financial-report/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 5; 5.70\u5104, +183.0% YoY verbatim (page uses full-width commas)."
+ },
+ "https://uanalyze.com.tw/articles/5558658077": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 31; revenue RMB27.8B +172%, net profit +174%, 1.6T growth accelerating all on page (evidence mixes quote and paraphrase)."
+ },
+ "https://investinglive.com/stocks/microsoft-sees-170bn-capex-in-fiscal-2027-but-says-it-will-stay-cash-flow-positive/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28; FCF-positive quote verbatim; Hood quoted as CFO. SOURCE CONFLICT: this page says ~$170B for fiscal 2027; Fortune (same call) says ~$170B for calendar 2026. Period of the $170B is ambiguous across sources."
+ },
+ "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/10/28/google-misses-revenue-expectations-alphabet-stock-sinks-in-early-after-hours-trading": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28; AP; 'increase significantly' in 2027 verbatim."
+ },
+ "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TNW, Oct 31, 2026; 'Late in 2027' refers to Amazon selling Trainium outside AWS. Evidence fragment is thin relative to headline but page supports AWS +39% and higher 2027 spend."
+ },
+ "https://fool.com/investing/2026/10/28/mark-zuckerberg-meta-platforms-negative-fcf": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28; 'This hasn't happened since 2012' verbatim. No claim about a person beyond the URL slug."
+ },
+ "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl 403 (bot block); read via WebFetch. Sep 10; RPO +$209B to $664B verbatim; FCF -$5B confirmed. whyItMatters 'new debt' NOT supported: borrowings fell ($129.5B -> $125.3B) and Oracle raised $20B via ATM equity."
+ },
+ "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 24; 2.45GW, 2028 target, gas pipeline delayed to Feb 1 2027 confirmed (Bloomberg-sourced); Oracle says it does not expect a delay."
+ },
+ "https://pulse2.com/coreweave-record-q3-revenue-reaches-3-66-billion-as-backlog-grows-to-132-5-billion/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 12 04:03 UTC (Nov 11 US); $37-39B capex verbatim. Page does not say the capex range was raised - 'higher capex range' in whyItMatters is unsupported here."
+ },
+ "https://www.thestar.com.my/tech/tech-news/2026/11/11/openai-posts-steep-losses-even-as-quarterly-revenue-rises-to-10-billion-wsj-reports": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 11 (Reuters, citing WSJ); 'operating losses widened to $10.9 billion from $10.1 billion' on page (invisible-character noise broke exact match)."
+ },
+ "https://thenextweb.com/news/openai-856bn-compute-vs-600bn-reset-burn-improved": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 19; $856bn compute and FT 'on track to exhaust that by 2028' verbatim."
+ },
+ "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl 403 (bot block); read via WebFetch. Published Nov 18 01:41Z. Confirmed: hyperscale $60.1B; AI cloud/ind/ent $16.1B->$47.5B; 195% vs 71%; ~56% of YoY growth; guarantees up to $118B with up to $105B for SB Energy Ohio (OpenAI to use site under 20-yr lease); conditional obligations up to $32B; FY28 growth outlook 70%->~75%. Guarantees cover land/power/shell credit support, not rent - 'underwriting a buyer's rent' is an overstatement. $118B corroborated by Newsquawk."
+ },
+ "https://www.unite.ai/anthropic-details-long-term-compute-commitments-in-amended-ipo-filing/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 2; $125-150B additional Google TPU compute verbatim."
+ },
+ "https://www.thenationalnews.com/future/technology/2026/10/22/saudi-arabias-humain-expands-nvidia-deal-with-84mw-ai-computing-plan/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 22; 84MW verbatim; Vera Rubin portion 'subject to final agreements' supports 'not yet final'."
+ },
+ "https://www.trendforce.com/presscenter/news/20260803-13161.html": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Aug 3; $1.3T 2027 (+~50%) and Meta/AWS ASIC acceleration verbatim. STALE vs same vendor: TrendForce raised 2027 to >$1.5T on Oct 14 (altdata-growth signal); the Oct figure is current."
+ },
+ "https://www.idc.com/resource-center/press-releases/2q2026-wwserver-tracker/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 10; GPU servers $87.4B +28.1%, 'Other Accelerated' +237.6% to $27.5B, GPU units -10.8% on page (evidence paraphrases)."
+ },
+ "https://www.idc.com/?p=122953": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 6; pricing through 2H27 verbatim; forecast raised $497B -> $521B (= $24B) confirmed."
+ },
+ "https://techblog.comsoc.org/2026/09/16/delloro-data-center-capex-grew-92-in-2q-2026-caveats-galore/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 16; evidence verbatim; 'concentrated in NVIDIA Blackwell Ultra' and memory/storage price inflation both on page."
+ },
+ "https://www.silicondata.com/products/silicon-index/h100": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Live index page: 'As of Nov 25, 2026 3.08 USD / GPU-hour'; Oct 27 reading 2.89 in table (neo-cloud SDH100RT). Evidence is a paraphrase; value will change on refresh."
+ },
+ "https://fortune.com/2026/10/28/microsofts-cloud-growth-accelerates-and-so-too-does-the-spending/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 28; 'demand that exceeds supply', $45.2B, >$50B next quarter confirmed. Says ~$170B is calendar-2026 capex (conflicts with InvestingLive 'fiscal 2027')."
+ },
+ "https://9to5google.com/2026/10/28/alphabet-q3-2026-earnings/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "9to5Google, Oct 28, 2026; 'Google Cloud revenues grew 103%' and TPU quote verbatim."
+ },
+ "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl 403 (bot block); read via WebFetch. Oct 21 2026; 2026 capex $135-145B (narrowed from $130-145B) and 'still developing our budget and capacity plans for next year' confirmed."
+ },
+ "https://cryptobriefing.com/openrouter-10-quadrillion-token-run-rate/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 2; 10 quadrillion run rate and 'more than sixfold' from 1.5 quadrillion in May confirmed."
+ },
+ "https://newsable.asianetnews.com/markets/msft-stock-soars-after-results-cfo-dismisses-ai-overcapacity-narrative-says-can-rein-in-spending-if-demand-changes-articleshow-9vrw2gs": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Jul 30; Amy Hood earnings-call quote verbatim (an on-record business quote, not an allegation)."
+ },
+ "https://cryptobriefing.com/microsoft-capex-accounting-change-ai-spending/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Aug 10; ~$15B revision, finance->operating lease shift, uncommenced leases $329.1B from $196.6B all on page. Single secondary source (cites news.microsoft.com)."
+ },
+ "https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 29; Jassy 'north of 40% in each 2027 and in 2028' verbatim."
+ },
+ "https://www.aboutamazon.com/news/company-news/amazon-custom-chips-demand-q3-2026-earnings": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Oct 30; Graviton and Trainium commitments each >20x YoY and 'late in 2027' verbatim."
+ },
+ "https://www.constellationr.com/insights/news/google-cloud-starts-shipping-tpu-systems-becomes-chipmaker": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl 403 (bot block); read via WebFetch. Jul 23 2026; CFO Ashkenazi quote 'vast majority of the revenues from these agreements will be realized in 2027' confirmed."
+ },
+ "https://technews.tw/2026/11/06/trendforce-2027-annual-forecast-ar-mlcc-ai-server-robot/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 6; TPU 2027 shipments '\u6301\u7e8c\u7ffb\u500d\u4ee5\u4e0a' and NVIDIA high-end platform shipments +30% in 2027 both on page."
+ },
+ "https://www.trendforce.com/research/download/RP261116CK3": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 16; 'ASIC shipments double and pass GPUs' on page (paid report landing page)."
+ },
+ "https://trendforce.com/news/2026/09/16/news-meta-targets-1h27-deployment-for-new-tsmc-made-ai-chip-claims-efficiency-edge-over-nvidia": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Sep 16; >1 GW over 12 months and Yee Jiun Song's '30% increase in chip costs' remark on page."
+ },
+ "https://www.thestar.com.my/tech/tech-news/2026/07/22/analysis-ai-investment-boom-puts-big-tech039s-free-cash-flow-under-pressure": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Jul 22 (Reuters); $534B capex rise and $1.57 per $1 verbatim."
+ },
+ "https://investor.marvell.com/news-events/press-releases/detail/1041/marvell-technology-inc-announces-conference-call-to-review-third-quarter-of-fiscal-year-2027-financial-results": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 6; Dec 1 2026 1:30pm PT verbatim. Trainium/Maia co-design is background, not on this page."
+ },
+ "https://thenextweb.com/news/nvidia-ai-server-price-increase-memory-costs": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Page dated Aug 22, 2026; says prices rise more than 15% from early next year. Supports headline."
+ },
+ "https://singjupost.com/?p=65326": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Q3 FY27 call transcript dated Nov 17, 2026; quote verbatim (Kress, as interim CEO). Third-party transcript site, not NVIDIA."
+ },
+ "https://gfmag.com/?p=77611": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Global Finance, Nov 18, 2026; inventory +86% to $39.7B quote verbatim."
+ },
+ "https://www.tokenpost.com/news/technology/58109": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Nov 16, 2026; quote verbatim. Single outlet citing unnamed industry sources; contradicted one day later by NVIDIA saying VR NVL72 has begun shipping. Headline correctly frames it as 'concerns'."
+ },
+ "https://news.skhynix.com/en/q3-2026-business-results/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "SK hynix newsroom, Oct 28, 2026; 80% operating margin verbatim; 'HBM4 expected to be the mainstream product from the fourth quarter' supports the overtake paraphrase. Operating margin is not comparable to Micron's gross margin guide."
+ },
+ "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms Sep 30, 2026 release; FQ1-27 revenue $61.5B +/- $1.5B, non-GAAP GM ~86.25% (GAAP ~85.95%)."
+ },
+ "https://investors.micron.com/news/press-release/2026/Micron-Technology-to-Report-Fiscal-First-Quarter-Results-on-December-17-2026/default.aspx": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms Nov 19, 2026 release; call Thursday Dec 17, 2026 at 2:30 p.m. Mountain time."
+ },
+ "https://www.trendforce.com/news/2026/07/22/news-tsmc-reportedly-plans-up-to-10-price-hikes-in-2027-with-extra-hpc-premiums-apple-nvidia-in-focus/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TrendForce News Jul 22, 2026, citing Nikkei; base hikes 5-10% plus 10-15% HPC surcharge (on orders above committed volume). Different scope from the Oct 27 '20% CoWoS' report; do not chain them."
+ },
+ "https://chipsupplychain.org/component-costs/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Page 'Updated 25 November 2026'; BOM table matches evidence. Figures are Epoch AI's December 2025 estimate and the $30-40k selling price is a March 2024 report: cross-source/cross-date comparison (epoch-ai node health 'near $6,400 against a $30,000-plus selling price'). Individual-author site, not an outlet."
+ },
+ "https://wccftech.com/nvidia-vera-rubin-rack-hit-with-memory-price-surge-pushing-hbm4-lpddr5x-bill-to-2m-of-7-8m-total/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Wccftech, May 21, 2026; 26% memory share quote verbatim. Six months old."
+ },
+ "https://www.kucoin.com/news/flash/morgan-stanley-report-cowos-demand-to-double-by-2027-amd-and-asics-drive-ai-chip-growth": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "KuCoin/TechFlow flash, Jul 9, 2026, relaying Morgan Stanley; 2.694M wafers 2027 (+93%), NVIDIA 1.222M = 45%. Crypto-exchange news relay of a broker note. CROSS-VENDOR: Morgan Stanley CoWoS DEMAND (2.694M) vs Goldman CoWoS CAPACITY (2.73M, TrendForce Oct 16) vs Taiwan analysts 130k/mo end-2026 (Wccftech Sep 11; Goldman puts 2026 at ~106k/mo). Goldman (Oct 16) is the most current."
+ },
+ "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvidiaannouncesceotransiti.htm": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: 8-K Ex.99.1 (acc. 0001045810-26-000082, filed 2026-11-12, period 2026-11-11). Release dated Nov 12; 8-K Item 5.02 says the Board accepted Huang's resignation on Nov 11, 2026; Kress interim CEO; Harvey Jones chair. Resignation reason not stated in this filing; reason (reports he was target of a foreign intelligence effort / affair with suspected spy) confirmed by AP (via ADN) and Al Jazeera/AP and by NVIDIA's Nov 23 release."
+ },
+ "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nov23pressrelease.htm": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: 8-K Ex.99.1 (acc. 0001045810-26-000090, filed 2026-11-23, period 2026-11-22). Release dated Nov 23; Item 5.02 says Board reinstated Huang on Nov 22, 2026; quote verbatim; release references 'recent reporting that Mr. Huang has been the target of a foreign intelligence effort' and an independent-director investigation still under way."
+ },
+ "https://aljazeera.com/news/2026/11/13/nvidias-huang-lutnick-summoned-to-testify-to-us-senate": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Al Jazeera Staff and AP, Nov 13, 2026; Sen. Tim Scott requested Huang and Lutnick appear Dec 3. Also reports Huang resigned amid revelations of an affair with a woman US authorities suspect of spying for China."
+ },
+ "https://cryptobriefing.com/nvidia-chip-restrictions-unlikely-final-ndaa/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Crypto Briefing, Nov 9, 2026; quote verbatim; 'reportedly' (second-hand). Lower-tier outlet."
+ },
+ "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: CFO commentary (8-K, Nov 17, 2026); $2.4B Hopper to China verbatim; Q4 outlook assumes no Data Center COMPUTE revenue from China. 'Stops licensed Hopper shipments' is not on this page but is in the call transcript ('we are no longer shipping licensed Hopper data center products to China'). Headline's 'no China data center revenue' should strictly read 'no China data center compute revenue'."
+ },
+ "https://thenextweb.com/news/nvidia-h200-chips-hong-kong-china-import-approval": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TNW, Nov 6, 2026, relaying Reuters (two people familiar); ~600,000 H200s in Hong Kong. Second-hand Reuters."
+ },
+ "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Al Jazeera, Nov 17, 2026; page writes '4.1 percent' and 'more than 30 percent' (evidence paraphrased with %). Also confirms the Megaspeed/MSS espionage allegations behind Huang's resignation."
+ },
+ "https://www.adn.com/business-economy/2026/11/13/treasurys-bessent-blames-lutnicks-commerce-department-for-not-restricting-nvidia-chips-to-china/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "AP (Catalini, Rugaber) via Anchorage Daily News, Nov 13, 2026; Megaspeed >$4B quote verbatim; reports Huang resigned after news of affair with former Megaspeed exec suspected by US intelligence of being a Chinese spy (per NYT)."
+ },
+ "https://www.techtimes.com/articles/326474/20260903/chip-tariff-phase-two-confirmed-build-america-pay-lutnick-announces.htm": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Tech Times, Sep 3, 2026; Lutnick quote present ('expect to pay to enter the greatest market in the world'); evidence slightly reworded from page's paraphrase+quote."
+ },
+ "https://ccianet.org/articles/applying-semiconductor-and-server-tariffs-to-data-centers-under-section-232-or-section-301-would-now-cost-the-u-s-about-180-billion-a-year/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "CCIA (industry lobby), Oct 23, 2026; quote verbatim. Advocacy source."
+ },
+ "https://cryptobriefing.com/doj-examines-nvidia-hugging-face-acquisition/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Crypto Briefing, Oct 28, 2026; $12.93B headline and quote verbatim. Lower-tier outlet."
+ },
+ "https://thecapitolforum.com/european-antitrust-agenda-eu-commission-advances-nvidia-probe-ministers-take-on-china-trade-strategy/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Capitol Forum, Oct 20, 2026; headline text present (teaser; body likely paywalled)."
+ },
+ "https://www.france24.com/en/asia-pacific/20261113-chinese-army-military-exercises-taiwan": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms headline and quote; published Nov 13, 2026."
+ },
+ "https://www.sec.gov/Archives/edgar/data/1045810/000119903926000016/xslF345X06/wk-form4_1790110579.xml": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: Form 4, Mark A. Stevens, box 'Director' checked; 09/18/2026 sale of 1,356,000 sh at weighted avg $219.7219 (range $219.40-$220.35) = $297.9M, plus 10,000 sh at $220.42; held by Third Millennium Trust; signed 09/22/2026. Post-sale holdings 970,531 + 11,544,612 + 15,017,750 = ~27.5M (matches node). 10b5-1 box NOT checked."
+ },
+ "https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: Form 4, Timothy S. Teter, EVP General Counsel and Secretary; 11/19/2026 sales totalling 30,000 sh at weighted avgs $146.03-$157.49; 10b5-1 plan adopted May 22, 2026 (verbatim)."
+ },
+ "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000188/q32026991.htm": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "PRIMARY: AMD 8-K Ex.99.1, Nov 3, 2026; Data Center record $8.5B up 97% verbatim."
+ },
+ "https://www.fierce-network.com/broadband/broadcom-predicts-ai-chip-revenue-double-2027": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Fierce Network, Sep 4, 2026; Anthropic XPU quote verbatim."
+ },
+ "https://techblog.comsoc.org/2026/11/16/broadcoms-sc26-open-ethernet-fabric-ai-tail-latency-vs-proprietary-interconnects-and-cisco-silicon-one/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "IEEE ComSoc Techblog, Nov 16, 2026; ~128,000 accelerators / two tiers verbatim."
+ },
+ "https://techcrunch.com/2025/12/02/amazon-releases-an-impressive-new-ai-chip-and-teases-a-nvidia-friendly-roadmap": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TechCrunch, Dec 2, 2025; NVLink Fusion quote verbatim. Nearly a year old; stale context."
+ },
+ "https://blogs.microsoft.com/?p=52563158": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Official Microsoft Blog, Oct 12, 2026; Maia multi-gigawatt quote verbatim."
+ },
+ "https://www.engineering.com/nvidia-and-meta-expand-collaboration-on-ai-models-and-infrastructure/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Engineering.com, Oct 28, 2026; '$3 billion in Meta's equity offering' verbatim."
+ },
+ "https://futurumgroup.com/insights/marvell-investor-day-2026-targets-80b-fy-2031-revenue-with-custom-silicon-and-optics/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Futurum, Oct 9, 2026 (Investor Day Oct 6); $80B FY2031 target in title, ~$30B quote verbatim."
+ },
+ "https://www.networkworld.com/article/4244672/arista-posts-record-growth-as-ai-networking-supercycle-accelerates.html": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Network World, Nov 4, 2026; '>10 gigawatts' quote verbatim."
+ },
+ "https://www.nextplatform.com/a/5310669": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "The Next Platform, Nov 18, 2026; Kress said networking brought in more than $21B. InfiniBand/Ethernet split on page is the author's estimate."
+ },
+ "https://technode.com/2026/10/14/nvidias-china-ai-chip-share-falls-to-34-as-huawei-reaches-28/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TechNode, Oct 14, 2026; 34% in 1H26 verbatim."
+ },
+ "https://www.androidheadlines.com/2026/09/huawei-accelerates-ai-chip-roadmap-against-nvidia.html": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms Sep 18, 2026; Eric Xu quote 'local appetite for Ascend chips currently outstrips manufacturing capacity'."
+ },
+ "https://thenextweb.com/news/tsmc-q3-2026-record-profit-prudent-2027": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TNW, Oct 17, 2026; demand exceeds supply quote verbatim."
+ },
+ "https://www.trendforce.com/news/2026/10/16/news-after-tsmcs-3q26-earnings-key-brokerage-takeaways-as-2028-capex-forecasts-reach-us105b/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TrendForce, Oct 16, 2026; figure is Goldman Sachs' CoWoS CAPACITY forecast (1.275M 2026 -> 2.73M 2027, +114%). CROSS-VENDOR: see Morgan Stanley demand (KuCoin) and Wccftech 130k/mo; this Goldman figure is the most current."
+ },
+ "https://www.mt.co.kr/en/industry/2026/10/28/2026102809242617566": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "MoneyToday, Oct 28, 2026; finalized HBM terms quote verbatim; HBM4 to surpass HBM3E in Q4."
+ },
+ "https://247wallst.com/investing/2026/10/01/micron-blew-past-estimates-and-says-it-cant-see-when-the-memory-shortage-ends/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "24/7 Wall St., Oct 1, 2026; sold-out-for-2027 quote verbatim (used in suppliers and supply)."
+ },
+ "https://news.samsungsemiconductor.com/global/samsung-electronics-announces-third-quarter-2026-results/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Samsung newsroom, Oct 29, 2026; HBM4 quote verbatim."
+ },
+ "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/": {
+  "status": 403,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl blocked (bot wall); page read via WebFetch and confirms Nov 17, 2026 release; Q4 GAAP and non-GAAP GM 71.0%-72.0% verbatim (also in SEC CFO commentary). Used in suppliers and supply."
+ },
+ "https://futurumgroup.com/?p=98250": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Futurum, Nov 19, 2026; $390B from $279B verbatim; consistent with NVIDIA CFO commentary table ($390B supply and capacity as of Oct 25, 2026) - same underlying source, not cross-vendor."
+ },
+ "https://www.trendforce.com/research/download/RP260921NC3": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TrendForce paid report listing (USD 30,000), last modified Sep 21, 2026; abstract supports headline. Since superseded: NVIDIA said Nov 17 it has begun shipping VR NVL72."
+ },
+ "https://focustaiwan.tw/business/202611120018": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Focus Taiwan (CNA), Nov 12, 2026; 54% cloud/networking verbatim; NT$77.52B net profit 'up 34 percent' (supply evidence paraphrased)."
+ },
+ "https://cryptobriefing.com/quanta-computer-record-revenue-ai-servers-margin/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Crypto Briefing, Wed 11 Nov 2026 20:07 EST (Nov 12 UTC); 125.2%/7.6% verbatim. Lower-tier outlet."
+ },
+ "https://cxotoday.com/media-coverage/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "CXOToday repost of NVIDIA release, Nov 18, 2026; both quotes present (Amkor CEO quote continues '...that will serve multiple generations')."
+ },
+ "https://www.credenceresearch.com/news/nvidia-six-suppliers-expand-ai-substrate-packaging-testing-capacity": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Credence Research, Oct 22, 2026; 3x capacity and $1.1B KYEC advance verbatim. Market-research vendor blog."
+ },
+ "https://wccftech.com/report-tsmc-to-double-cowos-capacity-by-2028-as-ai-chip-shortage-spills-over-to-rivals/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Wccftech, Sep 11, 2026, citing a Taiwan report; 260k/mo end-2028 from 130k/mo end-2026. CROSS-VENDOR: Goldman (TrendForce Oct 16) puts 2026 at ~106k/mo average and 2027 at ~227.5k/mo; not directly comparable (end-of-year vs average)."
+ },
+ "https://www.khan.co.kr/en/article/202610281734027": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Kyunghyang Shinmun, Oct 28, 2026; sold out through 2029 verbatim."
+ },
+ "https://www.trendforce.com/news/?p=66658": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "TrendForce, Nov 16, 2026 (citing ETNews); >20,000 wafers/mo verbatim; TPU 8-9M (2027) -> 16-18M (2029) is Ming-Chi Kuo's forecast, not TrendForce's."
+ },
+ "https://www.koreaherald.com/article/10895833": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Korea Herald, Oct 7, 2026; KB Securities: Samsung HBM ASP >+100% in 2027; TrendForce (Sep 29): blended HBM ASP +121%. CROSS-VENDOR: samsung node health cites KB (company-specific); evidence cites TrendForce (market-wide) - different vendors and scopes."
+ },
+ "https://finviz.com/news/400345/samsung-electronics-passes-nvidia-quality-tests-for-next-generation-hbm4e-memory-chips": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Finviz news, Oct 8, 2026, relaying Hankyung; 'reportedly' qualification verbatim. Second-hand."
+ },
+ "https://www.stocktitan.net/articles/nvidia-q3-fiscal-2027-earnings-revenue-outlook": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "curl returned a JS shell; page read via WebFetch: published Nov 17, 2026 (updated Nov 19): 'rose to $390 billion at the end of October, from $279 billion three months before'. Evidence is a paraphrase; same underlying NVIDIA figure as Futurum."
+ },
+ "https://iconnect007.com/article/152442/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout/152439/aep": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "I-Connect007 repost of NVIDIA release, Nov 18, 2026; Kinsus >3.5x, production 2H27, added capacity Q3 2028; Amkor nearly $3B (July and Oct 2026 agreements). Both evidences are paraphrases of page text."
+ },
+ "https://www.tomshardware.com/tech-industry/google-reportedly-books-intel-for-more-than-3-million-tpus-in-2028": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Tom's Hardware, Jun 10, 2026; Bernstein EMIB vs CoWoS estimate present (Bernstein flags no external production track record). Five months old."
+ },
+ "https://fortune.com/2026/11/04/power-transformer-shortage-grid-400-ton-electrical-steel-one-us-mill/": {
+  "status": 200,
+  "ok": true,
+  "hardFail": false,
+  "unconfirmed": false,
+  "note": "Fortune (The Conversation republish), Nov 4, 2026; >3 years transformer orders and 3-7 year turbine lead times present (evidence paraphrased)."
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "company": {
+    "id": "nvidia",
+    "name": "NVIDIA",
+    "ticker": "NVDA",
+    "asOf": "2026-11-25",
+    "memo": "NVIDIA demo memo (sample input for the Ripple README)",
+    "position": "long",
+    "summary": "Designs the GPUs and networking most AI data centers run on, sold as full rack-scale systems."
+  },
+  "pillars": [
+    {
+      "id": "P1",
+      "short": "Demand Runway",
+      "title": "Demand Runway",
+      "claim": "The biggest cloud companies keep raising AI spending into next year, so demand is set by their budgets rather than a cycle turning.",
+      "why": [
+        "The four US hyperscalers, Oracle and the GPU clouds are the biggest buyers.",
+        "Their capex plans decide how many racks get built next year.",
+        "Custom chips at those same buyers are the main thing that could take share."
+      ],
+      "killCriteria": "Two of the four largest US cloud companies cut their next-year capex plans.",
+      "status": "stable",
+      "statusReason": "None of the big four is cutting, and three plan to spend more in 2027. The catch is custom chips: more of that money goes to TPUs and Trainium, so it no longer turns into NVIDIA orders one for one.",
+      "nextCheck": "AWS re:Invent (Nov 30 to Dec 4), then the big four's Q4 calls in late January."
+    },
+    {
+      "id": "P2",
+      "short": "Supply Limit",
+      "title": "Supply Limit",
+      "claim": "Shipments are capped by TSMC's packaging and HBM supply rather than by orders, which keeps pricing firm.",
+      "why": [
+        "TSMC makes the chips and packages them with CoWoS.",
+        "SK hynix, Samsung and Micron supply the HBM memory.",
+        "Foxconn, Quanta and Wistron assemble the systems."
+      ],
+      "killCriteria": "NVIDIA guides gross margin below 70% for two quarters in a row.",
+      "status": "stable",
+      "statusReason": "Margins are guided to 71-72%, one to two points above the line, and management calls that the bottom. Demand still beats supply, but memory makers now set the price, so the cushion is thin.",
+      "nextCheck": "Micron's results on Dec 17, then NVIDIA's Q4 report in late February."
+    },
+    {
+      "id": "K",
+      "type": "kpi",
+      "short": "KPIs",
+      "title": "KPIs",
+      "claim": "The numbers management leads with, and the outside data that moves before they're reported.",
+      "kpis": [
+        {
+          "name": "Data center revenue growth",
+          "latest": "$107.6B in the October quarter, up 110% from a year ago",
+          "expected": "Q4 total revenue guided to $130B; the street had $124.8B",
+          "read": "Every early read points up: TSMC's October sales were up 60% from a year ago and B200 rental prices rose 32% in a month."
+        },
+        {
+          "name": "Gross margin",
+          "latest": "74.9% in the October quarter",
+          "expected": "71-72% guided for Q4, which management calls the bottom; 72-73% next year",
+          "read": "HBM prices are set to more than double in 2027, which is why the guide dips. NVIDIA's own price increases are the offset."
+        },
+        {
+          "name": "Networking revenue",
+          "latest": "Over $21B in the October quarter, about 2.6 times a year ago",
+          "expected": "Not broken out in the guide",
+          "read": "Spectrum-X Ethernet keeps growing, though IDC had NVIDIA's share slip to 20.4% from 21.5% in the June quarter."
+        }
+      ],
+      "status": "stable",
+      "statusReason": "The early data says growth is still accelerating, with record supplier sales and rising GPU rental prices. Margins are the soft spot: memory costs pull the next quarter down before NVIDIA's own price increases kick in.",
+      "nextCheck": "TSMC's November sales on Dec 10 and Micron's results on Dec 17."
+    }
+  ]
+}

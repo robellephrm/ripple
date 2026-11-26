@@ -1,0 +1,196 @@
+{
+  "lane": "rivals",
+  "nodes": [
+    {
+      "id": "amd", "label": "AMD", "type": "company", "role": "competitor", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Sells MI450 GPUs in Helios racks against NVIDIA's rack-scale systems",
+      "pillars": ["P1", "P2"], "domain": "amd.com",
+      "summary": "AMD is the only merchant GPU rival shipping full racks, and its MI450 launch put Helios into the same five big buyers NVIDIA depends on.",
+      "brief": ["Merchant GPU and rack rival", "Every Helios rack AMD ships to a hyperscaler is a rack NVIDIA did not sell."],
+      "health": "Data center revenue a record $8.5B, up 97%; Q4 guide about $17B."
+    },
+    {
+      "id": "broadcom", "label": "Broadcom", "type": "company", "role": "competitor", "tier": 1,
+      "connectsTo": ["nvidia", "google", "meta"], "relation": "Designs custom XPUs for Google, Meta, OpenAI and Anthropic, and sells Ethernet switches that compete with NVLink and Spectrum-X",
+      "pillars": ["P1", "K"], "domain": "broadcom.com",
+      "summary": "Broadcom is the biggest builder of custom AI chips for NVIDIA's own customers and is pushing open Ethernet into the scale-up network NVLink owns today.",
+      "brief": ["Custom AI chip and switch maker", "Its XPU wins are the clearest measure of how much hyperscaler spend skips NVIDIA."],
+      "health": "AI chip revenue $16.7B last quarter, up 221%; guiding $21.7B next quarter."
+    },
+    {
+      "id": "google", "label": "Google", "type": "company", "role": "substitute", "tier": 1,
+      "connectsTo": ["nvidia", "broadcom", "marvell"], "relation": "Buys NVIDIA GPUs for Google Cloud while renting and selling its own TPUs to outside labs",
+      "pillars": ["P1"], "domain": "google.com",
+      "summary": "Google is both a large NVIDIA buyer and the most credible seller of an alternative chip, with TPUs now offered to rival AI labs such as Anthropic and Meta.",
+      "brief": ["TPU maker and GPU buyer", "TPU sales to outside labs turn a customer's in-house chip into a competing product."],
+      "health": "Google Cloud revenue grew 103% to $30.7B in Q3 2026."
+    },
+    {
+      "id": "amazon", "label": "Amazon", "type": "company", "role": "substitute", "tier": 1,
+      "connectsTo": ["nvidia", "marvell"], "relation": "Buys NVIDIA GPUs for AWS and builds Trainium, which it plans to sell outside AWS",
+      "pillars": ["P1"], "domain": "amazon.com",
+      "summary": "AWS is NVIDIA's largest cloud buyer and also the hyperscaler pushing hardest to move its own and its customers' workloads onto Trainium.",
+      "brief": ["Trainium maker, largest cloud buyer", "Trainium decides how much of AWS's record capex budget reaches NVIDIA."],
+      "health": "AWS revenue up 39% to $46B in Q3; 2026 capex about $220B."
+    },
+    {
+      "id": "microsoft", "label": "Microsoft", "type": "company", "role": "substitute", "tier": 1,
+      "connectsTo": ["nvidia", "amd"], "relation": "Buys NVIDIA and AMD GPUs for Azure while scaling its own Maia inference chips",
+      "pillars": ["P1"], "domain": "microsoft.com",
+      "summary": "Microsoft is moving its own inference work, including Copilot, onto Maia, and plans multi-gigawatt Maia deployments starting in 2027.",
+      "brief": ["Maia inference chip builder", "Maia targets inference, the part of demand expected to grow fastest after 2027."],
+      "health": "Maia 200 in production in three regions; Maia 300 deploys in 2027."
+    },
+    {
+      "id": "meta", "label": "Meta", "type": "company", "role": "customer", "tier": 1,
+      "connectsTo": ["nvidia", "broadcom", "google", "amd"], "relation": "Buys NVIDIA GPUs and Spectrum-X while also running MTIA, renting TPUs and deploying AMD Helios",
+      "pillars": ["P1", "K"], "domain": "meta.com",
+      "summary": "Meta buys from every rival at once, which makes its NVIDIA orders a clean read on whether NVIDIA still wins when a buyer has real options.",
+      "brief": ["Multi-vendor hyperscale buyer", "Meta tests NVIDIA's position because it runs AMD, Broadcom MTIA and Google TPUs too."],
+      "health": "Raising new equity, with NVIDIA committing $3B to the offering."
+    },
+    {
+      "id": "marvell", "label": "Marvell", "type": "company", "role": "competitor", "tier": 2,
+      "connectsTo": ["amazon", "google", "nvidia"], "relation": "Co-designs custom AI chips and attach silicon for hyperscalers, and also supports NVLink Fusion",
+      "pillars": ["P1"], "domain": "marvell.com",
+      "summary": "Marvell is the second custom-chip house after Broadcom, helping Amazon and Google build silicon that replaces some GPU purchases.",
+      "brief": ["Custom chip design partner", "Its custom revenue targets show how much in-house silicon hyperscalers plan to buy."],
+      "health": "Record Q2 FY27 revenue of $2.739B, up 37%; FY2031 target $70-90B."
+    },
+    {
+      "id": "arista", "label": "Arista Networks", "type": "company", "role": "competitor", "tier": 2,
+      "connectsTo": ["nvidia", "broadcom", "meta"], "relation": "Sells Ethernet AI switches built on Broadcom silicon against NVIDIA Spectrum-X and InfiniBand",
+      "pillars": ["K"], "domain": "arista.com",
+      "summary": "Arista is the main switch vendor competing with NVIDIA's networking business inside AI clusters, mostly on Broadcom chips.",
+      "brief": ["Ethernet AI switch vendor", "Arista's wins cap how much of each AI cluster's network NVIDIA captures."],
+      "health": "Q3 2026 revenue $3.66B, up 58.5%, its fastest growth as a public company."
+    },
+    {
+      "id": "huawei", "label": "Huawei", "type": "company", "role": "competitor", "tier": 1,
+      "connectsTo": ["nvidia"], "relation": "Sells Ascend accelerators and Atlas superclusters to Chinese AI developers in place of NVIDIA GPUs",
+      "pillars": ["P1"], "domain": "huawei.com",
+      "summary": "Huawei is taking the China market that export rules closed to NVIDIA, though its output is capped by domestic manufacturing.",
+      "brief": ["China's leading AI accelerator maker", "Huawei's share gains make NVIDIA's lost China revenue harder to win back."],
+      "health": "Shipped 572,000 AI accelerators in China in H1 2026, a 28% share."
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "amd", "pillar": "P1", "date": "2026-11-03",
+      "headline": "AMD reports third quarter 2026 financial results",
+      "direction": "negative", "magnitude": 3, "horizon": "near",
+      "whyItMatters": "AMD's data center revenue nearly doubled on the MI450 launch, and Anthropic, Meta, Microsoft, OpenAI and Oracle are already running Helios racks, so the same budgets NVIDIA counts on now have a second rack-scale supplier.",
+      "evidence": "Data Center segment revenue was a record $8.5 billion, up 97% year-over-year",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000188/q32026991.htm",
+      "sourceName": "SEC (AMD 8-K)"
+    },
+    {
+      "nodeId": "broadcom", "pillar": "P1", "date": "2026-09-04",
+      "headline": "Broadcom predicts AI chip revenue to double in 2027",
+      "direction": "negative", "magnitude": 3, "horizon": "long",
+      "whyItMatters": "Broadcom says it has supply to reach about $115 billion of AI revenue in fiscal 2027, and Anthropic, a major NVIDIA buyer, is set to become its largest custom chip customer, which moves real dollars from GPUs to custom silicon.",
+      "evidence": "Anthropic is on track to become our largest XPU customer in 2027 and sustain that in 2028.",
+      "url": "https://www.fierce-network.com/broadband/broadcom-predicts-ai-chip-revenue-double-2027",
+      "sourceName": "Fierce Network"
+    },
+    {
+      "nodeId": "broadcom", "pillar": "K", "date": "2026-11-16",
+      "headline": "Broadcom's SC26 Open Ethernet Fabric: AI tail latency vs. proprietary interconnects and Cisco Silicon One",
+      "direction": "negative", "magnitude": 1, "horizon": "long",
+      "whyItMatters": "Broadcom is pitching open Ethernet directly against NVLink and InfiniBand at cluster scale, so if hyperscalers adopt it, NVIDIA's networking revenue per rack is the number that shrinks.",
+      "evidence": "connect approximately 128,000 accelerators through two switching tiers",
+      "url": "https://techblog.comsoc.org/2026/11/16/broadcoms-sc26-open-ethernet-fabric-ai-tail-latency-vs-proprietary-interconnects-and-cisco-silicon-one/",
+      "sourceName": "IEEE ComSoc Technology Blog"
+    },
+    {
+      "nodeId": "google", "pillar": "P1", "date": "2026-10-28",
+      "headline": "Alphabet Q3 2026 earnings: Google Cloud revenue grows 103%",
+      "direction": "negative", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Pichai is now selling TPU systems to a wide range of outside customers, which means part of the AI spending boom is flowing to Google's chip instead of NVIDIA's GPUs.",
+      "evidence": "We're also seeing strong demand for our TPU systems across a wide range of customers.",
+      "url": "https://9to5google.com/2026/10/28/alphabet-q3-2026-earnings/",
+      "sourceName": "9to5Google"
+    },
+    {
+      "nodeId": "amazon", "pillar": "P1", "date": "2026-10-31",
+      "headline": "AWS grows 39% and Amazon will spend even more on AI in 2027",
+      "direction": "negative", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Amazon plans to start selling Trainium outside AWS late in 2027, turning its in-house chip into a merchant product that competes with NVIDIA for other buyers too.",
+      "evidence": "late in 2027",
+      "url": "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex",
+      "sourceName": "The Next Web"
+    },
+    {
+      "nodeId": "amazon", "pillar": "P1", "date": "2025-12-02",
+      "headline": "Amazon releases an impressive new AI chip and teases an Nvidia-friendly roadmap",
+      "direction": "positive", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Trainium4 is being built to plug into NVIDIA's NVLink Fusion interconnect, so even Amazon's own chip roadmap keeps NVIDIA networking inside AWS racks rather than designing it out.",
+      "evidence": "Nvidia's NVLink Fusion high-speed chip interconnect technology",
+      "url": "https://techcrunch.com/2025/12/02/amazon-releases-an-impressive-new-ai-chip-and-teases-a-nvidia-friendly-roadmap",
+      "sourceName": "TechCrunch"
+    },
+    {
+      "nodeId": "microsoft", "pillar": "P1", "date": "2026-10-12",
+      "headline": "Microsoft to expand Azure Maia system to multi-gigawatt deployments",
+      "direction": "negative", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Microsoft says Maia 300 will give 40% more tokens per megawatt than leading GPU systems and will scale to multiple gigawatts from 2027, which takes inference capacity out of Azure's future NVIDIA orders.",
+      "evidence": "We will scale our Azure Maia family to multi-gigawatt deployments starting in 2027",
+      "url": "https://blogs.microsoft.com/?p=52563158",
+      "sourceName": "Microsoft Official Blog"
+    },
+    {
+      "nodeId": "meta", "pillar": "P1", "date": "2026-10-28",
+      "headline": "NVIDIA and Meta expand collaboration on AI models and infrastructure",
+      "direction": "positive", "magnitude": 3, "horizon": "near",
+      "whyItMatters": "Meta runs AMD, MTIA and Google TPUs, yet it is expanding Vera Rubin, Vera CPUs, Spectrum-X and BlueField-4, which shows NVIDIA still wins the buyer with the most alternatives, though the $3 billion stake ties some of that demand to NVIDIA's own money.",
+      "evidence": "NVIDIA will invest $3 billion in Meta's equity offering.",
+      "url": "https://www.engineering.com/nvidia-and-meta-expand-collaboration-on-ai-models-and-infrastructure/",
+      "sourceName": "Engineering.com"
+    },
+    {
+      "nodeId": "marvell", "pillar": "P1", "date": "2026-10-09",
+      "headline": "Marvell Investor Day 2026 targets $80B FY 2031 revenue with custom silicon and optics",
+      "direction": "negative", "magnitude": 2, "horizon": "long",
+      "whyItMatters": "Marvell is planning for custom chip revenue to reach about $30 billion by fiscal 2031, backed by a Google warrant tied to TPU work, which is a forecast that hyperscalers keep shifting spend toward their own silicon.",
+      "evidence": "on a path to approximately $30 billion by FY 2031",
+      "url": "https://futurumgroup.com/insights/marvell-investor-day-2026-targets-80b-fy-2031-revenue-with-custom-silicon-and-optics/",
+      "sourceName": "Futurum Group"
+    },
+    {
+      "nodeId": "arista", "pillar": "K", "date": "2026-11-04",
+      "headline": "Arista posts record growth as AI networking supercycle accelerates",
+      "direction": "mixed", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Arista's 58.5% growth and more than 100 Etherlink customers show Ethernet AI networking is booming, which grows the market NVIDIA's Spectrum-X sells into but also proves buyers have a strong non-NVIDIA option.",
+      "evidence": "we are forecasting greater than 10 gigawatts of deployment",
+      "url": "https://www.networkworld.com/article/4244672/arista-posts-record-growth-as-ai-networking-supercycle-accelerates.html",
+      "sourceName": "Network World"
+    },
+    {
+      "nodeId": "nvidia", "pillar": "K", "date": "2026-11-18",
+      "headline": "Nvidia networking tops $21 billion in Q3 fiscal 2027",
+      "direction": "positive", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "Even with Arista and Broadcom growing fast, NVIDIA's networking sales passed $21 billion in a single quarter, so rivals are growing alongside NVIDIA rather than taking its share of the rack so far.",
+      "evidence": "more than $21 billion in sales",
+      "url": "https://www.nextplatform.com/a/5310669",
+      "sourceName": "The Next Platform"
+    },
+    {
+      "nodeId": "huawei", "pillar": "P1", "date": "2026-10-14",
+      "headline": "Nvidia's China AI chip share falls to 34% as Huawei reaches 28%",
+      "direction": "negative", "magnitude": 2, "horizon": "near",
+      "whyItMatters": "IDC counts NVIDIA's China shipments down 44% in the first half while Huawei shipped 572,000 units, so the China market NVIDIA lost to export rules is being filled by a local rival and may not come back.",
+      "evidence": "fell to 34% in the first half of 2026",
+      "url": "https://technode.com/2026/10/14/nvidias-china-ai-chip-share-falls-to-34-as-huawei-reaches-28/",
+      "sourceName": "TechNode"
+    },
+    {
+      "nodeId": "huawei", "pillar": "P1", "date": "2026-09-18",
+      "headline": "Huawei accelerates AI chip roadmap to 2027 in aggressive push against Nvidia",
+      "direction": "mixed", "magnitude": 1, "horizon": "long",
+      "whyItMatters": "Huawei pulled the Ascend 960DT forward to the first quarter of 2027, but it cannot make enough chips for China and only ships trial lots abroad, so it threatens NVIDIA's China business without yet threatening its sales elsewhere.",
+      "evidence": "local appetite for Ascend chips currently outstrips manufacturing capacity",
+      "url": "https://www.androidheadlines.com/2026/09/huawei-accelerates-ai-chip-roadmap-against-nvidia.html",
+      "sourceName": "Android Headlines"
+    }
+  ]
+}

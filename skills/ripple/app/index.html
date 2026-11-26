@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ripple Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+<div id="app">
+  <aside id="left">
+    <div class="brand">RIPPLE MAP</div>
+    <div class="co">
+      <img id="co-logo" alt="" />
+      <div><div id="co-name"></div><div id="co-meta" class="mono dim"></div></div>
+    </div>
+    <div class="section"><span>THESIS</span><span id="th-count" class="dim"></span></div>
+    <div id="pillars"></div>
+    <div class="section"><span>METRICS</span><span id="m-asof" class="dim"></span></div>
+    <div id="metrics"></div>
+    <div class="legend-wrap">
+      <div class="section"><span>LEGEND</span></div>
+      <div class="legend mono">
+        <div><i style="background:var(--g)"></i>HELPS</div><div><i style="background:var(--r)"></i>HURTS</div>
+        <div><i style="background:var(--a)"></i>MIXED</div><div><i style="background:var(--n)"></i>NO NEWS</div>
+      </div>
+    </div>
+  </aside>
+  <main id="stage">
+    <div id="graph"></div>
+    <div id="crumb" class="mono"></div>
+    <div id="claim"></div>
+    <div id="hint" class="mono dim"><button id="reset" type="button">RESET</button><span>DRAG TO ROTATE · SCROLL TO ZOOM · CLICK A NODE</span></div>
+  </main>
+  <aside id="drawer" class="closed">
+    <button id="x" aria-label="Close">✕</button>
+    <div id="drawer-body"></div>
+  </aside>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+{
+  "lane": "altdata-margins",
+  "nodes": [
+    {
+      "id": "hbm-contract-prices",
+      "label": "HBM contract prices (TrendForce)",
+      "type": "index",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia",
+        "sk-hynix"
+      ],
+      "relation": "Tracks what NVIDIA pays for the HBM stacked on every data center GPU",
+      "pillars": [
+        "K"
+      ],
+      "domain": "trendforce.com",
+      "summary": "TrendForce's HBM price outlook is the biggest single input-cost read for NVIDIA's gross margin in 2027.",
+      "brief": [
+        "HBM memory price tracker",
+        "HBM is the largest bought-in cost on a Rubin GPU, so its price hits margin first."
+      ],
+      "health": "Forecasts 2027 blended HBM prices up 121% on 2026, with supply still tight.",
+      "tracks": "Gross margin, through the price of the HBM memory NVIDIA buys",
+      "reading": "September 29, 2026: 2027 blended HBM ASP forecast raised to up 121% year on year; market stays supply-constrained in 2027",
+      "cadence": "Forecast updates every one to two months",
+      "leads": "Two to four quarters ahead of gross margin, since 2027 contracts set the memory cost of Rubin systems"
+    },
+    {
+      "id": "dram-contract-prices",
+      "label": "DRAM contract prices (TrendForce)",
+      "type": "index",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Tracks the price of conventional server and mobile DRAM that goes into NVIDIA's rack systems",
+      "pillars": [
+        "K"
+      ],
+      "domain": "trendforce.com",
+      "summary": "Conventional DRAM contract prices are still rising every quarter, which is the cost NVIDIA blamed for its lower margin guide.",
+      "brief": [
+        "Memory contract price tracker",
+        "NVIDIA says memory prices rose faster than it expected and set its margin bottom."
+      ],
+      "health": "Conventional DRAM contract prices forecast up 10-15% in 4Q26 after larger earlier gains.",
+      "tracks": "Gross margin, through the cost of the CPU-side memory in each rack",
+      "reading": "September 30, 2026: conventional DRAM contract prices forecast up 10-15% quarter on quarter in 4Q26; server DRAM stays undersupplied",
+      "cadence": "Quarterly forecast plus monthly contract price bulletins",
+      "leads": "About one to two quarters ahead of reported gross margin"
+    },
+    {
+      "id": "sk-hynix",
+      "label": "SK hynix",
+      "type": "company",
+      "role": "data-source",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Main HBM supplier for NVIDIA's data center GPUs",
+      "pillars": [
+        "K"
+      ],
+      "domain": "skhynix.com",
+      "summary": "SK hynix's own results show how much pricing power the memory makers hold over NVIDIA going into 2027.",
+      "brief": [
+        "HBM and DRAM maker",
+        "Its record margins are partly NVIDIA's memory bill, so its pricing power caps NVIDIA's margin."
+      ],
+      "health": "3Q26 operating profit was 83.33 trillion won on 104.62 trillion won revenue, about 80%.",
+      "tracks": "Gross margin, through what the largest HBM supplier can charge",
+      "reading": "October 28, 2026: 3Q26 revenue 104.62 trillion won, up 327.89% year on year; DRAM and HBM volumes effectively sold out through 2029",
+      "cadence": "Quarterly, about four weeks after quarter end",
+      "leads": "One quarter or more ahead of NVIDIA's gross margin, since its contract prices become NVIDIA's cost"
+    },
+    {
+      "id": "tsmc-cowos-pricing",
+      "label": "TSMC wafer and CoWoS pricing",
+      "type": "index",
+      "role": "data-source",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "The price NVIDIA pays TSMC to make and package each GPU",
+      "pillars": [
+        "K"
+      ],
+      "domain": "tsmc.com",
+      "summary": "Reported TSMC price notices for 2027 add a second cost push on top of memory.",
+      "brief": [
+        "Foundry and packaging price notices",
+        "Wafer and CoWoS price hikes raise the cost of every NVIDIA GPU next year."
+      ],
+      "health": "Reported weighing CoWoS hikes up to 20% and wafer increases of 3-6% from January 2027.",
+      "tracks": "Gross margin, through wafer and advanced packaging costs",
+      "reading": "October 27, 2026 reports: TSMC weighing CoWoS price hikes of up to 20%; wafer prices up 3-6% from January 2027 depending on node",
+      "cadence": "Irregular; price notices for the next year usually surface in the second half",
+      "leads": "Two to three quarters ahead of gross margin"
+    },
+    {
+      "id": "delloro-ai-switch",
+      "label": "Dell'Oro AI back-end switch tracker",
+      "type": "index",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Ranks vendors of the Ethernet switches that connect GPUs inside AI clusters",
+      "pillars": [
+        "K"
+      ],
+      "domain": "delloro.com",
+      "summary": "Dell'Oro shows NVIDIA close behind Celestica's white-box switches in AI back-end Ethernet, so Spectrum-X is not winning every cluster.",
+      "brief": [
+        "AI switch market share tracker",
+        "Shows whether Spectrum-X is winning the scale-out Ethernet that drives networking revenue."
+      ],
+      "health": "Back-end switch sales passed front-end sales for the first time in 2Q26.",
+      "tracks": "Networking revenue, through NVIDIA's share of AI back-end Ethernet switching",
+      "reading": "2Q26 (published September 3, 2026): Celestica led Ethernet AI back-end switch sales, NVIDIA a close second, Arista third, Cisco gained the most share",
+      "cadence": "Quarterly, about two months after quarter end; 3Q26 report likely in December",
+      "leads": "Confirms share about one quarter after NVIDIA reports networking revenue"
+    },
+    {
+      "id": "idc-dc-ethernet",
+      "label": "IDC data center Ethernet switch tracker",
+      "type": "index",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Measures NVIDIA's Spectrum-X Ethernet switch revenue against Arista and Cisco",
+      "pillars": [
+        "K"
+      ],
+      "domain": "idc.com",
+      "summary": "IDC puts NVIDIA at the top of data center Ethernet switching, though its share slipped a point between 1Q26 and 2Q26.",
+      "brief": [
+        "Ethernet switch revenue tracker",
+        "The cleanest outside count of Spectrum-X sales, a growing part of networking revenue."
+      ],
+      "health": "Data center Ethernet switching reached $12.3B in 2Q26, up 64.5% year on year.",
+      "tracks": "Networking revenue, through NVIDIA's Ethernet switch sales and share",
+      "reading": "2Q26 (published September 11, 2026): NVIDIA $2.5B, up 181.1% year on year, 20.4% share, down from 21.5% in 1Q26",
+      "cadence": "Quarterly, about ten weeks after quarter end",
+      "leads": "Lags NVIDIA's report by a quarter but splits out Ethernet, which NVIDIA no longer does"
+    },
+    {
+      "id": "landmark",
+      "label": "LandMark Optoelectronics",
+      "type": "company",
+      "role": "data-source",
+      "tier": 3,
+      "connectsTo": [
+        "innolight"
+      ],
+      "relation": "Makes laser and photodetector epiwafers that go into data center optical modules",
+      "pillars": [
+        "K"
+      ],
+      "domain": "lmoc.com.tw",
+      "summary": "LandMark's monthly sales are the earliest scheduled read on optics demand for AI scale-out networks.",
+      "brief": [
+        "Optical laser epiwafer maker",
+        "Its monthly sales show optics demand before the modules ship with NVIDIA networking."
+      ],
+      "health": "October 2026 sales were NT$570 million, up 183% on last year.",
+      "tracks": "Networking revenue, through demand for the lasers inside AI optical modules",
+      "reading": "NT$570 million in October 2026, up 5.5% from September and 183.0% from October 2025; January to October up 141.7%",
+      "cadence": "Monthly, about five days after month end",
+      "leads": "Roughly one to two quarters ahead of optics-heavy networking revenue, as epiwafers become modules"
+    },
+    {
+      "id": "innolight",
+      "label": "Innolight",
+      "type": "company",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Major maker of the 800G and 1.6T optical transceivers used in AI cluster networks",
+      "pillars": [
+        "K"
+      ],
+      "domain": "innolight.com",
+      "summary": "Innolight's growth and 1.6T ramp show the optics attached to AI networks are still accelerating.",
+      "brief": [
+        "800G and 1.6T optical module maker",
+        "Its sales track the optics that ship alongside NVIDIA switches and NICs."
+      ],
+      "health": "3Q26 net profit was RMB 8.59 billion, up 174% on last year.",
+      "tracks": "Networking revenue, through optical transceiver volumes for AI clusters",
+      "reading": "3Q26 (reported October 31, 2026): revenue RMB 27.8 billion, up 172% year on year; 1.6T revenue growth accelerated",
+      "cadence": "Quarterly, within a month of quarter end",
+      "leads": "Roughly in step with NVIDIA's networking revenue, reported about three weeks earlier"
+    },
+    {
+      "id": "margin-consensus",
+      "label": "Street margin consensus",
+      "type": "index",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Analyst expectations NVIDIA's gross margin is judged against",
+      "pillars": [
+        "K"
+      ],
+      "summary": "The street expected 74% for the October quarter and NVIDIA beat it; the step down to 71-72% had been flagged since August.",
+      "brief": [
+        "Analyst gross margin expectations",
+        "NVIDIA beat the 74.03% consensus by almost a point last quarter."
+      ],
+      "health": "Q3 FY27 GAAP gross margin 74.8% versus 74.03% expected.",
+      "tracks": "What analysts expect NVIDIA's gross margin to be",
+      "reading": "Q3 FY27 GAAP gross margin consensus 74.03% versus 74.8% actual (November 17, 2026); no published consensus found for the Q4 guide",
+      "cadence": "Continuously updated; snapshot before each report",
+      "leads": "Sets the bar for the February report"
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "nvidia",
+      "pillar": "K",
+      "date": "2026-11-17",
+      "headline": "NVIDIA reports third-quarter gross margin of 74.9%, above its own 74% guide",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Margin held near 75% even as Rubin started ramping, up 1.4 points on last year, so pricing still covers rising costs.",
+      "evidence": "GAAP and non-GAAP gross margins were 74.8% and 74.9%, respectively",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+      "sourceName": "NVIDIA press release"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "K",
+      "date": "2026-11-17",
+      "headline": "NVIDIA guides fourth-quarter gross margin down to 71-72% and calls it the bottom",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "A three-point drop from 74.9% is the memory bill showing up; it stays above the 70% kill line, but there is less room than a year ago.",
+      "evidence": "We expect Q4 to mark the bottom of gross margins before improving to the 72 to 73 range in fiscal year '28.",
+      "url": "https://valueaddvc.com/blog/nvidia-q3-fy2027-earnings-115-8b-revenue-130b-guide",
+      "sourceName": "ValueAdd VC"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "K",
+      "date": "2026-11-17",
+      "headline": "NVIDIA's supply commitments jump to $390 billion, mostly multi-year memory purchases",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Locking in memory secures Rubin volume, but it also fixes NVIDIA's cost at peak-cycle prices for years.",
+      "evidence": "supply commitments increased from $279 billion last quarter to $390 billion, primarily related to the multi-year procurement of memory supply",
+      "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Q3FY27-CFO-Commentary.pdf",
+      "sourceName": "NVIDIA CFO commentary"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "K",
+      "date": "2026-11-18",
+      "headline": "Nvidia Breaks Revenue And Profit Records, And Will Keep Doing It",
+      "direction": "positive",
+      "magnitude": 3,
+      "horizon": "near",
+      "whyItMatters": "Networking is now about a fifth of data center revenue and roughly 2.6 times the $8.2 billion of a year ago, so NVIDIA captures more of each rack.",
+      "evidence": "Nvidia's networking business brought in more than $21 billion in sales",
+      "url": "https://www.nextplatform.com/compute/2026/11/18/nvidia-breaks-revenue-and-profit-records-and-will-keep-doing-it/5310669",
+      "sourceName": "The Next Platform"
+    },
+    {
+      "nodeId": "margin-consensus",
+      "pillar": "K",
+      "date": "2026-11-17",
+      "headline": "NVIDIA Q3 FY27 gross margin 74.8% versus 74.03% expected",
+      "direction": "positive",
+      "magnitude": 1,
+      "horizon": "near",
+      "whyItMatters": "Beating the margin bar by almost a point shows memory costs have not yet outrun NVIDIA's pricing.",
+      "evidence": "Gross margin 74.8% vs. 74.03% expected",
+      "url": "https://www.newsquawk.com/headlines/nvidia-corporation-nvda-q3-fy27-usd-adj-eps-268-exp-248-revenue-1158bln-exp-109bln",
+      "sourceName": "Newsquawk"
+    },
+    {
+      "nodeId": "hbm-contract-prices",
+      "pillar": "K",
+      "date": "2026-09-29",
+      "headline": "HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce",
+      "direction": "negative",
+      "magnitude": 3,
+      "horizon": "long",
+      "whyItMatters": "HBM more than doubling in price is the main reason NVIDIA's margin steps down, and the FY28 recovery depends on passing it on.",
+      "evidence": "Blended ASP is now projected to jump 121% YoY.",
+      "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "dram-contract-prices",
+      "pillar": "K",
+      "date": "2026-09-30",
+      "headline": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Another 10-15% rise in conventional DRAM lands in the quarter NVIDIA already guided as its margin low.",
+      "evidence": "Conventional DRAM contract prices are projected to grow 10–15% QoQ in 4Q26",
+      "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "sk-hynix",
+      "pillar": "K",
+      "date": "2026-10-28",
+      "headline": "SK hynix says DRAM and HBM booked through 2029 as profit soars to $62 billion",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "A supplier earning about 80% operating margin with volumes sold out to 2029 holds the pricing power, which caps how far NVIDIA's margin can recover.",
+      "evidence": "our DRAM and HBM volumes for the next three years through 2029 are effectively sold out",
+      "url": "https://koreajoongangdaily.com/business/sk-hynix-says-dram-hbm-booked-through-2029-as-profit-soars-to-62b/12942008",
+      "sourceName": "Korea JoongAng Daily"
+    },
+    {
+      "nodeId": "tsmc-cowos-pricing",
+      "pillar": "K",
+      "date": "2026-10-27",
+      "headline": "TSMC Reportedly Eyes 20% CoWoS Price Hike, Skips Equipment Price Renegotiations Amid AI Demand Surge",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Packaging and wafer hikes in 2027 stack on top of memory, so NVIDIA's own price increases have to cover two cost pushes.",
+      "evidence": "weighing price hikes of up to 20%",
+      "url": "https://trendforce.com/news/2026/10/27/news-tsmc-reportedly-eyes-20-cowos-price-hike-skips-equipment-price-renegotiations-amid-ai-demand-surge",
+      "sourceName": "TrendForce"
+    },
+    {
+      "nodeId": "delloro-ai-switch",
+      "pillar": "K",
+      "date": "2026-09-03",
+      "headline": "AI back-end network switch sales surpass front-end networks for the first time in 2Q26",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "The AI switch market is growing fast, but white-box Celestica still leads and Cisco is gaining, so Spectrum-X share is not guaranteed.",
+      "evidence": "Celestica retained the leading position, followed closely by NVIDIA",
+      "url": "https://www.delloro.com/news/ai-back-end-networks-switch-sales-surpass-front-end-networks-for-the-first-time-in-2q2026/",
+      "sourceName": "Dell'Oro Group"
+    },
+    {
+      "nodeId": "idc-dc-ethernet",
+      "pillar": "K",
+      "date": "2026-09-11",
+      "headline": "Ethernet Switch Market Surges 43.4% to $18.9B in 2Q26 as AI Infrastructure Demand Drives Record Datacenter Spending",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Spectrum-X nearly tripled its Ethernet sales on last year, though its share slipped from 21.5% to 20.4%, so the growth is the market as much as share gains.",
+      "evidence": "NVIDIA $2.5B, 20.4% share, up 181.1% year over year",
+      "url": "https://www.idc.com/resource-center/blog/ethernet-switch-market-surges-43-4-to-18-9b-in-2q26-as-ai-infrastructure-demand-drives-record-datacenter-spending/",
+      "sourceName": "IDC"
+    },
+    {
+      "nodeId": "landmark",
+      "pillar": "K",
+      "date": "2026-11-05",
+      "headline": "LandMark October revenue NT$570 million, up 183% year on year",
+      "direction": "positive",
+      "magnitude": 1,
+      "horizon": "near",
+      "whyItMatters": "Laser epiwafer sales still rising in October point to optics demand holding into NVIDIA's January quarter.",
+      "evidence": "10 月營收,達 5.70 億元,較去年同期成長 183.0%",
+      "url": "https://finance.technews.tw/2026/11/05/landmark-3081-202610-financial-report/",
+      "sourceName": "TechNews"
+    },
+    {
+      "nodeId": "innolight",
+      "pillar": "K",
+      "date": "2026-10-31",
+      "headline": "Innolight third-quarter profit up 174% as 1.6T shipments ramp",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Optics revenue nearly tripling with 1.6T accelerating matches the networking surge NVIDIA reported three weeks later.",
+      "evidence": "1.6T產品收入成長加快; revenue 人民幣278億元, up 172% YoY",
+      "url": "https://uanalyze.com.tw/articles/5558658077",
+      "sourceName": "uAnalyze"
+    }
+  ]
+}

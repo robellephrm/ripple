@@ -1,0 +1,427 @@
+{
+ "lane": "buyers",
+ "nodes": [
+  {
+   "id": "microsoft",
+   "label": "Microsoft",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "openai",
+    "anthropic"
+   ],
+   "relation": "Azure buys NVIDIA racks for itself and for OpenAI and Anthropic workloads",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Microsoft guided fiscal 2027 capex to about $170 billion while saying it will stay free cash flow positive.",
+   "domain": "microsoft.com",
+   "brief": [
+    "Largest Azure GPU buyer",
+    "Its fiscal 2027 budget is the clearest single read on next year's rack orders."
+   ],
+   "health": "Guides about $170 billion fiscal 2027 capex and still expects positive free cash flow."
+  },
+  {
+   "id": "amazon",
+   "label": "Amazon",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "anthropic"
+   ],
+   "relation": "AWS buys NVIDIA systems but is pushing its own Trainium chips",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Amazon holds about $220 billion of 2026 capex and plans meaningfully more in 2027, but more of it goes to Trainium.",
+   "domain": "amazon.com",
+   "brief": [
+    "Biggest cloud, Trainium maker",
+    "Its spend keeps rising, but a growing share flows to its own chips."
+   ],
+   "health": "Trailing free cash flow is negative $42.4 billion on about $220 billion of 2026 capex."
+  },
+  {
+   "id": "google",
+   "label": "Alphabet",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "anthropic"
+   ],
+   "relation": "Google Cloud runs Vera Rubin racks while selling its own TPU systems",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Alphabet kept 2026 capex at $195 to $205 billion and said 2027 will rise significantly, with TPU systems a growing product.",
+   "domain": "google.com",
+   "brief": [
+    "Hyperscaler and TPU rival",
+    "One of the largest GPU buyers and also the strongest custom chip alternative."
+   ],
+   "health": "Free cash flow was negative $9.1 billion in Q3 on $51.4 billion of capex."
+  },
+  {
+   "id": "meta",
+   "label": "Meta",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Buys Vera Rubin, Vera CPUs and Spectrum-X for its own models",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Meta spent $34.9 billion of capex in Q3 and went cash flow negative for the first time since 2012.",
+   "domain": "meta.com",
+   "brief": [
+    "Largest non-cloud GPU buyer",
+    "Spends only for itself, so its willingness to burn cash sets its orders."
+   ],
+   "health": "Q3 free cash flow was negative $2.1 billion, with long-term debt at $80.9 billion."
+  },
+  {
+   "id": "oracle",
+   "label": "Oracle",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "openai"
+   ],
+   "relation": "OCI builds NVIDIA clusters, largely for OpenAI's Stargate sites",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Oracle has a $664 billion backlog and is paying for the buildout with negative free cash flow and a $20 billion share sale.",
+   "domain": "oracle.com",
+   "brief": [
+    "OpenAI's main cloud builder",
+    "The most leveraged big buyer, so financing strain shows up here first."
+   ],
+   "health": "Q1 free cash flow was negative $5.4 billion on $28.5 billion of capex."
+  },
+  {
+   "id": "coreweave",
+   "label": "CoreWeave",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "openai",
+    "microsoft"
+   ],
+   "relation": "GPU cloud built almost entirely on NVIDIA hardware, partly NVIDIA-owned",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "CoreWeave raised 2026 capex to $37 to $39 billion on a $132.5 billion backlog, financed mostly with debt.",
+   "domain": "coreweave.com",
+   "brief": [
+    "Largest independent GPU cloud",
+    "A pure NVIDIA buyer whose orders depend on debt markets staying open."
+   ],
+   "health": "Carries nearly $47 billion of debt and lost $709 million in Q3."
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia",
+    "microsoft",
+    "oracle",
+    "coreweave",
+    "sb-energy"
+   ],
+   "relation": "End customer behind Stargate, Oracle and CoreWeave capacity; NVIDIA backs its Ohio campus",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "OpenAI's compute plans are the single biggest demand driver, but it loses more than it earns and needs new money by 2028.",
+   "domain": "openai.com",
+   "brief": [
+    "Largest AI lab compute buyer",
+    "Much of Oracle's and CoreWeave's NVIDIA demand ultimately rests on OpenAI paying."
+   ],
+   "health": "Q3 revenue of $10 billion against a $10.9 billion operating loss."
+  },
+  {
+   "id": "anthropic",
+   "label": "Anthropic",
+   "type": "company",
+   "role": "customer",
+   "tier": 2,
+   "connectsTo": [
+    "google",
+    "amazon",
+    "microsoft",
+    "nvidia"
+   ],
+   "relation": "Rents compute through Google, Amazon and Microsoft; NVIDIA expanded its GPU access",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Anthropic's IPO filing shows about $895 billion of compute commitments, with the biggest slices tied to Google TPUs and Amazon.",
+   "domain": "anthropic.com",
+   "brief": [
+    "Fast-growing lab, TPU-heavy",
+    "Shows how much frontier lab demand can flow to custom chips instead of GPUs."
+   ],
+   "health": "Q3 revenue near $17 billion with a $567 million operating loss, per its filing."
+  },
+  {
+   "id": "humain",
+   "label": "Humain",
+   "type": "company",
+   "role": "customer",
+   "tier": 1,
+   "connectsTo": [
+    "nvidia"
+   ],
+   "relation": "Saudi PIF-owned AI company buying Blackwell and Vera Rubin systems",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "Humain expanded its NVIDIA deal to up to 84 megawatts, about 27,000 GPUs, with a US client taking most of it.",
+   "domain": "humain.ai",
+   "brief": [
+    "Saudi sovereign AI buyer",
+    "Sovereign demand is outside the hyperscaler budget cycle, which spreads NVIDIA's risk."
+   ],
+   "health": "Backed by Saudi Arabia's Public Investment Fund, targeting about 3GW of capacity by 2030."
+  },
+  {
+   "id": "sb-energy",
+   "label": "SB Energy",
+   "type": "company",
+   "role": "partner",
+   "tier": 2,
+   "connectsTo": [
+    "nvidia",
+    "openai"
+   ],
+   "relation": "SoftBank-backed developer of OpenAI's Ohio campus, with NVIDIA guaranteeing the lease value",
+   "pillars": [
+    "P1"
+   ],
+   "summary": "NVIDIA guarantees up to $105 billion of residual lease value on SB Energy's 4.25GW Ohio campus leased to OpenAI.",
+   "domain": "sbenergy.com",
+   "brief": [
+    "Builds OpenAI's Ohio campus",
+    "NVIDIA is now on the hook if OpenAI cannot pay its rent here."
+   ],
+   "health": "NVIDIA invested $1.5 billion and guarantees up to $105 billion of its lease value."
+  }
+ ],
+ "signals": [
+  {
+   "nodeId": "microsoft",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Microsoft sees $170bn capex in fiscal 2027 but says it will stay cash flow positive",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "near",
+   "whyItMatters": "The largest buyer is raising its budget again and can fund it from cash, which supports next year's rack orders.",
+   "evidence": "expects to stay free cash flow positive this fiscal year",
+   "url": "https://investinglive.com/stocks/microsoft-sees-170bn-capex-in-fiscal-2027-but-says-it-will-stay-cash-flow-positive/",
+   "sourceName": "InvestingLive"
+  },
+  {
+   "nodeId": "google",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Google misses revenue expectations, Alphabet stock sinks in early after-hours trading",
+   "direction": "positive",
+   "magnitude": 3,
+   "horizon": "near",
+   "whyItMatters": "Alphabet promised a significant capex increase for 2027 even as the stock fell, so a second of the big four is still raising spend.",
+   "evidence": "continues to expect its capital expenditures to \"increase significantly\" in 2027",
+   "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/10/28/google-misses-revenue-expectations-alphabet-stock-sinks-in-early-after-hours-trading",
+   "sourceName": "AP via NY1"
+  },
+  {
+   "nodeId": "google",
+   "pillar": "P1",
+   "date": "2026-10-31",
+   "headline": "Alphabet's Q3 2026 results: search and cloud grow, free cash flow is negative",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Google is now building inventory to sell TPU systems to others, which turns a buyer into a direct competitor for the same budgets.",
+   "evidence": "a buildup of inventory for TPU-system sales",
+   "url": "https://www.neoteo.com/en/alphabets-q3-2026-results-search-and-cloud-grow-free-cash-flow-is-negative",
+   "sourceName": "NeoTeo"
+  },
+  {
+   "nodeId": "amazon",
+   "pillar": "P1",
+   "date": "2026-10-31",
+   "headline": "AWS grows 39% and Amazon will spend even more on AI in 2027",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "A third hyperscaler says 2027 spend goes up, which makes the kill criterion of two cuts look far away.",
+   "evidence": "expects to spend \"meaningfully more\" in 2027",
+   "url": "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex",
+   "sourceName": "The Next Web"
+  },
+  {
+   "nodeId": "amazon",
+   "pillar": "P1",
+   "date": "2026-10-31",
+   "headline": "Amazon plans to sell Trainium chips outside AWS starting late 2027",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "Trainium sold to outside buyers would compete with NVIDIA for the same AI clouds and labs, on top of AWS's own fleet.",
+   "evidence": "plans to start selling its Trainium AI chips outside AWS",
+   "url": "https://thenextweb.com/news/amazon-q3-earnings-aws-39-free-cash-flow-2027-capex",
+   "sourceName": "The Next Web"
+  },
+  {
+   "nodeId": "meta",
+   "pillar": "P1",
+   "date": "2026-10-28",
+   "headline": "Meta Platforms posts negative free cash flow for the first time since 2012",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Meta is still spending hard on NVIDIA gear, but it is now funding that from its balance sheet rather than cash flow.",
+   "evidence": "This hasn't happened since 2012",
+   "url": "https://fool.com/investing/2026/10/28/mark-zuckerberg-meta-platforms-negative-fcf",
+   "sourceName": "The Motley Fool"
+  },
+  {
+   "nodeId": "oracle",
+   "pillar": "P1",
+   "date": "2026-09-10",
+   "headline": "Oracle announces Q1 results driven by triple digit growth in cloud infrastructure revenues",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "A $664 billion backlog means many more NVIDIA clusters, but Oracle is paying for them with negative cash flow and a $20 billion share sale.",
+   "evidence": "RPO up $209 billion year-over-year to $664 billion",
+   "url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+   "sourceName": "Oracle Investor Relations"
+  },
+  {
+   "nodeId": "oracle",
+   "pillar": "P1",
+   "date": "2026-09-24",
+   "headline": "Oracle sends force majeure notice on its New Mexico Stargate data center",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "If the 2.45GW Jupiter campus slips past 2028 because of power delays, the NVIDIA racks meant for it slip too.",
+   "evidence": "February 1, 2027",
+   "url": "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center/",
+   "sourceName": "TechCrunch"
+  },
+  {
+   "nodeId": "coreweave",
+   "pillar": "P1",
+   "date": "2026-11-11",
+   "headline": "CoreWeave: record Q3 revenue reaches $3.66 billion as backlog grows to $132.5 billion",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "A growing backlog at a pure NVIDIA cloud turns almost one for one into GPU and networking orders.",
+   "evidence": "2026 capital expenditures of $37 billion to $39 billion",
+   "url": "https://pulse2.com/coreweave-record-q3-revenue-reaches-3-66-billion-as-backlog-grows-to-132-5-billion/",
+   "sourceName": "Pulse 2.0"
+  },
+  {
+   "nodeId": "openai",
+   "pillar": "P1",
+   "date": "2026-11-11",
+   "headline": "OpenAI posts steep losses even as quarterly revenue rises to $10 billion, WSJ reports",
+   "direction": "mixed",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Revenue is growing fast, but OpenAI still loses more than it books, and Oracle and CoreWeave orders depend on it paying.",
+   "evidence": "operating losses widened to $10.9 billion from $10.1 billion",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/11/11/openai-posts-steep-losses-even-as-quarterly-revenue-rises-to-10-billion-wsj-reports",
+   "sourceName": "Reuters via The Star"
+  },
+  {
+   "nodeId": "openai",
+   "pillar": "P1",
+   "date": "2026-09-19",
+   "headline": "OpenAI's compute plan rises to $856bn while its projected cash burn improves",
+   "direction": "negative",
+   "magnitude": 3,
+   "horizon": "long",
+   "whyItMatters": "OpenAI's compute plan is far bigger than its cash, so a weak funding round in 2027 or 2028 would hit NVIDIA demand through several clouds at once.",
+   "evidence": "on track to exhaust that by 2028",
+   "url": "https://thenextweb.com/news/openai-856bn-compute-vs-600bn-reset-burn-improved",
+   "sourceName": "The Next Web"
+  },
+  {
+   "nodeId": "sb-energy",
+   "pillar": "P1",
+   "date": "2026-11-18",
+   "headline": "NVIDIA's Q3 filing shows up to $118 billion of credit guarantees, mostly for OpenAI's Ohio campus",
+   "direction": "negative",
+   "magnitude": 3,
+   "horizon": "long",
+   "whyItMatters": "NVIDIA is now providing credit support for a buyer's land, power and buildings, so part of its demand is propped up by its own balance sheet and an OpenAI default would land on NVIDIA.",
+   "evidence": "up to $105 billion supports guarantees for SB Energy's data center project in Ohio",
+   "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+   "sourceName": "XenoSpectrum"
+  },
+  {
+   "nodeId": "anthropic",
+   "pillar": "P1",
+   "date": "2026-11-02",
+   "headline": "Anthropic details long-term compute commitments in amended IPO filing",
+   "direction": "negative",
+   "magnitude": 2,
+   "horizon": "long",
+   "whyItMatters": "The fastest-growing lab is reserving its biggest new compute on Google TPUs, so that spend goes to a rival chip rather than NVIDIA.",
+   "evidence": "$125 billion to $150 billion for additional Google TPU compute",
+   "url": "https://www.unite.ai/anthropic-details-long-term-compute-commitments-in-amended-ipo-filing/",
+   "sourceName": "Unite.AI"
+  },
+  {
+   "nodeId": "humain",
+   "pillar": "P1",
+   "date": "2026-10-22",
+   "headline": "Saudi Arabia's Humain expands Nvidia deal with 84MW AI computing plan",
+   "direction": "positive",
+   "magnitude": 1,
+   "horizon": "long",
+   "whyItMatters": "Sovereign buyers add demand that does not depend on hyperscaler budgets, although this deal is small and not yet final.",
+   "evidence": "develop up to 84 megawatts of artificial intelligence computing capacity",
+   "url": "https://www.thenationalnews.com/future/technology/2026/10/22/saudi-arabias-humain-expands-nvidia-deal-with-84mw-ai-computing-plan/",
+   "sourceName": "The National"
+  },
+  {
+   "nodeId": "nvidia",
+   "pillar": "K",
+   "date": "2026-11-18",
+   "headline": "NVIDIA's Q3 data center revenue splits $60.1 billion hyperscale and $47.5 billion AI cloud, industrial and enterprise",
+   "direction": "positive",
+   "magnitude": 2,
+   "horizon": "near",
+   "whyItMatters": "Non-hyperscale buyers grew 195% against 71% for hyperscalers, so revenue is less concentrated in the big four than a year ago.",
+   "evidence": "AI cloud, industrial and enterprise customers contributed $47.5 billion",
+   "url": "https://xenospectrum.com/en/nvidia-fy2027-q3-data-center-growth/",
+   "sourceName": "XenoSpectrum"
+  }
+ ]
+}

@@ -1,0 +1,292 @@
+{
+  "lane": "drill-P2",
+  "nodes": [
+    {
+      "id": "tsmc",
+      "label": "TSMC",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Makes NVIDIA's GPU dies and packages them with CoWoS",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "tsmc.com",
+      "summary": "Beyond the reported CoWoS hike, TSMC plans to lift 2027 wafer prices on advanced nodes and add a surcharge on HPC orders above committed volumes, and NVIDIA is named as one of the most exposed customers.",
+      "brief": [
+        "Foundry and CoWoS packager",
+        "Its 2027 wafer and packaging price rises land directly on NVIDIA's cost of goods."
+      ],
+      "health": "Next monthly sales print is December 10; October sales were NT$586.9 billion."
+    },
+    {
+      "id": "sk-hynix",
+      "label": "SK hynix",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Largest HBM supplier for Blackwell and Vera Rubin",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "skhynix.com",
+      "summary": "SK hynix now earns an 80% operating margin and has locked more than half of its 2027 and 2028 capacity under long-term agreements, so it holds the pricing power in the HBM negotiation.",
+      "brief": [
+        "Main HBM4 supplier",
+        "Its 80% margin shows how much of each GPU's value memory now captures."
+      ],
+      "health": "Third-quarter operating profit was 83.3 trillion won on 104.6 trillion won of revenue."
+    },
+    {
+      "id": "micron",
+      "label": "Micron",
+      "type": "company",
+      "role": "supplier",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Third HBM4 supplier for Vera Rubin",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "micron.com",
+      "summary": "Micron is guiding to a gross margin above NVIDIA's own, and its December 17 report is the first hard read on memory pricing going into NVIDIA's 2027 cost base.",
+      "brief": [
+        "Third HBM supplier, only US one",
+        "Its December 17 report is the next read on what NVIDIA pays for memory."
+      ],
+      "health": "Guides fiscal Q1 revenue to $61.5 billion at about 86% gross margin."
+    },
+    {
+      "id": "vera-rubin",
+      "label": "Vera Rubin NVL72",
+      "type": "product",
+      "role": "other",
+      "tier": 1,
+      "connectsTo": [
+        "nvidia",
+        "sk-hynix",
+        "micron",
+        "tsmc"
+      ],
+      "relation": "NVIDIA's new rack system, built on HBM4 and CoWoS-L",
+      "pillars": [
+        "P2"
+      ],
+      "summary": "Rubin carries about five times the memory cost of a GB300 rack, so its ramp is where both the HBM bottleneck and the margin dip show up first.",
+      "brief": [
+        "NVIDIA's new flagship rack",
+        "Its HBM4 supply sets both shipment volume and the margin low point."
+      ],
+      "health": "Started shipping in fiscal Q3 with nearly $20 billion of first-quarter revenue."
+    },
+    {
+      "id": "epoch-ai",
+      "label": "Epoch AI",
+      "type": "company",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia"
+      ],
+      "relation": "Publishes line-by-line build cost estimates for NVIDIA GPUs",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "epoch.ai",
+      "summary": "Epoch's B200 cost model is the most detailed public breakdown of what NVIDIA pays per GPU, and it shows memory and packaging are most of it.",
+      "brief": [
+        "Independent AI hardware research group",
+        "Its cost model shows memory and packaging make up most of a GPU's build cost."
+      ],
+      "health": "Puts a B200's build cost near $6,400 against a $30,000-plus selling price."
+    },
+    {
+      "id": "morgan-stanley",
+      "label": "Morgan Stanley Research",
+      "type": "company",
+      "role": "data-source",
+      "tier": 2,
+      "connectsTo": [
+        "nvidia",
+        "tsmc"
+      ],
+      "relation": "Sell-side models of Rubin rack costs and CoWoS demand",
+      "pillars": [
+        "P2"
+      ],
+      "domain": "morganstanley.com",
+      "summary": "Morgan Stanley's models are the most-cited source for how much of a Rubin rack is memory and how much of 2027 CoWoS demand NVIDIA will take.",
+      "brief": [
+        "Sell-side research desk",
+        "Its models size NVIDIA's memory bill and its share of 2027 packaging."
+      ],
+      "health": "Estimates memory at about 26% of a $7.8 million Rubin rack bill of materials."
+    }
+  ],
+  "signals": [
+    {
+      "nodeId": "nvidia",
+      "pillar": "P2",
+      "date": "2026-08-22",
+      "headline": "Nvidia tells biggest customers AI server prices will rise more than 15% for systems shipped from early 2027",
+      "direction": "positive",
+      "magnitude": 3,
+      "horizon": "near",
+      "whyItMatters": "A price rise of this size on Rubin and Blackwell systems is the main offset to the 2027 memory bill, and it is why management can promise margins recover to 72-73% next year.",
+      "evidence": "more than 15%",
+      "url": "https://thenextweb.com/news/nvidia-ai-server-price-increase-memory-costs",
+      "sourceName": "The Next Web (citing Bloomberg)"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "P2",
+      "date": "2026-11-17",
+      "headline": "Kress says Hopper GPUs have recontracted at up to twice their original price",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "When three-year-old Hopper capacity reprices at up to double and B300 rental rates are up more than 60%, buyers are short of compute, which is what a supply-limited market looks like.",
+      "evidence": "Hopper GPUs have recontracted at up to twice their original price under the multi-year agreements.",
+      "url": "https://singjupost.com/?p=65326",
+      "sourceName": "The Singju Post (earnings call transcript)"
+    },
+    {
+      "nodeId": "nvidia",
+      "pillar": "P2",
+      "date": "2026-11-18",
+      "headline": "Nvidia's inventory climbs 86% to $39.7 billion as Vera Rubin production ramps",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Inventory has nearly doubled since January while NVIDIA says it cannot meet demand; if those parts are finished goods waiting on data centers rather than components, the limit is shifting from supply to deployment.",
+      "evidence": "Inventory climbed 86% to $39.7 billion as the company ramped up production of its Vera Rubin NVL72 rack systems",
+      "url": "https://gfmag.com/?p=77611",
+      "sourceName": "Global Finance"
+    },
+    {
+      "nodeId": "vera-rubin",
+      "pillar": "P2",
+      "date": "2026-11-17",
+      "headline": "NVIDIA ramps production and begins shipping Vera Rubin NVL72",
+      "direction": "positive",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "NVIDIA's own account is that Rubin is shipping at volume now, with nearly $20 billion in its first quarter, which undercuts reports that HBM4 has pushed the ramp into 2027.",
+      "evidence": "the fastest product ramp in the company's history",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+      "sourceName": "NVIDIA"
+    },
+    {
+      "nodeId": "vera-rubin",
+      "pillar": "P2",
+      "date": "2026-11-16",
+      "headline": "Industry sources raise HBM4 concerns over NVIDIA Vera Rubin ramp",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "If HBM4 really caps Rubin volume into the first half of 2027, that confirms supply is the limit but also slows the shift to the product that is supposed to lift margins back up.",
+      "evidence": "could push mass production into the first half of 2027, beyond its previous second-half 2026 shipment outlook",
+      "url": "https://www.tokenpost.com/news/technology/58109",
+      "sourceName": "TokenPost"
+    },
+    {
+      "nodeId": "sk-hynix",
+      "pillar": "P2",
+      "date": "2026-10-28",
+      "headline": "SK hynix posts an 80% operating margin and expects HBM4 to overtake HBM3E in the fourth quarter",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "NVIDIA's main memory supplier now earns a higher margin than NVIDIA's own 75% gross margin, a sign that the scarce part in each GPU is the memory and that the supplier is setting the price.",
+      "evidence": "with an operating margin of 80%",
+      "url": "https://news.skhynix.com/en/q3-2026-business-results/",
+      "sourceName": "SK hynix Newsroom"
+    },
+    {
+      "nodeId": "micron",
+      "pillar": "P2",
+      "date": "2026-09-30",
+      "headline": "Micron guides fiscal first-quarter revenue to $61.5 billion with non-GAAP gross margin near 86%",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "A memory maker guiding to an 86% gross margin, more than ten points above NVIDIA's guide, shows how much of the AI server's value has moved to HBM and DRAM.",
+      "evidence": "approximately 86.25% (non-GAAP)",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/",
+      "sourceName": "Micron"
+    },
+    {
+      "nodeId": "micron",
+      "pillar": "P2",
+      "date": "2026-11-19",
+      "headline": "Micron to report fiscal first-quarter results on December 17, 2026",
+      "direction": "mixed",
+      "magnitude": 1,
+      "horizon": "near",
+      "whyItMatters": "Micron's December 17 call is the first supplier report after NVIDIA's guide, and its HBM pricing commentary for 2027 tells you whether the 72-73% fiscal 2028 margin guide still holds.",
+      "evidence": "Thursday, December 17, 2026, at 2:30 p.m. Mountain time",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-to-Report-Fiscal-First-Quarter-Results-on-December-17-2026/default.aspx",
+      "sourceName": "Micron"
+    },
+    {
+      "nodeId": "tsmc",
+      "pillar": "P2",
+      "date": "2026-07-22",
+      "headline": "TSMC reportedly plans up to 10% price hikes in 2027 with extra HPC premiums, Apple and NVIDIA in focus",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "On top of a possible 20% CoWoS increase, a 5-10% wafer rise plus a 10-15% surcharge on orders above commitments hits the customer that keeps asking for more than it booked, which is NVIDIA.",
+      "evidence": "TSMC plans to impose an additional 10% to 15% surcharge on top of the base adjustment.",
+      "url": "https://www.trendforce.com/news/2026/07/22/news-tsmc-reportedly-plans-up-to-10-price-hikes-in-2027-with-extra-hpc-premiums-apple-nvidia-in-focus/",
+      "sourceName": "TrendForce (citing Nikkei)"
+    },
+    {
+      "nodeId": "epoch-ai",
+      "pillar": "P2",
+      "date": "2026-11-25",
+      "headline": "What Nvidia's B200 AI chip costs to make",
+      "direction": "mixed",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "If HBM is about $2,900 and CoWoS about $1,100 of a $6,400 build, memory and packaging are roughly 60% of NVIDIA's chip cost, so the 2027 price rises at SK hynix and TSMC land on most of its cost of goods.",
+      "evidence": "HBM3E, 192 GB $2,900; CoWoS-L packaging $1,100; Packaging yield loss $1,000; Manufacturing cost ~$6,400",
+      "url": "https://chipsupplychain.org/component-costs/",
+      "sourceName": "Chip Supply Chain (Epoch AI estimates)"
+    },
+    {
+      "nodeId": "morgan-stanley",
+      "pillar": "P2",
+      "date": "2026-05-21",
+      "headline": "NVIDIA's Vera Rubin rack hit with 435% memory price surge, pushing HBM4 and LPDDR5X bill to $2M of $7.8M total",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "near",
+      "whyItMatters": "Memory went from about 9% of a Grace Blackwell rack to about 26% of a Rubin rack, so each Rubin shipment carries far more supplier cost than the Blackwell it replaces.",
+      "evidence": "Memory now accounts for 26% of the entire system cost",
+      "url": "https://wccftech.com/nvidia-vera-rubin-rack-hit-with-memory-price-surge-pushing-hbm4-lpddr5x-bill-to-2m-of-7-8m-total/",
+      "sourceName": "Wccftech (citing Morgan Stanley)"
+    },
+    {
+      "nodeId": "morgan-stanley",
+      "pillar": "P2",
+      "date": "2026-07-09",
+      "headline": "Morgan Stanley: CoWoS demand to nearly double by 2027, with NVIDIA at about 45% of the total",
+      "direction": "negative",
+      "magnitude": 2,
+      "horizon": "long",
+      "whyItMatters": "Morgan Stanley sees 2027 CoWoS demand up 93% while Goldman sees TSMC capacity up 114%, so packaging may stop being the bottleneck next year and NVIDIA's share of it is falling as AMD and custom chips grow.",
+      "evidence": "global CoWoS demand will reach 2.694 million wafers in 2027, a 93% increase from 1.394 million wafers in 2026",
+      "url": "https://www.kucoin.com/news/flash/morgan-stanley-report-cowos-demand-to-double-by-2027-amd-and-asics-drive-ai-chip-growth",
+      "sourceName": "KuCoin News (citing Morgan Stanley)"
+    }
+  ]
+}
