@@ -4,7 +4,7 @@
 
 Give Ripple an investment memo on a stock you own or short. It sends out a team of research agents and turns the memo into a live 3D map of every material supplier, customer, rival, regulator and owner one to three steps away, each scored against your thesis.
 
-![Ripple map for the NVIDIA demo spinning: NVIDIA at the center, with its suppliers, buyers, rivals and regulators around it](docs/ripple-map.avif)
+![Ripple map for the NVIDIA demo spinning: the full map, then the 2nd order and 1st order views zooming in on the companies closest to NVIDIA, then back out to the full map](docs/ripple-map.avif)
 
 ## Why
 
