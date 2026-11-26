@@ -25,7 +25,9 @@ const DOMAIN_RE = /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // PNG / GIF / ICO / JPEG / WEBP dimensions from the header; null if not a raster image we understand
-function dims(b) {
+// a malformed or truncated image header must never crash the run: unreadable means "not an image"
+function dims(b) { try { return dimsOf(b); } catch { return null; } }
+function dimsOf(b) {
   if (!b || b.length < 24) return null;
   if (b.readUInt32BE(0) === 0x89504e47) return [b.readUInt32BE(16), b.readUInt32BE(20)];
   if (b.toString('ascii', 0, 3) === 'GIF') return [b.readUInt16LE(6), b.readUInt16LE(8)];
@@ -57,14 +59,16 @@ for (const c of ['0.0.0.0/8', '10.0.0.0/8', '100.64.0.0/10', '127.0.0.0/8', '169
   '192.0.0.0/24', '192.168.0.0/16', '198.18.0.0/15', '224.0.0.0/3']) { const [a, p] = c.split('/'); BLOCK.addSubnet(a, +p, 'ipv4'); }
 // IPv4-mapped forms (::ffff:a.b.c.d, ::ffff:7f00:1) are caught by the IPv4 rules above; a ::ffff:0:0/96 rule
 // here would block every IPv4 address, because BlockList checks IPv4 as mapped IPv6.
-for (const c of ['::/128', '::1/128', '100::/64', '2001:db8::/32',
+for (const c of ['::/128', '::1/128', '64:ff9b::/96', '64:ff9b:1::/48', '100::/64', '2001::/32', '2001:db8::/32', '2002::/16',
   'fc00::/7', 'fe80::/10', 'fec0::/10', 'ff00::/8']) { const [a, p] = c.split('/'); BLOCK.addSubnet(a, +p, 'ipv6'); }
 const privateIp = ip => BLOCK.check(ip, net.isIPv6(ip) ? 'ipv6' : 'ipv4');
 function guardedLookup(host, opts, cb) {
   if (typeof opts === 'function') { cb = opts; opts = {}; }
   dns.lookup(host, { all: true }).then(addrs => {
-    if (!addrs.length || addrs.some(a => privateIp(a.address))) return cb(Object.assign(new Error(`blocked non-public address for ${host}`), { code: 'EBLOCKED' }));
-    if (opts && opts.all) cb(null, addrs); else cb(null, addrs[0].address, addrs[0].family);
+    try {
+      if (!addrs.length || addrs.some(a => privateIp(a.address))) return cb(Object.assign(new Error(`blocked non-public address for ${host}`), { code: 'EBLOCKED' }));
+      if (opts && opts.all) cb(null, addrs); else cb(null, addrs[0].address, addrs[0].family);
+    } catch (e) { cb(e); }
   }, cb);
 }
 function request(u, { headers = {}, signal, maxBytes = 3_000_000 } = {}) {
@@ -111,7 +115,8 @@ async function get(url, { json = false, tries = 3 } = {}) {
 }
 
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return ''; } };
-const sameSite = (a, b) => { const r = d => d.split('.').slice(-2).join('.'); return a && b && r(a) === r(b); };
+// same site = the same domain or one a subdomain of the other (bbc.co.uk must not match every .co.uk site)
+const sameSite = (a, b) => !!a && !!b && (a === b || a.endsWith('.' + b) || b.endsWith('.' + a));
 
 // Wikidata: search label variants, take the first entity with an official logo whose website matches the domain
 let wdChain = Promise.resolve();  // one Wikidata request at a time, >= 400ms apart (it rate-limits hard)
@@ -144,7 +149,7 @@ async function wikidataLogo(label, domain) {
 }
 
 // SVG: accept if it parses as an <svg> root with no scripts (it is only ever drawn through <img>, which can't run them anyway)
-const isSvg = b => { const t = b && b.length < 800_000 ? b.toString('utf8', 0, Math.min(b.length, 4000)) : ''; return /<svg[\s>]/i.test(t) && !/<script/i.test(b.toString('utf8')); };
+const isSvg = b => { const t = b && b.length < 800_000 ? b.toString('utf8', 0, Math.min(b.length, 4000)) : ''; return /<svg[\s>]/i.test(t) && !/<script|:script|\son[a-z]+\s*=|foreignObject|javascript:/i.test(b.toString('utf8')); };   // no active content at all
 // Only public https hosts: no plain http, no IP literals, no localhost or .local names (agents and
 // web pages supply these URLs, so they are untrusted).
 function publicHttps(u) {
@@ -175,7 +180,8 @@ async function siteIcon(domain) {
     if (html) break;
   }
   if (!html) return null;
-  const links = [...html.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(l => /rel=["'][^"']*icon/i.test(l));
+  const links = [...html.matchAll(/<link\b[^<>]{0,2000}>/gi)]   // bounded, so a page of unclosed tags can't stall the run
+  .map(m => m[0]).filter(l => /rel=["'][^"']*icon/i.test(l));
   const cands = links.map(l => ({ href: (l.match(/href=["']([^"']+)["']/i) || [])[1], size: +((l.match(/sizes=["'](\d+)x\d+/i) || [])[1] || (/apple-touch/i.test(l) ? 180 : 0)) }))
     .filter(c => c.href).sort((a, b) => b.size - a.size);
   for (const c of cands.slice(0, 4)) {

@@ -4,7 +4,8 @@
 // Usage: node scripts/fundamentals.mjs <TICKER>
 const TICKER = (process.argv[2] || '').toUpperCase();
 if (!/^[A-Z0-9.-]{1,10}$/.test(TICKER)) { console.error('usage: fundamentals.mjs <TICKER>'); process.exit(1); }
-const UA = { 'User-Agent': 'ripple-map/1.0 (personal research tool)', Accept: 'application/json' };
+// SEC asks for a contact in the User-Agent and can refuse requests without one (same setting as research.mjs)
+const UA = { 'User-Agent': process.env.RIPPLE_SEC_UA || 'ripple-map/1.0 research@example.com', Accept: 'application/json' };
 async function get(url) {
   for (let k = 0; k < 3; k++) {
     const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 20000);
@@ -68,14 +69,19 @@ const ebit = ttm('OperatingIncomeLoss');
 const da = ttm('DepreciationDepletionAndAmortization', 'DepreciationAndAmortization', 'Depreciation');
 const interest = ttm('InterestExpense', 'InterestExpenseNonoperating', 'InterestExpenseDebt');
 const assets = latestInstant('Assets');
-const cash = latestInstant('CashAndCashEquivalentsAtCarryingValue', 'CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents');
-const sti = latestInstant('ShortTermInvestments', 'AvailableForSaleSecuritiesDebtSecuritiesCurrent', 'MarketableSecuritiesCurrent');
-const lti = latestInstant('LongTermInvestments', 'AvailableForSaleSecuritiesDebtSecuritiesNoncurrent', 'MarketableSecuritiesNoncurrent');
-const debtLT = latestInstant('LongTermDebtNoncurrent', 'LongTermDebt', 'ConvertibleNotesPayable');
-const debtST = latestInstant('LongTermDebtCurrent', 'DebtCurrent', 'ShortTermBorrowings');
+// a balance-sheet tag the company stopped filing (its last value over a year older than the latest balance sheet) is stale, not current
+const fresh = x => (x && assets && Date.parse(assets.end) - Date.parse(x.end) > 400 * 864e5 ? null : x);
+const cash = fresh(latestInstant('CashAndCashEquivalentsAtCarryingValue', 'CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents'));
+const sti = fresh(latestInstant('ShortTermInvestments', 'AvailableForSaleSecuritiesDebtSecuritiesCurrent', 'MarketableSecuritiesCurrent'));
+// long-term marketable debt securities count as cash-like; LongTermInvestments can hold equity stakes, so it doesn't
+const lti = fresh(latestInstant('AvailableForSaleSecuritiesDebtSecuritiesNoncurrent', 'MarketableSecuritiesNoncurrent'));
+const debtLT = fresh(latestInstant('LongTermDebtNoncurrent', 'LongTermDebt', 'LongTermNotesPayable', 'ConvertibleNotesPayable'));
+const debtST = fresh(latestInstant('LongTermDebtCurrent', 'DebtCurrent', 'ShortTermBorrowings'));
 const dilShares = quarterPair('WeightedAverageNumberOfDilutedSharesOutstanding');
 
-const debt = (v(debtLT) || 0) + (v(debtST) || 0);
+// LongTermDebt already includes the current portion, so when that is the tag found only short-term borrowings are added
+const stb = fresh(latestInstant('ShortTermBorrowings'));
+const debt = debtLT?.tag === 'LongTermDebt' ? (v(debtLT) || 0) + (v(stb) || 0) : (v(debtLT) || 0) + (v(debtST) || 0);
 const liquid = (v(cash) || 0) + (v(sti) || 0) + (v(lti) || 0);
 const ebitda = v(ebit) != null && v(da) != null ? v(ebit) + v(da) : null;
 const fcf = v(cfo) != null && v(capex) != null ? v(cfo) - v(capex) : null;

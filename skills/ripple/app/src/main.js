@@ -268,7 +268,7 @@ function chainTo(id) {
   if (!(CENTER in prev)) return [id];
   const path = []; for (let c = CENTER; c; c = prev[c]) path.unshift(c); return path;
 }
-const cleanH = h => { const x = h.replace(/^[A-Za-z0-9 .&'-]{2,22}:\s+/, ''); return x[0].toUpperCase() + x.slice(1); };
+const cleanH = h => { const x = String(h ?? '').replace(/^[A-Za-z0-9 .&'-]{2,22}:\s+/, ''); return x ? x[0].toUpperCase() + x.slice(1) : ''; };
 const short = s => s.replace(/\s*\(.*\)/, '');
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const fdate = d => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(d)); return m ? `${MON[+m[2] - 1]} ${+m[3]}, ${m[1].slice(2)}` : ''; };

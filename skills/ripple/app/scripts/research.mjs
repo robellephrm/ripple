@@ -34,6 +34,12 @@ const today = () => ymd(new Date());
 const out = o => console.log(JSON.stringify(o, null, 1));
 const DOMAIN_RE = /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i;
 
+// read a response body as text, but stop at a size cap (third-party relays can pass back hostile pages)
+async function capped(r, max = 6_000_000) {
+  const reader = r.body.getReader(); const parts = []; let n = 0;
+  for (;;) { const { done, value } = await reader.read(); if (done) break; n += value.length; if (n > max) { await reader.cancel(); throw new Error(`response over ${max / 1e6} MB, skipped`); } parts.push(value); }
+  return Buffer.concat(parts).toString('utf8');
+}
 // fetch with timeout and bounded retries on 429 / 5xx (public APIs only; agent-supplied URLs go through safeGet)
 async function api(url, { headers = {}, method = 'GET', body, tries = 3, timeout = 25000 } = {}) {
   let last = '';
@@ -59,7 +65,7 @@ async function exa(tool, args) {
     method: 'POST', headers, timeout: 45000, tries: 5,   // free tier answers bursts with 429; back off rather than give up
     body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: tool, arguments: args } }),
   });
-  const raw = await r.text();
+  const raw = await capped(r);
   const line = raw.split('\n').filter(l => l.startsWith('data: ')).pop();
   const msg = JSON.parse(line ? line.slice(6) : raw);
   if (msg.error) throw new Error(`exa: ${msg.error.message}`);
@@ -89,7 +95,7 @@ const ent = s => s.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g, '&').repl
   .replace(/&#x([0-9a-f]{1,6});/gi, (_, c) => cp(parseInt(c, 16))).replace(/&#(\d{1,7});/g, (_, c) => cp(+c));
 async function googleNews(query, { n = 15, days = 30 } = {}) {
   const u = `https://news.google.com/rss/search?q=${encodeURIComponent(`${query} when:${days}d`)}&hl=en-US&gl=US&ceid=US:en`;
-  const xml = await (await api(u)).text();
+  const xml = await capped(await api(u));
   const items = xml.slice(0, 3_000_000).split('<item>').slice(1).map(x => { const e = x.indexOf('</item>'); return e < 0 ? '' : x.slice(0, Math.min(e, 20000)); }).filter(Boolean);
   return items.slice(0, n).map(it => {
     const tag = t => { const a = it.indexOf(`<${t}`); if (a < 0) return ''; const b = it.indexOf('>', a); const c = it.indexOf(`</${t}>`, b); return b < 0 || c < 0 ? '' : ent(it.slice(b + 1, c)).trim(); };
@@ -104,12 +110,14 @@ async function googleNews(query, { n = 15, days = 30 } = {}) {
 const BLOCK = new net.BlockList();
 for (const c of ['0.0.0.0/8', '10.0.0.0/8', '100.64.0.0/10', '127.0.0.0/8', '169.254.0.0/16', '172.16.0.0/12',
   '192.0.0.0/24', '192.168.0.0/16', '198.18.0.0/15', '224.0.0.0/3']) { const [a, p] = c.split('/'); BLOCK.addSubnet(a, +p, 'ipv4'); }
-for (const c of ['::/128', '::1/128', '64:ff9b::/96', '64:ff9b:1::/48', '100::/64', '2001:db8::/32', 'fc00::/7', 'fe80::/10', 'fec0::/10', 'ff00::/8']) { const [a, p] = c.split('/'); BLOCK.addSubnet(a, +p, 'ipv6'); }
+for (const c of ['::/128', '::1/128', '64:ff9b::/96', '64:ff9b:1::/48', '100::/64', '2001::/32', '2001:db8::/32', '2002::/16', 'fc00::/7', 'fe80::/10', 'fec0::/10', 'ff00::/8']) { const [a, p] = c.split('/'); BLOCK.addSubnet(a, +p, 'ipv6'); }
 function guardedLookup(host, opts, cb) {
   if (typeof opts === 'function') { cb = opts; opts = {}; }
   dns.lookup(host, { all: true }).then(addrs => {
-    if (!addrs.length || addrs.some(a => BLOCK.check(a.address, net.isIPv6(a.address) ? 'ipv6' : 'ipv4'))) return cb(Object.assign(new Error(`blocked non-public address for ${host}`), { code: 'EBLOCKED' }));
-    if (opts && opts.all) cb(null, addrs); else cb(null, addrs[0].address, addrs[0].family);
+    try {
+      if (!addrs.length || addrs.some(a => BLOCK.check(a.address, net.isIPv6(a.address) ? 'ipv6' : 'ipv4'))) return cb(Object.assign(new Error(`blocked non-public address for ${host}`), { code: 'EBLOCKED' }));
+      if (opts && opts.all) cb(null, addrs); else cb(null, addrs[0].address, addrs[0].family);
+    } catch (e) { cb(e); }
   }, cb);
 }
 const publicHttps = u => { try { const x = new URL(u); return x.protocol === 'https:' && !x.username && !x.password && !net.isIP(x.hostname.replace(/^\[|\]$/g, '')) && DOMAIN_RE.test(x.hostname); } catch { return false; } };
@@ -180,8 +188,9 @@ const fetchable = u => { try { const x = new URL(u); return /^https?:$/.test(x.p
 async function fetchPage(url, max, { find, from = 0 } = {}) {
   if (!fetchable(url)) return { url, via: null, error: 'refused: only public http(s) pages on a domain name can be fetched' };
   const notes = [];
-  const r = url.startsWith('https:') ? await safeGet(url) : { error: 'plain http, skipped the direct read' };
-  if (r.error && /non-public address|not a public https URL/.test(r.error)) return { url, via: null, error: 'refused: this address points at a private network' };
+  const r = new URL(url).protocol === 'https:' ? await safeGet(url) : { error: 'plain http, skipped the direct read' };
+  // only a real private-network hit is refused outright; an https page that redirects to http just falls back
+  if (r.error && /non-public address/.test(r.error)) return { url, via: null, error: 'refused: this address points at a private network' };
   if (r.error) notes.push(`direct: ${r.error}`);
   else if (r.status !== 200) notes.push(`direct: HTTP ${r.status}`);
   else {
@@ -199,7 +208,7 @@ async function fetchPage(url, max, { find, from = 0 } = {}) {
     notes.push('exa: empty');
   } catch (e) { notes.push(`exa: ${e.message}`); }
   try {
-    const t = await (await api(`https://r.jina.ai/${url}`, { headers: { Accept: 'text/plain' }, tries: 2, timeout: 40000 })).text();
+    const t = await capped(await api(`https://r.jina.ai/${url}`, { headers: { Accept: 'text/plain' }, tries: 2, timeout: 40000 }));
     if (t.length > 300 && !/requiring CAPTCHA|Target URL returned error|Page not Found/i.test(t.slice(0, 800))) return { url, via: 'jina', title: (t.match(/^Title: (.*)$/m) || [, ''])[1], ...pageSlice(t, max, find, from), notes };
     notes.push('jina: blocked or empty');
   } catch (e) { notes.push(`jina: ${e.message}`); }

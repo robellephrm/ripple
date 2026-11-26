@@ -2,7 +2,7 @@
 // No localhost and no browser tab. Pages are served from a private ripple:// scheme so canvas and
 // WebGL treat every file as same-origin. Source links (http/https) open in the default browser.
 // Usage: electron <viewer dir> <path to workspace dist> [window title]
-const { app, BrowserWindow, protocol, net, shell, nativeTheme, Menu } = require('electron');
+const { app, BrowserWindow, protocol, net, shell, nativeTheme, Menu, session } = require('electron');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const fs = require('node:fs');
@@ -20,11 +20,18 @@ const isExternal = url => /^https?:\/\//i.test(url);
 
 app.whenReady().then(() => {
   nativeTheme.themeSource = 'dark';
+  const realDist = fs.realpathSync(dist);
+  // the map never needs the camera, microphone, location, notifications or anything else: refuse them all
+  session.defaultSession.setPermissionRequestHandler((_wc, _perm, cb) => cb(false));
+  session.defaultSession.setPermissionCheckHandler(() => false);
   // ripple://map/<file> -> <dist>/<file>, never outside dist
   protocol.handle('ripple', req => {
     const rel = decodeURIComponent(new URL(req.url).pathname).replace(/^\/+/, '') || 'index.html';
     const file = path.resolve(dist, rel);
     if (file !== dist && !file.startsWith(dist + path.sep)) return new Response('not found', { status: 404 });
+    // also check where the file really is, so a symlink inside dist can't point the app at other files
+    let real; try { real = fs.realpathSync(file); } catch { return new Response('not found', { status: 404 }); }
+    if (real !== realDist && !real.startsWith(realDist + path.sep)) return new Response('not found', { status: 404 });
     return net.fetch(pathToFileURL(file).toString()).then(r => {
       const headers = new Headers(r.headers);
       // only the app's own code runs; fonts may come from Google Fonts; images only from the app

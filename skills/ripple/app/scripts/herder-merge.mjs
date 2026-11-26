@@ -26,6 +26,7 @@ for (const p of lanePaths) {
   try { lane = read(p); } catch (e) { badLanes.push(`${p}: ${e.message}`); continue; }
   for (const n of lane.nodes || []) {
     if (!n.id || n.id === CENTER) continue;
+    if (!/^[a-z0-9-]+$/.test(n.id)) { dropped.push({ url: n.id, why: 'node id is not kebab-case' }); continue; }   // ids become file names and object keys
     const pillars = (n.pillars || []).filter(x => pillarIds.has(x));
     const cur = nodes.get(n.id);
     if (!cur) { nodes.set(n.id, { ...n, tier: n.tier || 3, connectsTo: [...new Set(n.connectsTo || [])], pillars: [...new Set(pillars)] }); continue; }
@@ -38,8 +39,8 @@ for (const p of lanePaths) {
     for (const k of ['domain', 'brief', 'health', 'tracks', 'reading', 'cadence', 'leads']) if (n[k] && !cur[k]) cur[k] = n[k];
   }
   for (const s of lane.signals || []) {
-    if (!s.nodeId || !pillarIds.has(s.pillar) || !/^\d{4}-\d{2}-\d{2}$/.test(s.date || '') || !/^https?:\/\//.test(s.url || '')) {
-      dropped.push({ url: s.url, why: 'malformed (pillar/date/url)' }); continue;
+    if (!s.nodeId || typeof s.headline !== 'string' || !s.headline.trim() || !pillarIds.has(s.pillar) || !/^\d{4}-\d{2}-\d{2}$/.test(s.date || '') || !/^https?:\/\//.test(s.url || '')) {
+      dropped.push({ url: s.url, why: 'malformed (headline/pillar/date/url)' }); continue;
     }
     const v = verify[s.url];
     if (v && v.hardFail) { dropped.push({ url: s.url, why: `verifier: ${v.status}` }); continue; }
