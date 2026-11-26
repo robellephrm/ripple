@@ -9,7 +9,9 @@ For each target node, find what an investor would not get from headlines about t
   change the answer for this thesis point. Example: the stock's top buyer is a hyperscaler, so
   check that hyperscaler's capex guide, its in-house chip program, and its other vendors.
 - **Numbers, not adjectives.** Contract size, % of revenue or COGS, capex guide, share, units,
-  dates of the next decision. Every number with its source.
+  dates of the next decision. Every number with its source. Filings are where these hide:
+  `research filings "<stock's name>" --forms 10-K,10-Q,8-K` finds other companies' filings that name it
+  (customer and supplier disclosures, purchase commitments, concentration).
 - **The kill test.** How close is this thesis point's "breaks if" condition to happening? Name
   the next dated event that settles it and what result would break it.
 - **The other side.** At least one signal that cuts against your own early read.

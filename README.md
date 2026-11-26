@@ -71,6 +71,10 @@ The map spins on its own, pauses while you read a card or drag, and resumes afte
 
 Ripple runs with sub-agents in Claude Code, or as teams in a [Prime Fleet](https://github.com/robellephrm/prime-fleet). Fleet mode uses a different model family to cross-check load-bearing claims and Strong or Broken calls.
 
+## Research sources
+
+The research agents use the built-in free tool at `skills/ripple/app/scripts/research.mjs`, with no account needed, for Exa semantic search and news, SEC full-text search, Federal Register rules, and hiring data from public Greenhouse, Lever, and Ashby job boards. Exa's free tier is rate limited, and a free Exa API key in `EXA_API_KEY` raises that limit; page reads fall back to Exa and the Jina reader when a site blocks plain fetches. Firecrawl and other paid tools are optional extras, and running out of credits never stops a run.
+
 ## Honest notes
 
 Research quality depends on public sources and the models reading them. A full run takes about an hour and a lot of web reads.

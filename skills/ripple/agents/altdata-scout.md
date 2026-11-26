@@ -15,7 +15,10 @@ gross margin). For each KPI:
    - Demand footprints: job postings, web traffic, app downloads, foot traffic (e.g. Placer.ai for
      stores), Google Trends, government statistics.
    - What the street expects: consensus for the KPI, so readings can be compared to it.
-   Prefer free sources that publish on a schedule. If the best source is paid (credit card panels,
+   Prefer free sources that publish on a schedule. Free readings you can take yourself: open roles
+   (`research jobs greenhouse:<board> --q <team>`, note the count and date so the next run can compare),
+   Taiwan and Korea monthly sales posted on company IR pages (`research fetch`), SEC filings that name the
+   number (`research filings "<phrase>"`), and dated trade-press figures (`research news`). If the best source is paid (credit card panels,
    satellite, Placer.ai detail), name it in your summary but do not cite numbers you cannot read.
 2. **Read the latest value.** Open the source, take the newest reading with its date, and compare
    it to the prior period and to what the KPI needs.

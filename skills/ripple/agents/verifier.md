@@ -1,6 +1,8 @@
 # verifier
 
-For every signal URL in `data/lanes/*.json`: fetch it and write `data/verify.json` keyed by URL:
+For every signal URL in `data/lanes/*.json`: fetch it with
+`~/.claude/skills/ripple/app/scripts/research.mjs fetch <url>` (add `--find "<quoted evidence>"` to land on the quote) (it falls back to Exa and the
+Jina reader when a site blocks plain reads, so far fewer pages end up unread) and write `data/verify.json` keyed by URL:
 
 ```json
 { "https://...": { "status": 200, "ok": true, "hardFail": false, "unconfirmed": false, "note": "" } }
@@ -8,7 +10,8 @@ For every signal URL in `data/lanes/*.json`: fetch it and write `data/verify.jso
 
 - `hardFail` = 404/410, a dead domain, or the page clearly does not support the headline/evidence.
   Hard fails are dropped from the map by the merge.
-- Bot blocks (401/403/429, paywalls) are NOT hard fails if the scout quoted the page. Record the status.
+- Bot blocks (401/403/429, paywalls) are NOT hard fails if the scout quoted the page. Record the status,
+  and if the research tool read it through Exa or Jina, check the quote against that text and note `via`.
 - `unconfirmed: true` when a claim is single-source AND contradicts the memo; the merge appends
   "(unconfirmed)" to its headline.
 - Check dates: if the page date is clearly different from the signal date, fix the date in the lane
